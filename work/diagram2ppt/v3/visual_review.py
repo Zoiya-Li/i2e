@@ -16,6 +16,12 @@ from typing import Any
 from . import method_registry
 
 
+# NOTE: these are FRAMEWORK.PNG-SPECIFIC fixture priors (left 3D manifold,
+# failure summary, Q0 coverage, pipeline/auditor/action cards). They are a
+# LAST-RESORT FALLBACK ONLY. Generic review derives regions from the
+# strategy_plan (see `_semantic_regions_px`, which falls back to a generic
+# whole-slide region, not to this list). Do not extend this fixture for new
+# diagrams — add strategy regions instead, or move it to tests/fixtures.
 REGION_PRIORS = [
     {
         "id": "left_surface",
