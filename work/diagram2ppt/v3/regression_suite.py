@@ -197,6 +197,9 @@ def _set_default_provider_env() -> None:
     os.environ.setdefault("I2E_VLM_MODEL", "Qwen/Qwen3-VL-32B-Instruct")
     os.environ.setdefault("I2E_VISION_MODEL", "Qwen/Qwen3-VL-32B-Instruct")
     os.environ.setdefault("I2E_PLANNER_MODEL", "Qwen/Qwen3.5-397B-A17B")
+    # Reproducibility: regression must not reuse same-source memory from sibling
+    # v3_out* dirs, or results depend on local history. Opt in with =1.
+    os.environ.setdefault("I2E_USE_RUN_MEMORY", "0")
 
 
 if __name__ == "__main__":

@@ -182,6 +182,11 @@ class Planner:
         self.ir, selected_entities = self._select_initial_ir_by_render(entities, w, h)
         (self.out_dir / "processed.json").write_text(
             json.dumps(selected_entities, indent=2, ensure_ascii=False, default=_jsonable))
+        self.ir["run_memory"] = {
+            "enabled": os.environ.get("I2E_USE_RUN_MEMORY", "1") != "0",
+            "decompose_recovered": decompose_recovered,
+            "processed_from_memory": processed_from_memory,
+        }
         self.ir["status"] = "extracting"
         self._push_snapshot()
         self._save_ir("ir_00_plan.json")
@@ -479,6 +484,8 @@ class Planner:
 
     def _best_cached_decompose(self) -> list[dict] | None:
         """Find the richest prior decompose.json for this same image hash."""
+        if os.environ.get("I2E_USE_RUN_MEMORY", "1") == "0":
+            return None
         root = self.out_dir.parent
         source_hash = _file_hash(self.image_path)
         best: tuple[int, list[dict]] | None = None
@@ -528,6 +535,8 @@ class Planner:
         return best_entities
 
     def _cached_processed_candidates(self) -> list[list[dict]]:
+        if os.environ.get("I2E_USE_RUN_MEMORY", "1") == "0":
+            return []
         root = self.out_dir.parent
         source_hash = _file_hash(self.image_path)
         out: list[list[dict]] = []
@@ -631,6 +640,7 @@ class Planner:
         if not renderer.is_available():
             # Fallback to PIL proxy render for environments without PowerPoint.
             self.log("[Planner] true PowerPoint renderer unavailable; using PIL proxy")
+            self.ir["renderer_mode"] = "proxy"
             proxy_png = self.out_dir / "diagram_v3.proxy.png"
             _ensure_proxy_image(self.ir, self.image_path, self.original)
             v2_render.render(self.ir, self.original).save(proxy_png)
@@ -648,9 +658,11 @@ class Planner:
                     str(self.out_dir / "diagram_v3.compare.png"),
                 )
                 compare_png = str(self.out_dir / "diagram_v3.compare.png")
+                self.ir["renderer_mode"] = "true_powerpoint"
             except Exception as exc:
                 self.log("[Planner] true PowerPoint render failed; using PIL proxy: "
                          f"{type(exc).__name__}: {exc}")
+                self.ir["renderer_mode"] = "proxy"
                 proxy_png = self.out_dir / "diagram_v3.proxy.png"
                 _ensure_proxy_image(self.ir, self.image_path, self.original)
                 v2_render.render(self.ir, self.original).save(proxy_png)

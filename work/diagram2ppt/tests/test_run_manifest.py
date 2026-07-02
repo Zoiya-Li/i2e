@@ -113,3 +113,53 @@ def test_write_manifest_roundtrip():
         reloaded = json.loads(path.read_text())
         assert reloaded["schema"] == rm.SCHEMA_VERSION
         assert reloaded["outcome"] == rm.OUTCOME_ACCEPTED
+
+
+def test_derive_stage_returns_furthest():
+    assert rm.derive_stage({"perception_blackboard.json": True, "diagram_v3.pptx": True}) == "rendered"
+    assert rm.derive_stage({"perception_blackboard.json": True}) == "perceived"
+    assert rm.derive_stage({"ir_final.json": True, "diagram_v3.pptx": True}) == "finalized"
+    assert rm.derive_stage({}) is None
+
+
+def test_acceptance_blockers_empty_when_clean():
+    ir = {"status": "accepted", "renderer_mode": "true_powerpoint",
+          "metrics": {}, "defects": [], "visual_review": {}}
+    assert rm.acceptance_blockers(ir) == []
+
+
+def test_acceptance_blockers_lists_reasons():
+    ir = {"status": "failed", "renderer_mode": "proxy",
+          "metrics": {"critical_defect_count": 3},
+          "defects": [{"id": "d"}, {"id": "e", "status": "skipped"}],
+          "visual_review": {"defects": [1, 2]}}
+    b = rm.acceptance_blockers(ir)
+    assert any("ir_status=failed" in x for x in b)
+    assert any("renderer_mode=proxy" in x for x in b)
+    assert any("critical_defect_count=3" in x for x in b)
+    assert any("actionable_defects=1" in x for x in b)  # skipped excluded
+    assert any("visual_review_defects=2" in x for x in b)
+
+
+def test_proxy_render_cannot_be_accepted():
+    m = rm.build_manifest(
+        ir={"status": "accepted", "renderer_mode": "proxy", "metrics": {}, "defects": []},
+        artifacts={"diagram_v3.pptx": True},
+        **_base_kwargs(),
+    )
+    assert m["outcome"] == rm.OUTCOME_PARTIAL
+    assert m["renderer_mode"] == "proxy"
+    assert any("renderer_mode" in x for x in m["acceptance_blockers"])
+
+
+def test_true_powerpoint_accepted_has_no_blockers():
+    m = rm.build_manifest(
+        ir={"status": "accepted", "renderer_mode": "true_powerpoint",
+            "metrics": {}, "defects": [], "visual_review": {}},
+        artifacts={"diagram_v3.pptx": True, "ir_final.json": True},
+        **_base_kwargs(),
+    )
+    assert m["outcome"] == rm.OUTCOME_ACCEPTED
+    assert m["acceptance_blockers"] == []
+    assert m["last_successful_stage"] == "finalized"
+    assert m["memory"] is None

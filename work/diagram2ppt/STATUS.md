@@ -55,7 +55,7 @@ Input → Preprocess → Evidence Extraction → Component Decomposition → Loc
 
 | 模块 / 产物 | 作用 | 优先级 |
 |---|---|---|
-| `v3/run_manifest.py` + `v3/run.py` 包装 | 每次运行都写 `run_manifest.json`（含 timeout/SIGTERM/异常），outcome ∈ accepted/partial/rejected/error/interrupted——**失败可诊断** | P0 |
+| `v3/run_manifest.py` + `v3/run.py` 包装 | 每次运行都写 `run_manifest.json`（含 timeout/SIGTERM/异常），outcome ∈ accepted/partial/rejected/error/interrupted——**失败可诊断**。P1 扩展：`renderer_mode`、`memory`（run 记忆是否复用）、`last_successful_stage`（stalled 在哪一阶段）、`acceptance_blockers`；**proxy 渲染永不判 accepted**（降级 partial，真 PowerPoint 才是生产验收）。可复现性：`I2E_USE_RUN_MEMORY=0` 关闭同源记忆复用（regression 默认关） | P0/P1 |
 | `v3/pptx_stats.py` | 确定性 PPTX 结构指纹（shape 直方图、pictures 数、OMML 数、native_object_ratio、sha256），无网络 | P1/P3 |
 | `v3/baselines/v2_framework.json` | 冻结的 v2 回归基线（**实测**：97 shapes / 7 pictures / 9 OMML / native_ratio 0.9278），并记录与旧文档"0 图片=v3.3"说法的出入 | P1 |
 | `regression_suite.py`：`load_v2_baseline` / `compare_to_baseline` | 每份回归报告内嵌 v2 基线；每个 v3 case 产物与基线对比可编辑性（pictures/native_ratio delta） | P3 |

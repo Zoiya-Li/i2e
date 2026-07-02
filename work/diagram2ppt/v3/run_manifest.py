@@ -63,6 +63,55 @@ def classify_outcome(
     return OUTCOME_REJECTED
 
 
+# Pipeline stages in progress order; the furthest artifact present marks how far
+# a run got before stopping. Keeps a failed run's manifest specific ("stalled at
+# render") instead of a bare "partial".
+_STAGE_ORDER = [
+    ("perceived", "perception_blackboard.json"),
+    ("content", "content_tasks.json"),
+    ("proposed", "task_graph.json"),
+    ("rendered", "diagram_v3.pptx"),
+    ("audited", "visual_review_latest.json"),
+    ("finalized", "ir_final.json"),
+]
+
+
+def derive_stage(artifacts: Optional[dict]) -> Optional[str]:
+    """Return the furthest pipeline stage reached, from artifact presence."""
+    artifacts = artifacts or {}
+    reached = None
+    for stage, artifact in _STAGE_ORDER:
+        if artifacts.get(artifact):
+            reached = stage
+    return reached
+
+
+def acceptance_blockers(ir: Optional[dict]) -> list:
+    """Concrete reasons a run is not production-acceptable, derived from the IR.
+
+    An empty list means nothing blocks acceptance (an accepted, true-PowerPoint
+    run with no residual defects).
+    """
+    ir = ir or {}
+    metrics = ir.get("metrics") or {}
+    blockers: list = []
+    if ir.get("status") != "accepted":
+        blockers.append(f"ir_status={ir.get('status') or 'none'}")
+    renderer_mode = ir.get("renderer_mode")
+    if renderer_mode and renderer_mode != "true_powerpoint":
+        blockers.append(f"renderer_mode={renderer_mode} (not true_powerpoint)")
+    crit = int(metrics.get("critical_defect_count") or 0)
+    if crit:
+        blockers.append(f"critical_defect_count={crit}")
+    actionable = len([d for d in (ir.get("defects") or []) if d.get("status") != "skipped"])
+    if actionable:
+        blockers.append(f"actionable_defects={actionable}")
+    vr = len((ir.get("visual_review") or {}).get("defects") or [])
+    if vr:
+        blockers.append(f"visual_review_defects={vr}")
+    return blockers
+
+
 def build_manifest(
     *,
     image: Any,
@@ -74,11 +123,18 @@ def build_manifest(
     error: Any = None,
     interrupted: bool = False,
     artifacts: Optional[dict] = None,
+    renderer_mode: Optional[str] = None,
+    last_successful_stage: Optional[str] = None,
 ) -> dict:
     """Build the manifest dict from whatever run state is available.
 
     Robust to a missing/partial ``ir`` (early crash) — every field degrades to
     a null/empty default rather than raising.
+
+    Production acceptance gate: a run rendered only through the PIL proxy can
+    never be reported as ``accepted`` (the proxy lies about OMML/autofit/fonts,
+    per the repo's true-PowerPoint rule); such a run is downgraded to
+    ``partial`` even if the IR status says accepted.
     """
     ir = ir or {}
     artifacts = artifacts or {}
@@ -86,6 +142,12 @@ def build_manifest(
     defects = ir.get("defects", []) or []
     produced_output = bool(any(artifacts.values())) or bool(metrics)
     outcome = classify_outcome(ir.get("status"), produced_output, error, interrupted)
+
+    renderer_mode = renderer_mode or ir.get("renderer_mode")
+    if outcome == OUTCOME_ACCEPTED and renderer_mode and renderer_mode != "true_powerpoint":
+        outcome = OUTCOME_PARTIAL
+
+    ir_view = {**ir, "renderer_mode": renderer_mode}
     return {
         "schema": SCHEMA_VERSION,
         "image": str(image),
@@ -96,6 +158,10 @@ def build_manifest(
         "elapsed_sec": round(float(ended_at) - float(started_at), 3),
         "outcome": outcome,
         "ir_status": ir.get("status"),
+        "renderer_mode": renderer_mode,
+        "memory": ir.get("run_memory"),
+        "last_successful_stage": last_successful_stage or derive_stage(artifacts),
+        "acceptance_blockers": acceptance_blockers(ir_view),
         "rounds": ir.get("round"),
         "metrics": metrics,
         "defect_count": len(defects),
