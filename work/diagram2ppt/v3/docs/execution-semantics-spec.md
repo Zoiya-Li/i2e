@@ -466,9 +466,96 @@ The current system already has valuable properties that the refactor must keep:
 | Is the system auditable? | Partially. Transitions exist but do not capture full deltas. |
 | What is the next jump? | Enforce IR immutability + effect declarations + deterministic replay hashes. |
 
+## 13. Executable contract layer (Current as of 2026-07-02)
+
+A concrete, opt-in contract layer now lives in `work/diagram2ppt/v3/runtime/contract.py`.
+It does not yet replace the legacy operators, but it defines the interfaces and
+has been validated with two pure operators and offline tests.
+
+### 13.1 Core classes
+
+- `ImmutableOperator`: abstract base that receives a deep-copied `RuntimeState`
+  and returns `(new_state, effects)`.
+- `SideEffect` / `WriteFileEffect` / `UpdatePlannereffect` / `NoEffect`:
+  first-class descriptions of what the kernel should commit.
+- `Transaction`: encapsulates one operator call with pre/post state hashes and
+  effect list.
+- `commit_effects()`: the only place in the contract layer allowed to perform
+  side effects.
+- `state_hash()`: stable hash of canonical state fields for replay/cache keys.
+
+### 13.2 Declarative operator contract
+
+Each immutable operator declares:
+
+```python
+reads = ("ir", "strategy_plan")
+writes = ("task_graph",)
+artifacts = ("task_graph.json",)
+idempotent = True
+```
+
+This lets the kernel:
+
+- Validate preconditions (`reads` must be non-None).
+- Detect undeclared writes (future validation hook).
+- Build a dependency graph from `reads`/`writes`.
+- Cache results by `transition_hash()`.
+
+### 13.3 First pure operators
+
+| Operator | Reads | Writes | Artifacts | Status |
+|----------|-------|--------|-----------|--------|
+| `ImmutableTaskGraphOperator` | `ir`, `strategy_plan` | `task_graph` | `task_graph.json` | ✅ tested |
+| `ImmutableAuditTasksOperator` | `ir`, `components` | `audit_tasks` | `audit_tasks.json` | ✅ tested |
+
+These operators:
+
+- Do not touch `Planner`.
+- Do not write files directly.
+- Return a new `RuntimeState` and a list of `SideEffect` objects.
+- Are deterministic given the same input state.
+
+### 13.4 Test coverage
+
+`work/diagram2ppt/tests/test_runtime_contract.py` covers:
+
+- `state_hash` stability and sensitivity.
+- `Transaction` pre/post hash recording.
+- Immutable operator non-mutation of input state.
+- `commit_effects` for file writes and planner updates.
+- `ImmutableTaskGraphOperator` / `ImmutableAuditTasksOperator` purity.
+- Deterministic `transition_hash`.
+- Error capture in `Transaction.execute()`.
+
+### 13.5 Adoption path
+
+The legacy `Operator` registry remains the default.  New pure operators can be
+added side-by-side.  The next incremental steps are:
+
+1. Add a kernel method `transition_immutable(op_name, **inputs)` that uses the
+   `Transaction` / `commit_effects` path instead of the legacy operator path.
+2. Migrate `derive_components` to an immutable operator.
+3. Wrap `strategy.apply_*`, `quality_gate.apply`, `verifier.verify`, and
+   `visual_review.attach_to_ir` so they return deltas instead of mutating IR.
+4. Once enough operators are immutable, switch `AuditAgentSystem` to dispatch
+   through the immutable registry and remove legacy mutation operators.
+
+### 13.6 What is still missing
+
+- The kernel does not yet commit immutable-operator effects.
+- No write-field validation hook.
+- No code-version / seed recording in `Transaction`.
+- No execution graph scheduler.
+- No transactional rollback of partial file writes.
+
+These remain Target work; the contract layer makes them implementable
+incrementally without rewriting the whole system.
+
 ---
 
 **Bottom line:** v3 is a strong, traceable AI pipeline. To become a Visual
 Design Compiler runtime, it needs a transition semantics layer that makes the
 IR immutable at operator boundaries and the kernel the sole owner of state
-mutation. Everything else follows from that one change.
+mutation. The executable contract layer is the first concrete step in that
+direction.

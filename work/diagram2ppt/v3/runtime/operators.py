@@ -4,13 +4,26 @@ Each operator consumes a ``PlannerKernel`` (and thus ``RuntimeState`` + the
 wrapped Planner), performs one deterministic state mutation, and returns an
 updated ``RuntimeState``.  Agents are not rewritten here; their existing
 Planner-level methods are wrapped so the kernel can own control flow.
+
+This module also introduces ``ImmutableOperator`` variants for a subset of
+operators.  These variants are pure reducers: they receive a deep-copied state,
+return a new state, and declare their effects explicitly.  They exist alongside
+the legacy operators so the transition to a deterministic kernel can happen
+incrementally.
 """
 from __future__ import annotations
 
+import copy
+from collections import Counter
 from pathlib import Path
 from typing import Any
 
 from .state import RuntimeState
+from .contract import (
+    ImmutableOperator,
+    SideEffect,
+    WriteFileEffect,
+)
 
 
 class Operator:
@@ -128,12 +141,47 @@ class TaskGraphOperator(Operator):
 
     def run(self, kernel: Any, **inputs: Any) -> RuntimeState:
         from .. import task_graph
-
         graph = task_graph.build(kernel.state.ir)
         state = self._state_copy(kernel)
         state.task_graph = graph
         state.stage = self.target_stage
         return state
+
+
+class ImmutableTaskGraphOperator(ImmutableOperator):
+    """Pure-reducer variant of TaskGraphOperator.
+
+    This operator does not touch the Planner or filesystem.  It reads IR and
+    strategy_plan and returns a new state with task_graph populated, plus an
+    effect requesting the kernel to write task_graph.json.
+    """
+
+    name = "immutable_task_graph"
+    target_stage = "refining"
+    reads = ("ir", "strategy_plan")
+    writes = ("task_graph",)
+    artifacts = ("task_graph.json",)
+    idempotent = True
+
+    def run(
+        self,
+        state: RuntimeState,
+        **inputs: Any,
+    ) -> tuple[RuntimeState, list[SideEffect]]:
+        if state.ir is None:
+            raise RuntimeError("immutable_task_graph requires an IR")
+        from .. import task_graph
+        graph = task_graph.build(state.ir)
+        new_state = copy.deepcopy(state)
+        new_state.task_graph = graph
+        new_state.stage = self.target_stage
+        effects: list[SideEffect] = [
+            WriteFileEffect(
+                path="task_graph.json",
+                payload=graph,
+            )
+        ]
+        return new_state, effects
 
 
 class ProposalPhaseOperator(Operator):
@@ -294,6 +342,46 @@ class AuditTasksOperator(Operator):
         state.audit_tasks = tasks
         state.stage = self.target_stage
         return state
+
+
+class ImmutableAuditTasksOperator(ImmutableOperator):
+    """Pure-reducer variant of AuditTasksOperator.
+
+    Reads IR and optional components, returns unified audit tasks and an effect
+    to write audit_tasks.json.  No Planner mutation, no filesystem writes.
+    """
+
+    name = "immutable_audit_tasks"
+    target_stage = "auditing"
+    reads = ("ir", "components")
+    writes = ("audit_tasks",)
+    artifacts = ("audit_tasks.json",)
+    idempotent = True
+
+    def run(
+        self,
+        state: RuntimeState,
+        **inputs: Any,
+    ) -> tuple[RuntimeState, list[SideEffect]]:
+        from .. import audit_tasks as _audit_tasks
+
+        if state.ir is None:
+            raise RuntimeError("immutable_audit_tasks requires an IR")
+        tasks = _audit_tasks.unify_tasks(state.ir, state.components)
+        payload = {
+            "schema": "audit-tasks-v1",
+            "count": len(tasks),
+            "types": _audit_tasks.TASK_TYPES,
+            "type_summary": dict(sorted(Counter(t["type"] for t in tasks).items())),
+            "tasks": tasks,
+        }
+        new_state = copy.deepcopy(state)
+        new_state.audit_tasks = tasks
+        new_state.stage = self.target_stage
+        effects: list[SideEffect] = [
+            WriteFileEffect(path="audit_tasks.json", payload=payload)
+        ]
+        return new_state, effects
 
 
 class SvgLoopOperator(Operator):

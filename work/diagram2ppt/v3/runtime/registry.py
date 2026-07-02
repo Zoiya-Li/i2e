@@ -15,6 +15,8 @@ from .operators import (
     DeriveComponentsOperator,
     FailOperator,
     FinalizeOperator,
+    ImmutableAuditTasksOperator,
+    ImmutableTaskGraphOperator,
     LegacyPlannerLoopOperator,
     Operator,
     PerceiveOperator,
@@ -44,6 +46,8 @@ def register_operators() -> dict[str, Operator]:
         FailOperator(),
         FinalizeOperator(),
         LegacyPlannerLoopOperator(),
+        ImmutableTaskGraphOperator(),
+        ImmutableAuditTasksOperator(),
     ]
     return {op.name: op for op in ops}
 
