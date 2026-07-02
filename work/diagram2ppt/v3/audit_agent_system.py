@@ -47,11 +47,17 @@ class AuditAgentSystem:
         },
     }
 
-    def __init__(self, planner, log: Callable[[str], None] = print) -> None:
+    def __init__(
+        self,
+        planner,
+        log: Callable[[str], None] = print,
+        kernel: Any | None = None,
+    ) -> None:
         self.planner = planner
         self.log = log
         self.trace: list[dict[str, Any]] = []
         self._started = time.time()
+        self.kernel = kernel
 
     def run(self) -> dict:
         """Run the autonomous audit loop and return the final IR."""
@@ -104,6 +110,15 @@ class AuditAgentSystem:
             result = self._call_tool("final_render_verify", self.planner.render_and_verify)
 
         self.planner.ir["status"] = "accepted" if result.get("passed") else "failed"
+        final_stage = "accepted" if self.planner.ir.get("status") == "accepted" else "failed"
+        if self.kernel is not None:
+            self.kernel.set_final_stage(
+                final_stage,
+                outputs={
+                    "passed": bool(result.get("passed")),
+                    "metrics": _summarize_result(result),
+                },
+            )
         self._finish()
         return self.planner.ir
 
@@ -289,6 +304,13 @@ class AuditAgentSystem:
                 "summary": _summarize_result(result),
                 "artifacts": _known_artifacts(self.planner.out_dir),
             })
+            if self.kernel is not None:
+                self.kernel.record_transition(
+                    operator=name,
+                    stage_to=_tool_stage(name),
+                    outputs={"summary": _summarize_result(result)},
+                    artifact_paths=_artifact_paths(name, self.planner.out_dir),
+                )
             return result
         except Exception as exc:
             self._record("tool_result", {
@@ -297,6 +319,14 @@ class AuditAgentSystem:
                 "elapsed_sec": round(time.time() - start, 3),
                 "error": f"{type(exc).__name__}: {exc}",
             })
+            if self.kernel is not None:
+                self.kernel.record_transition(
+                    operator=name,
+                    stage_to=_tool_stage(name),
+                    outputs={"summary": _summarize_result(None)},
+                    error={"type": type(exc).__name__, "message": str(exc)},
+                    artifact_paths=_artifact_paths(name, self.planner.out_dir),
+                )
             self._write_trace()
             raise
 
@@ -389,3 +419,37 @@ def _known_artifacts(out_dir: Path) -> dict[str, bool]:
         "ir_final.json",
     ]
     return {name: (out_dir / name).exists() for name in names}
+
+
+def _tool_stage(name: str) -> str:
+    """Map audit tool names to runtime lifecycle stages."""
+    mapping = {
+        "bootstrap_blackboard": "planning",
+        "render_verify_audit": "auditing",
+        "proposal_phase": "refining",
+        "single_repair": "refining",
+        "accept_or_rollback": "refining",
+        "component_cleanup": "refining",
+        "final_render_verify": "auditing",
+    }
+    return mapping.get(name, "refining")
+
+
+def _artifact_paths(name: str, out_dir: Path) -> dict[str, str | None]:
+    """Return the artifact paths a tool is expected to write."""
+    out_dir = Path(out_dir)
+    paths: dict[str, str | None] = {}
+    if name == "bootstrap_blackboard":
+        paths["perception_blackboard"] = str(out_dir / "perception_blackboard.json")
+        paths["strategy_plan"] = str(out_dir / "strategy_plan_processed.json")
+        paths["ir_00_plan"] = str(out_dir / "ir_00_plan.json")
+    elif name == "render_verify_audit":
+        paths["pptx"] = str(out_dir / "diagram_v3.pptx")
+        paths["compare"] = str(out_dir / "diagram_v3.compare.png")
+        paths["visual_review"] = str(out_dir / "visual_review_latest.json")
+    elif name == "proposal_phase":
+        paths["task_graph"] = str(out_dir / "task_graph.json")
+        paths["proposal_report"] = str(out_dir / "proposal_phase" / "proposal_report.json")
+    elif name == "component_cleanup":
+        paths["ir_cleanup"] = str(out_dir / "ir_agent_component_cleanup.json")
+    return paths

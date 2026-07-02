@@ -73,7 +73,7 @@ python -m editor.server out.ir.json
 
 ```bash
 python -m pytest tests/ work/diagram2ppt/tests/ -q
-# 162 passed  (latest known; rerun: pytest tests/ work/diagram2ppt/tests/ -q)
+# 169 passed  (latest known; rerun: pytest tests/ work/diagram2ppt/tests/ -q)
 ```
 
 ### Output organization

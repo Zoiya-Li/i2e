@@ -26,6 +26,7 @@ from . import run_manifest
 from .audit_agent_system import AuditAgentSystem
 from .default_agents import register_default_agents
 from .planner import DEFAULT_MAX_ROUNDS, Planner
+from .runtime import PlannerKernel
 
 
 class _Terminated(Exception):
@@ -147,15 +148,19 @@ def main() -> int:
     _install_sigterm_handler()
     started = time.time()
     planner = None
+    kernel: PlannerKernel | None = None
     final_ir: dict = {}
     error = None
     interrupted = False
     postprocess: dict = {}
     try:
         planner = Planner(args.image, args.out, max_rounds=args.max_rounds)
+        kernel = PlannerKernel(planner, config=config)
         register_default_agents(planner)
         final_ir = (
-            planner.run() if args.legacy_planner else AuditAgentSystem(planner).run()
+            planner.run()
+            if args.legacy_planner
+            else AuditAgentSystem(planner, kernel=kernel).run()
         )
     except (KeyboardInterrupt, _Terminated) as exc:
         interrupted = True
@@ -187,6 +192,18 @@ def main() -> int:
             manifest_path = run_manifest.write_manifest(args.out, manifest)
         except Exception:  # noqa: BLE001 - never let manifest I/O mask the run
             manifest_path = None
+
+        # Persist the runtime state log (Phase 1 kernel skeleton).
+        if kernel is not None:
+            try:
+                if interrupted:
+                    kernel.set_final_stage(
+                        "interrupted",
+                        outputs={"error": error} if error else {},
+                    )
+                kernel.write_state_log(args.out)
+            except Exception:  # noqa: BLE001 - state log must not mask the run
+                pass
 
     print("\n=== v3 reconstruction result ===")
     print(f"outcome: {manifest['outcome']}")
