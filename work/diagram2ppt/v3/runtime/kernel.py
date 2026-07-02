@@ -196,6 +196,7 @@ class PlannerKernel:
         self,
         graph: ExecutionGraph,
         cache: dict[str, RuntimeState] | None = None,
+        semantics: Any | None = None,
     ) -> Any:
         """Execute a dependency graph of operators and return the execution trace.
 
@@ -204,7 +205,7 @@ class PlannerKernel:
         nodes are executed serially here; a parallel executor can be swapped in
         later without changing the graph semantics.
         """
-        scheduler = GraphScheduler(self, cache=cache)
+        scheduler = GraphScheduler(self, cache=cache, semantics=semantics)
         trace = scheduler.execute(graph)
         # Write back any populated cache entries to the caller's dict.
         if cache is not None:

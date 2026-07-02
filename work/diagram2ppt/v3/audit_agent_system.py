@@ -14,6 +14,7 @@ from typing import Any, Callable
 
 from . import component_cleanup, ir as IR
 from .planner import _has_visual_review_defects
+from .runtime import ExecutionSemantics
 from .runtime.graph import DependencyEdge, ExecutionGraph, GraphNode
 from .runtime.operators import Operator
 
@@ -159,7 +160,7 @@ class AuditAgentSystem:
         self.kernel._operators[_AuditLoopBodyOperator.name] = _AuditLoopBodyOperator(self)
 
         graph = self._build_audit_graph()
-        self.kernel.execute_graph(graph)
+        self.kernel.execute_graph(graph, semantics=ExecutionSemantics(self.kernel._operators))
         self._finish()
         return self.planner.ir
 

@@ -10,4 +10,6 @@ from __future__ import annotations
 from .state import RuntimeState, Transition
 from .kernel import PlannerKernel
 
-__all__ = ["RuntimeState", "Transition", "PlannerKernel"]
+from .semantics import ExecutionSemantics
+
+__all__ = ["RuntimeState", "Transition", "PlannerKernel", "ExecutionSemantics"]

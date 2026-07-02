@@ -68,7 +68,7 @@ Input → Preprocess → Evidence Extraction → Component Decomposition → Loc
 | `v3/builder.py` build profiles | P4 fallback 分层：`--profile all_native`（研究，零 raster）vs `product_delivery`（允许**有文档的局部** fallback，拒绝 undocumented / full_page）；经 `I2E_BUILD_PROFILE` 生效。`group` 两档都拒（尚不可渲染） | P4 |
 | `v3/svg_loop.py` + `svg_loop.json` | P3 SVG canonical loop：v3 IR → SVG（复用 v2 `export_svg`，chart 占位兜底 + minimal-SVG fallback，永不崩）→ PNG（`rsvg-convert`，缺工具则跳过）→ 与原图 pixel diff。CLI `python -m work.diagram2ppt.v3.svg_loop <run_dir>`；实测 testpng `visual_delta_vs_source=0.087`。SVG 是 debug/preview 层，不取代 PPTX 交付 | P3 |
 | `v3/visual_review.py` REGION_PRIORS | 明确标注为 **framework.png 专属 fixture、仅最后兜底**；通用 review 已从 `strategy_plan` 区域生成（`_semantic_regions_px`，兜底为通用 whole-slide 而非该 fixture） | 清理 |
-| 测试 `test_run_manifest.py` `test_runtime_kernel.py` `test_v2_baseline.py` `test_triage.py` `test_metrics.py` `test_fallback.py` `test_components.py` `test_audit_tasks.py` `test_builder_profiles.py` `test_svg_loop.py` `tests/test_capture_corrections.py` | 上述契约 + Correction schema + RuntimeState / Kernel / replay / legacy loop 的离线回归（全套件 **191 passed**；重跑 `pytest tests/ work/diagram2ppt/tests/ -q`） | — |
+| 测试 `test_run_manifest.py` `test_runtime_kernel.py` `test_v2_baseline.py` `test_triage.py` `test_metrics.py` `test_fallback.py` `test_components.py` `test_audit_tasks.py` `test_builder_profiles.py` `test_svg_loop.py` `test_semantics.py` `tests/test_capture_corrections.py` | 上述契约 + Correction schema + RuntimeState / Kernel / replay / legacy loop / execution semantics 的离线回归（全套件 **204 passed**；重跑 `pytest tests/ work/diagram2ppt/tests/ -q`） | — |
 
 > **实测洞见（由新指标暴露）**：全部 29 个 v3 run 的 editability=1.0 / fallback=0（全原生政策生效），但最佳 `visual_delta` 仅 0.357——即 **v3 在可编辑性上已胜过 v2（1.0 vs 0.735），输在视觉保真**。v2 hybrid 交付含 26.5% raster fallback 面积且 7 处均无 §9 文档。瓶颈是收敛/保真，不是可编辑性。
 
@@ -228,7 +228,7 @@ work/diagram2ppt/
 
 ```bash
 python -m pytest tests/ work/diagram2ppt/tests/ -q
-# 结果：191 passed, 0 failed
+# 结果：204 passed, 0 failed
 ```
 
 ### 5.2 各测试文件

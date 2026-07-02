@@ -231,6 +231,7 @@ class GraphExecutionTrace:
     transitions: list[Transition] = field(default_factory=list)
     errors: dict[str, dict[str, Any]] = field(default_factory=dict)
     cache_hits: set[str] = field(default_factory=set)
+    semantics_violations: list[Any] = field(default_factory=list)
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -238,6 +239,10 @@ class GraphExecutionTrace:
             "node_order": self.graph.topological_order(),
             "cache_hits": sorted(self.cache_hits),
             "errors": self.errors,
+            "semantics_violations": [
+                {"node_id": v.node_id, "rule": v.rule, "message": v.message}
+                for v in self.semantics_violations
+            ],
             "transitions": [t.to_dict() for t in self.transitions],
         }
 
@@ -250,17 +255,42 @@ class GraphScheduler:
       2. Executes each wave, running independent immutable operators in parallel.
       3. Commits immutable-operator effects via ``commit_effects``.
       4. Records the result and any error.
+      5. Optionally validates the trace against the execution semantics.
     """
 
-    def __init__(self, kernel: Any, cache: dict[str, RuntimeState] | None = None) -> None:
+    def __init__(
+        self,
+        kernel: Any,
+        cache: dict[str, RuntimeState] | None = None,
+        semantics: Any | None = None,
+    ) -> None:
         self.kernel = kernel
         self.cache = cache or {}
+        self.semantics = semantics
 
     def execute(self, graph: ExecutionGraph) -> GraphExecutionTrace:
         trace = GraphExecutionTrace(graph=graph)
+        initial_state = deepcopy(self.kernel.state)
         waves = graph.independent_groups()
         for wave in waves:
             self._execute_wave(wave, graph, trace)
+
+        if self.semantics is not None:
+            validator = self.semantics.validator()
+            operator_specs = self.semantics.specs if isinstance(getattr(self.semantics, "specs", None), dict) else None
+            violations = validator.validate(graph, trace, initial_state, operator_specs)
+            trace.semantics_violations = violations
+            if violations:
+                trace.errors["__semantics__"] = {
+                    "type": "ExecutionSemanticsViolation",
+                    "count": len(violations),
+                    "first": {
+                        "node_id": violations[0].node_id,
+                        "rule": violations[0].rule,
+                        "message": violations[0].message,
+                    },
+                }
+
         return trace
 
     def _execute_wave(
@@ -393,6 +423,14 @@ class GraphScheduler:
             node = graph.nodes[nid]
             op = ops[nid]
             new_state, effects = results[nid]
+            trace.node_results[nid] = deepcopy(new_state)
+            self.cache[node.compute_cache_key(pre_state)] = deepcopy(new_state)
+
+        # Merge writes deterministically (sorted by node id).
+        for nid in sorted(nids):
+            node = graph.nodes[nid]
+            op = ops[nid]
+            new_state, _ = results[nid]
             writes = set(getattr(op, "writes", ()) or ()) | set(node.produced_fields or ())
             for field in writes:
                 if field and hasattr(self.kernel.state, field):
@@ -439,8 +477,14 @@ class GraphScheduler:
             getattr(self.kernel.planner, "max_rounds", 0) or 100
         )
 
+        from .semantics import LoopFixpoint, TerminationMetric
+        metric = TerminationMetric(name=f"loop_{node.id}", lower_bound=0)
+
         for _ in range(max_iter + 1):
             stage_from = self.kernel.state.stage
+            # Record metric before guard runs.
+            metric.record(self._loop_budget(self.kernel.state))
+
             if isinstance(guard_op, ImmutableOperator):
                 new_state, effects = self._run_immutable_operator(
                     guard_op, node, deepcopy(self.kernel.state)
@@ -469,6 +513,33 @@ class GraphScheduler:
             trace.transitions.extend(body_trace.transitions)
             trace.errors.update(body_trace.errors)
             trace.cache_hits.update(body_trace.cache_hits)
+            trace.semantics_violations.extend(body_trace.semantics_violations)
+
+        # Validate loop as a bounded fixed-point.
+        loop_fixpoint = LoopFixpoint(
+            guard_node_id=node.guard_operator,
+            body_graph=node.loop_body,
+            metric=metric,
+        )
+        is_valid, reasons = loop_fixpoint.evaluate_trace(trace)
+        if not is_valid:
+            trace.errors[f"__loop_{node.id}__"] = {
+                "type": "LoopFixpointViolation",
+                "reasons": reasons,
+            }
+
+    def _loop_budget(self, state: RuntimeState) -> int:
+        """Default termination budget for a loop node."""
+        ir = state.ir or {}
+        defects = ir.get("defects") or []
+        visual = ir.get("visual_review") or {}
+        visual_defects = visual.get("defects") or []
+        defect_budget = len([d for d in defects if d.get("status") != "skipped"]) + len(visual_defects)
+        iteration_budget = max(
+            0,
+            int(getattr(self.kernel.planner, "max_rounds", 0) or 100) - state.loop_iteration,
+        )
+        return defect_budget + iteration_budget
 
     def _run_immutable_operator(
         self,
