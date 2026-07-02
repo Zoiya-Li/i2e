@@ -63,7 +63,9 @@ Input → Preprocess → Evidence Extraction → Component Decomposition → Loc
 | `v3/metrics.py` | §8 多维指标（离线部分）：native_element_ratio、fallback_area_ratio、editability_score、object_coverage；visual/text 分数从 `ir['metrics']` 透传（需真实渲染） | §8 |
 | `v3/fallback.py` | §9 fallback 审计：识别 raster_crop/editable=False，校验「局部+显式+可追踪」，标记 undocumented / full_page 违规（`ext.forced` 视为强制原生，不算 fallback） | §9 |
 | `v3/components.py` + `components.json` | P2 Component IR：把 strategy 区域升级为一等 `Component`（生命周期 planned/generated/rendered/audited/accepted/fallback、component-local 指标、per-component crop + sub-IR、provenance）。CLI `python -m work.diagram2ppt.v3.components <run_dir>`。`local_visual_delta` 为 Target 钩子（待组件级 render/diff） | P2 |
-| 测试 `test_run_manifest.py` `test_v2_baseline.py` `test_triage.py` `test_metrics.py` `test_fallback.py` `test_components.py` `tests/test_capture_corrections.py` | 上述契约 + Correction schema 的离线回归（全套件 **144 passed**） | — |
+| `v3/audit_tasks.py` + `audit_tasks.json` | P5 统一可执行审计任务：把 verifier defects + visual_review defects 合并为单一 `AuditTask`（type ∈ refine_geometry/refine_text/rebuild_component/apply_fallback、component_id/element_id、source_error、severity、acceptance gate），按严重度排序。CLI `python -m work.diagram2ppt.v3.audit_tasks <run_dir>` | P5 |
+| `v3/builder.py` build profiles | P4 fallback 分层：`--profile all_native`（研究，零 raster）vs `product_delivery`（允许**有文档的局部** fallback，拒绝 undocumented / full_page）；经 `I2E_BUILD_PROFILE` 生效。`group` 两档都拒（尚不可渲染） | P4 |
+| 测试 `test_run_manifest.py` `test_v2_baseline.py` `test_triage.py` `test_metrics.py` `test_fallback.py` `test_components.py` `test_audit_tasks.py` `test_builder_profiles.py` `tests/test_capture_corrections.py` | 上述契约 + Correction schema 的离线回归（全套件 **154 passed**） | — |
 
 > **实测洞见（由新指标暴露）**：全部 29 个 v3 run 的 editability=1.0 / fallback=0（全原生政策生效），但最佳 `visual_delta` 仅 0.357——即 **v3 在可编辑性上已胜过 v2（1.0 vs 0.735），输在视觉保真**。v2 hybrid 交付含 26.5% raster fallback 面积且 7 处均无 §9 文档。瓶颈是收敛/保真，不是可编辑性。
 

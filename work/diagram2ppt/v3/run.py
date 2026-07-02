@@ -74,11 +74,17 @@ def main() -> int:
                     help="maximum repair rounds")
     ap.add_argument("--legacy-planner", action="store_true",
                     help="run the old planner loop instead of the agent audit system")
+    ap.add_argument("--profile", choices=["all_native", "product_delivery"],
+                    default="all_native",
+                    help="build profile: all_native (research, zero raster) or "
+                         "product_delivery (documented local fallback allowed)")
     args = ap.parse_args()
+    os.environ["I2E_BUILD_PROFILE"] = args.profile
 
     config = {
         "loop": "legacy_planner" if args.legacy_planner else "audit_agent_system",
         "max_rounds": args.max_rounds,
+        "build_profile": args.profile,
         "vlm_provider": os.environ.get("I2E_V3_VLM_PROVIDER"),
         "ocr_provider": os.environ.get("I2E_V3_OCR_PROVIDER"),
         "vlm_model": os.environ.get("I2E_VLM_MODEL"),
