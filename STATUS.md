@@ -6,7 +6,7 @@
 
 **Long-term target (Target):** evolve i2e from an *image → editable* converter into a **Visual Design Decompiler** — recover any flat visual asset into an editable, auditable, iterable, cross-format design source: `Visual Artifact → Evidence → Components → Editable Design IR → SVG / PPTX / (future) Figma-like JSON / HTML`. AI participates only during decompile; post-export editing stays native / deterministic / fast / auditable / model-independent. This is a **Target**, not current behavior — see the state legend below.
 
-> **State legend (used throughout):** **Current** = already in the repo · **Active** = current main dev line · **Frozen** = done, maintenance only · **Target** = final architecture direction, **not yet implemented**. Genuine `Target` items are: a true multi-layer IR (Evidence/Component/Editable/Correction as separate schemas), the component-level local render/diff/**refine execution** loop, an executable refinement task **queue**, and cross-format lowering (Figma/HTML). Already **Current** (see `work/diagram2ppt/STATUS.md` §1.6): the run manifest, multi-dimensional metrics, fallback audit, Component/audit-task **scaffolds**, and the SVG loop.
+> **State legend (used throughout):** **Current** = already in the repo · **Active** = current main dev line · **Frozen** = done, maintenance only · **Target** = final architecture direction, **not yet implemented**. Genuine `Target` items are: a true multi-layer IR (Evidence/Component/Editable/Correction as separate schemas), the component-level local render/diff/**refine execution** loop, an executable refinement task **queue**, and cross-format lowering (Figma/HTML). Already **Current** (see `work/diagram2ppt/STATUS.md` §1.6): the run manifest, multi-dimensional metrics, fallback audit, Component/audit-task **scaffolds**, the SVG loop, build profiles, regression suite, and the **v3 runtime state-machine kernel** (`PlannerKernel` + `RuntimeState` + operators + `state_log.json` + `kernel.replay()`).
 
 > **Strategic pivot (2026-06-10):** pixel-level decomposition (RGBA layers) is being commoditized by Lovart/OmniPSD and Qwen-Image-Layered. Our wedge is **semantic native structure**: text as text boxes, boxes as shapes, arrows as connectors, formulas as OMML, charts as data. See `docs/positioning-20260610.md`.
 
@@ -73,7 +73,7 @@ python -m editor.server out.ir.json
 
 ```bash
 python -m pytest tests/ work/diagram2ppt/tests/ -q
-# 169 passed  (latest known; rerun: pytest tests/ work/diagram2ppt/tests/ -q)
+# 173 passed  (latest known; rerun: pytest tests/ work/diagram2ppt/tests/ -q)
 ```
 
 ### Output organization

@@ -38,15 +38,20 @@ Visual Artifact → Evidence → Components → Editable Design IR → SVG / PPT
 **已交付（Current，仓库中已存在、离线可测，见 `work/diagram2ppt/STATUS.md` §1.6）**：
 
 - `v3/run_manifest.py`（每次运行写 `run_manifest.json`，outcome ∈ accepted/partial/rejected/error/interrupted）、`v3/metrics.py`（§8 多维指标离线部分）、`v3/fallback.py`（§9 fallback 审计）、`v3/triage.py`（输出目录分类索引）、`v3/pptx_stats.py`、`v3/baselines/v2_framework.json`（v2 回归基线）。
+- `v3/runtime/`：运行态契约 `RuntimeState` / `Transition` / `PlannerKernel`，Phase 3 已让 `AuditAgentSystem` 通过 kernel operator 调度控制流，支持 `state_log.json` 与 `kernel.replay()`。
+- `v3/components.py`：Component IR scaffold（把 strategy 区域提升为带生命周期、provenance、per-component crop/sub-IR 的 Component），但**组件级局部 render/diff/refine 闭环仍是 Target**。
+- `v3/audit_tasks.py`：统一可执行审计任务 schema（`AuditTask`，映射 component_id / element_id / suggested_task），但**由 audit task 驱动Planner自动执行的 queue 仍是 Target**。
+- `v3/svg_loop.py`：SVG canonical loop（IR → SVG → PNG → diff）。
+- `v3/builder.py` build profiles：`all_native` vs `product_delivery`。
 - 修正飞轮的 `corrections[]` 单条契约（`field_path` / `kind` / `predicted` / `corrected`）已在 IR v1 中。
 
 **仍是 Target（尚未实现，不要当作已存在的稳定文件 / API）**：
 
-- 真正的多层 IR：`Evidence IR` / `Component IR` / `Editable Design IR`。当前承重墙仍是**单层** `ir/ir-v1.schema.json`；证据已内嵌在 `ext.evidence*`，但多层分离尚未落地，只在 `work/diagram2ppt/v3/` 内增量、非破坏引入。
-- 组件级局部闭环：`crop → local generate → local render → local diff → local refine → component accepted`（`Component` 尚未成为一等对象，region/task 仍是每轮临时推断）。
-- 可执行 refinement task queue：audit 产出**统一的可执行修复任务**（映射 component_id / element_id / suggested_task）——目前 verifier / visual_review 各自产 defect，尚未统一。
-- 跨格式 lowering：SVG canonical loop、Figma-like JSON / HTML 导出。
-- 运行态契约的完整对象化：`PipelineState` / `Task` / `TaskResult` / `AuditResult` / `Constraint` 等尚未定形为稳定 schema。
+- 真正的多层 IR：`Evidence IR` / `Component IR` / `Editable Design IR`。当前承重墙仍是**单层** `ir/ir-v1.schema.json`；证据已内嵌在 `ext.evidence*`，Component IR 只是 v3 内的 scaffold，多层分离尚未落地。
+- 组件级局部闭环：`crop → local generate → local render → local diff → local refine → component accepted`（`Component` 尚未成为驱动主循环的一等 runtime 对象，region/task 仍是每轮临时推断）。
+- 可执行 refinement task queue：audit 产出**统一的可执行修复任务**并已统一 schema，但这些任务**尚未自动调度执行**（目前仍是 post-run 报告）。
+- 跨格式 lowering：SVG canonical loop 已存在，但 Figma-like JSON / HTML 导出、以及 SVG/PPTX 作为统一 lowering target 的 canonical loop 仍是 Target。
+- 运行态契约的完整对象化：`PipelineState` / `Task` / `TaskResult` / `AuditResult` / `Constraint` 等尚未定形为稳定 schema；当前 Kernel 状态是 v3 内部 runtime 表示，不是项目级标准 schema。
 
 演进路线（Target，详见 `work/diagram2ppt/STATUS.md`）：P1 坐实运行态契约（renderer_mode / memory_used / stage 诊断）→ P2 组件级 Component IR 闭环 → P3 SVG canonical loop → P4 PPTX native lowering → P5 audit-driven refinement task queue。
 
@@ -149,7 +154,7 @@ python -m work.diagram2ppt.v3.run <image.png> -o work/diagram2ppt/v3_out --max-r
 
 ```bash
 python -m pytest tests/ work/diagram2ppt/tests/ -q
-# 当前：169 passed, 0 failed（重跑：pytest tests/ work/diagram2ppt/tests/ -q）
+# 当前：173 passed, 0 failed（重跑：pytest tests/ work/diagram2ppt/tests/ -q）
 ```
 
 ### 6.2 单条 smoke 测试（均离线，无需 API key）

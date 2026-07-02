@@ -55,7 +55,7 @@ Input → Preprocess → Evidence Extraction → Component Decomposition → Loc
 
 | 模块 / 产物 | 作用 | 优先级 |
 |---|---|---|
-| `v3/runtime/` + `state_log.json` | **P1 Runtime State Machine Kernel 骨架**：`RuntimeState` 是单一真相源，`PlannerKernel` 包装现有 Planner 并记录每次 `AuditAgentSystem` tool 调用的 `Transition`（stage_from/stage_to/operator/artifact_paths）。Phase 1 不改变控制流，只新增可审计的运行时状态日志；为 Phase 3「Kernel 拥有控制流」打基础 | P1 |
+| `v3/runtime/` + `state_log.json` | **P1 Runtime State Machine Kernel**：`RuntimeState` 是单一真相源，`PlannerKernel` 包装现有 Planner。Phase 3 已让 `AuditAgentSystem` 通过 `kernel.transition(...)` 调度 operator，把控制流从 Planner 移入 Kernel；operators 覆盖 perceive / compose / render_verify_audit / proposal_phase / repair / rollback_or_accept / derive_components / audit_tasks / svg_loop / accept / fail / legacy_planner_loop / finalize。每次 transition 落盘 `state_log.json`，支持 `kernel.replay(state_log.json)` 恢复现场 | P1 |
 | `v3/run_manifest.py` + `v3/run.py` 包装 | 每次运行都写 `run_manifest.json`（含 timeout/SIGTERM/异常），outcome ∈ accepted/partial/rejected/error/interrupted——**失败可诊断**。P1 扩展：`renderer_mode`、`memory`（run 记忆是否复用）、`last_successful_stage`（stalled 在哪一阶段）、`acceptance_blockers`；**proxy 渲染或缺失 renderer_mode 永不判 accepted**（降级 partial，真 PowerPoint 才是生产验收）。可复现性：`I2E_USE_RUN_MEMORY=0` 关闭同源记忆复用（regression 默认关）。**run.py finally 现自动跑 post-run**：run 一旦 finalize 就 best-effort 生成 `components.json`/`audit_tasks.json`/`svg_loop.json` 并记入 manifest（`--no-postprocess` 可关） | P0/P1 |
 | `v3/pptx_stats.py` | 确定性 PPTX 结构指纹（shape 直方图、pictures 数、OMML 数、native_object_ratio、sha256），无网络 | P1/P3 |
 | `v3/baselines/v2_framework.json` | 冻结的 v2 回归基线（**实测**：97 shapes / 7 pictures / 9 OMML / native_ratio 0.9278），并记录与旧文档"0 图片=v3.3"说法的出入 | P1 |
@@ -68,7 +68,7 @@ Input → Preprocess → Evidence Extraction → Component Decomposition → Loc
 | `v3/builder.py` build profiles | P4 fallback 分层：`--profile all_native`（研究，零 raster）vs `product_delivery`（允许**有文档的局部** fallback，拒绝 undocumented / full_page）；经 `I2E_BUILD_PROFILE` 生效。`group` 两档都拒（尚不可渲染） | P4 |
 | `v3/svg_loop.py` + `svg_loop.json` | P3 SVG canonical loop：v3 IR → SVG（复用 v2 `export_svg`，chart 占位兜底 + minimal-SVG fallback，永不崩）→ PNG（`rsvg-convert`，缺工具则跳过）→ 与原图 pixel diff。CLI `python -m work.diagram2ppt.v3.svg_loop <run_dir>`；实测 testpng `visual_delta_vs_source=0.087`。SVG 是 debug/preview 层，不取代 PPTX 交付 | P3 |
 | `v3/visual_review.py` REGION_PRIORS | 明确标注为 **framework.png 专属 fixture、仅最后兜底**；通用 review 已从 `strategy_plan` 区域生成（`_semantic_regions_px`，兜底为通用 whole-slide 而非该 fixture） | 清理 |
-| 测试 `test_run_manifest.py` `test_runtime_kernel.py` `test_v2_baseline.py` `test_triage.py` `test_metrics.py` `test_fallback.py` `test_components.py` `test_audit_tasks.py` `test_builder_profiles.py` `test_svg_loop.py` `tests/test_capture_corrections.py` | 上述契约 + Correction schema + RuntimeState 的离线回归（全套件 **169 passed**；重跑 `pytest tests/ work/diagram2ppt/tests/ -q`） | — |
+| 测试 `test_run_manifest.py` `test_runtime_kernel.py` `test_v2_baseline.py` `test_triage.py` `test_metrics.py` `test_fallback.py` `test_components.py` `test_audit_tasks.py` `test_builder_profiles.py` `test_svg_loop.py` `tests/test_capture_corrections.py` | 上述契约 + Correction schema + RuntimeState / Kernel / replay / legacy loop 的离线回归（全套件 **173 passed**；重跑 `pytest tests/ work/diagram2ppt/tests/ -q`） | — |
 
 > **实测洞见（由新指标暴露）**：全部 29 个 v3 run 的 editability=1.0 / fallback=0（全原生政策生效），但最佳 `visual_delta` 仅 0.357——即 **v3 在可编辑性上已胜过 v2（1.0 vs 0.735），输在视觉保真**。v2 hybrid 交付含 26.5% raster fallback 面积且 7 处均无 §9 文档。瓶颈是收敛/保真，不是可编辑性。
 
@@ -228,7 +228,7 @@ work/diagram2ppt/
 
 ```bash
 python -m pytest tests/ work/diagram2ppt/tests/ -q
-# 结果：169 passed, 0 failed
+# 结果：173 passed, 0 failed
 ```
 
 ### 5.2 各测试文件

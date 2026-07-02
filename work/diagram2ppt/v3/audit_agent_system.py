@@ -62,6 +62,108 @@ class AuditAgentSystem:
     def run(self) -> dict:
         """Run the autonomous audit loop and return the final IR."""
         self._observe_source()
+
+        if self.kernel is not None:
+            return self._run_with_kernel()
+        return self._run_legacy()
+
+    def _run_with_kernel(self) -> dict:
+        """Kernel-driven control path (Phase 3+)."""
+        assert self.kernel is not None
+        self.kernel.transition("perceive")
+        self._derive_runtime_artifacts()
+        result = self.kernel.transition("render_verify_audit")
+        self._derive_runtime_artifacts()
+        self._write_agent_state("initial", self._build_audit_state(self._current_verify_result(), 0))
+
+        if self._accept_if_done(self._current_verify_result(), "initial render passed"):
+            return self.planner.ir
+
+        for iteration in range(max(0, int(self.planner.max_rounds))):
+            state = self._build_audit_state(self._current_verify_result(), iteration + 1)
+            self._write_agent_state(f"{iteration + 1:02d}", state)
+            decision = self._decide_next_action(state)
+            self._write_decision(f"{iteration + 1:02d}", decision)
+            self._record("decision", decision)
+
+            action = decision["action"]
+            if action == "proposal_phase":
+                self.kernel.transition("task_graph")
+                self.kernel.transition("proposal_phase")
+                if self._current_proposal_result().get("accepted", 0):
+                    self.kernel.transition("component_cleanup")
+                result = self.kernel.transition("render_verify_audit")
+                self._derive_runtime_artifacts()
+            elif action == "single_repair":
+                result = self._run_single_repair_kernel(decision)
+                self._derive_runtime_artifacts()
+            elif action == "stop":
+                break
+            else:
+                self._record("warning", {"reason": f"unknown action {action}"})
+                break
+
+            if self._accept_if_done(self._current_verify_result(), f"iteration {iteration + 1} passed"):
+                return self.planner.ir
+
+        if not self._result_passed(self._current_verify_result()):
+            result = self.kernel.transition("render_verify_audit")
+            self._derive_runtime_artifacts()
+
+        passed = self._result_passed(self._current_verify_result())
+        self.kernel.transition("finalize")
+        self.kernel.transition("accept" if passed else "fail")
+        self._finish()
+        return self.planner.ir
+
+    def _derive_runtime_artifacts(self) -> None:
+        """Best-effort derive components / audit tasks / SVG after state changes."""
+        if self.kernel is None:
+            return
+        try:
+            self.kernel.transition("derive_components")
+        except Exception:
+            pass
+        try:
+            self.kernel.transition("audit_tasks")
+        except Exception:
+            pass
+        try:
+            self.kernel.transition("svg_loop")
+        except Exception:
+            pass
+
+    def _run_single_repair_kernel(self, decision: dict[str, Any]) -> dict[str, Any]:
+        repair = decision.get("repair")
+        if not repair:
+            return {"passed": False, "metrics": self.planner.ir.get("metrics", {})}
+        agent_name = repair.get("suggested_agent", "")
+        self.planner._agent_attempts[agent_name] = (
+            self.planner._agent_attempts.get(agent_name, 0) + 1
+        )
+        if agent_name not in self.planner.agents:
+            self._record("tool_skip", {
+                "tool": "single_repair",
+                "reason": f"no registered agent for {agent_name}",
+                "defect": repair,
+            })
+            for d in self.planner.ir.get("defects", []):
+                if d.get("id") == repair.get("id"):
+                    d["status"] = "skipped"
+            return {"passed": False, "metrics": self.planner.ir.get("metrics", {})}
+
+        self.kernel.transition("repair", agent_name=agent_name, defect=repair)
+        result = self.kernel.transition("render_verify_audit")
+        self.kernel.transition("rollback_or_accept")
+
+        patches = self.planner.ir.get("patches", [])
+        last_decision = patches[-1]["decision"] if patches else "accept"
+        if last_decision == "rollback":
+            return {"passed": False, "metrics": self.planner.ir.get("metrics", {})}
+        return result
+
+    def _run_legacy(self) -> dict:
+        """Original Planner-level control path (kernel unavailable)."""
         self._call_tool("bootstrap_blackboard", self.planner.plan)
         result = self._call_tool("render_verify_audit", self.planner.render_and_verify)
         self._write_agent_state("initial", self._build_audit_state(result, 0))
@@ -243,7 +345,7 @@ class AuditAgentSystem:
             })
         return candidates
 
-    def _build_audit_state(self, result: dict[str, Any], iteration: int) -> dict[str, Any]:
+    def _build_audit_state(self, result: dict[str, Any] | None, iteration: int) -> dict[str, Any]:
         ir = self.planner.ir or {}
         defects = [d for d in ir.get("defects", []) if d.get("status") != "skipped"]
         visual_review = ir.get("visual_review") or {}
@@ -275,13 +377,37 @@ class AuditAgentSystem:
         }
         return state
 
-    def _accept_if_done(self, result: dict[str, Any], reason: str) -> bool:
-        if result.get("passed") and not _has_visual_review_defects(self.planner.ir):
+    def _accept_if_done(self, result: dict[str, Any] | None, reason: str) -> bool:
+        passed = False
+        if result is not None:
+            passed = bool(result.get("passed"))
+        elif self.kernel is not None:
+            passed = bool(
+                (self.kernel.state.last_verify_result or {}).get("passed")
+            )
+        if passed and not _has_visual_review_defects(self.planner.ir):
             self.planner.ir["status"] = "accepted"
             self._record("decision", {"action": "accept", "reason": reason})
+            if self.kernel is not None:
+                self.kernel.transition("accept")
             self._finish()
             return True
         return False
+
+    def _current_verify_result(self) -> dict[str, Any]:
+        if self.kernel is not None:
+            return self.kernel.state.last_verify_result or {}
+        return {}
+
+    def _current_proposal_result(self) -> dict[str, Any]:
+        if self.kernel is not None:
+            return self.kernel.state.last_proposal_result or {}
+        return {}
+
+    def _result_passed(self, result: dict[str, Any] | None) -> bool:
+        if result is not None:
+            return bool(result.get("passed"))
+        return bool(self._current_verify_result().get("passed"))
 
     def _observe_source(self) -> None:
         original = self.planner.original

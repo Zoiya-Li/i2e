@@ -157,11 +157,11 @@ def main() -> int:
         planner = Planner(args.image, args.out, max_rounds=args.max_rounds)
         kernel = PlannerKernel(planner, config=config)
         register_default_agents(planner)
-        final_ir = (
-            planner.run()
-            if args.legacy_planner
-            else AuditAgentSystem(planner, kernel=kernel).run()
-        )
+        if args.legacy_planner:
+            kernel.transition("legacy_planner_loop")
+            final_ir = planner.ir
+        else:
+            final_ir = AuditAgentSystem(planner, kernel=kernel).run()
     except (KeyboardInterrupt, _Terminated) as exc:
         interrupted = True
         error = {"type": type(exc).__name__, "message": str(exc)}

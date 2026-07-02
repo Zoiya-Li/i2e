@@ -1,25 +1,52 @@
-"""Operator registry placeholder for the v3 runtime kernel.
+"""Operator registry for the v3 runtime kernel.
 
-Phase 1 does not yet dispatch through operators. This module reserves the
-namespace and provides the registry shape used in Phase 2.
+All operators are registered here so the kernel can dispatch by name.
 """
 from __future__ import annotations
 
 from typing import Any, Callable
 
-Operator = Callable[[Any, Any], Any]
+from .operators import (
+    AcceptOperator,
+    AcceptOrRollbackOperator,
+    AuditTasksOperator,
+    ComponentCleanupOperator,
+    ComposeOperator,
+    DeriveComponentsOperator,
+    FailOperator,
+    FinalizeOperator,
+    LegacyPlannerLoopOperator,
+    Operator,
+    PerceiveOperator,
+    ProposalPhaseOperator,
+    RepairOperator,
+    RenderVerifyAuditOperator,
+    SvgLoopOperator,
+    TaskGraphOperator,
+)
 
-_REGISTRY: dict[str, Operator] = {}
 
-
-def register(name: str, op: Operator) -> Operator:
-    _REGISTRY[name] = op
-    return op
+def register_operators() -> dict[str, Operator]:
+    """Return the default operator registry."""
+    ops: list[Operator] = [
+        PerceiveOperator(),
+        ComposeOperator(),
+        RenderVerifyAuditOperator(),
+        TaskGraphOperator(),
+        ProposalPhaseOperator(),
+        ComponentCleanupOperator(),
+        RepairOperator(),
+        AcceptOrRollbackOperator(),
+        DeriveComponentsOperator(),
+        AuditTasksOperator(),
+        SvgLoopOperator(),
+        AcceptOperator(),
+        FailOperator(),
+        FinalizeOperator(),
+        LegacyPlannerLoopOperator(),
+    ]
+    return {op.name: op for op in ops}
 
 
 def get(name: str) -> Operator | None:
-    return _REGISTRY.get(name)
-
-
-def all_operators() -> dict[str, Operator]:
-    return dict(_REGISTRY)
+    return register_operators().get(name)

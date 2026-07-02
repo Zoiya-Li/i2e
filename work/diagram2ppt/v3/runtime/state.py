@@ -93,6 +93,10 @@ class RuntimeState:
     last_pptx: str | None = None
     last_svg: str | None = None
 
+    # Operator outputs that policy needs to inspect
+    last_verify_result: dict[str, Any] | None = None
+    last_proposal_result: dict[str, Any] | None = None
+
     # Configuration
     config: dict[str, Any] = field(default_factory=dict)
     run_memory: dict[str, Any] = field(default_factory=dict)

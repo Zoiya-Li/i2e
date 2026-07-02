@@ -98,7 +98,7 @@ Offline, deterministic infra built around the v3 pipeline:
 
 | Module | Purpose |
 |---|---|
-| `v3/run_manifest.py` | One diagnosable `run_manifest.json` per run (outcome, `renderer_mode`, `memory`, `last_successful_stage`, `acceptance_blockers`, error/traceback). Proxy renders can never be `accepted` |
+| `v3/runtime/` | Runtime state-machine kernel: `RuntimeState` as single source of truth, `PlannerKernel` dispatching operators, `state_log.json` transitions, `kernel.replay()` |
 | `v3/pptx_stats.py` | Deterministic PPTX fingerprint: shape histogram, picture/OMML counts, `native_object_ratio`, sha256 |
 | `v3/baselines/v2_framework.json` | Frozen, **measured** v2 delivery locked as a regression baseline |
 | `v3/metrics.py` | Multi-dimensional metrics: `native_element_ratio`, `fallback_area_ratio`, `editability_score`, coverage |
@@ -123,7 +123,7 @@ All core tests are **offline** (mock providers, stub segmenters, synthetic image
 
 ```bash
 python -m pytest tests/ work/diagram2ppt/tests/ -q
-# 169 passed  (latest known; rerun locally/CI before release)
+# 173 passed  (latest known; rerun locally/CI before release)
 ```
 
 ---
