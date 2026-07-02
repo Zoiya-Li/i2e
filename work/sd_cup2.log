@@ -1,3 +1,0 @@
-occluders: 4
-done 7s ok=True method=cv2 added=310765
-bbox {'x': 487, 'y': 699, 'w': 803, 'h': 1108} cutout work/poster/_cup_sd.png

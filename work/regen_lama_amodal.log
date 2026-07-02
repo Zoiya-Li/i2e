@@ -1,8 +1,0 @@
-  [cache] 56 masks
-  selected 19 top-level objects
-  +13 specialist-detected graphics (icons/badges/trim)
-  OCR: 22 text lines
-  VLM-labeled 32 object(s)
-  amodal-completed 21 object(s)
-  clean bg (modal-mask + lama) -> /Users/lizeyan/Desktop/i2e/work/poster/assets/_bg.png
-  IR -> /Users/lizeyan/Desktop/i2e/work/poster/poster.ir.json {'background': 1, 'raster': 32, 'text': 22}
