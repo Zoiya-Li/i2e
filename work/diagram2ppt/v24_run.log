@@ -1,0 +1,17 @@
+  [formula] formula_A: A = \frac{|\langle \beta, \gamma \rangle|}{\|\beta\| \|\gamm
+  [formula] beta_text: \beta = \nabla e(x)
+  [formula] gamma_text: \gamma = \nabla \tau(x)
+  [formula] theta_text: 0
+  [formula] inset_ci_labels: (..) \\ (\text{true})
+  [formula] step1_content: \text{Propensity} \\ \text{Model} \\ T \sim X \rightarrow \h
+  [formula] step2_content: Surrogate \\ CATE \\ Y \sim X + X \cdot T \rightarrow \tilde
+  [formula] step3_content: T \sim X \rightarrow \hat{\beta} \\ Y \sim X + X \cdot T \ri
+  [formula] ocr-4: = \frac{| \langle \beta, \gamma \rangle |}{\|\beta\| \|\gamm
+  [formula] ocr-59: \text{aligned } (A \approx 1)
+  [chart] inset_ci_plot: line, 2 series x 7 cats
+  [chart] chart_q0_plot: bar, 2 series x 2 cats
+  [chart] chart_bar_plot FAILED (chart spec missing categories/series) — stays a crop
+[sanitize] dropped 2 sliver crops
+formulas=10 charts=2 sanitized=2 vlm_calls=13
+v2.4: {"elements": 111, "native_count": 78, "demoted_count": 33, "native_fraction_count": 0.7027, "native_fraction_area": 0.6957, "mean_native_residual": 0.2932, "round": "v2.4-experts", "coverage": 0.9661, "vlm_calls": 13}
+pptx: {"shapes": 70, "pictures": 33, "connectors": 6, "charts": 2}

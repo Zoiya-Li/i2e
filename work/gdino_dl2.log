@@ -1,0 +1,20 @@
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /IDEA-Research/grounding-dino-tiny/resolve/a2bb814dd30d776dcf7e30523b00659f4f141c71/.gitattributes (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))"), '(Request ID: a37f5380-0f21-4b07-92ab-52974d175fd7)')' thrown while requesting HEAD https://hf-mirror.com/IDEA-Research/grounding-dino-tiny/resolve/a2bb814dd30d776dcf7e30523b00659f4f141c71/.gitattributes
+Retrying in 1s [Retry 1/5].
+'(MaxRetryError("HTTPSConnectionPool(host='hf-mirror.com', port=443): Max retries exceeded with url: /IDEA-Research/grounding-dino-tiny/resolve/a2bb814dd30d776dcf7e30523b00659f4f141c71/README.md (Caused by SSLError(SSLEOFError(8, '[SSL: UNEXPECTED_EOF_WHILE_READING] EOF occurred in violation of protocol (_ssl.c:1007)')))"), '(Request ID: 42b3b17e-87dc-4a90-bfbb-ece699afb58f)')' thrown while requesting HEAD https://hf-mirror.com/IDEA-Research/grounding-dino-tiny/resolve/a2bb814dd30d776dcf7e30523b00659f4f141c71/README.md
+Retrying in 1s [Retry 1/5].
+Fetching 11 files:   0%|          | 0/11 [00:08<?, ?it/s]
+retry 0: An error happened while trying to locate the file on the Hub and we cannot find the requested files 
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]
+retry 1: An error happened while trying to locate the file on the Hub and we cannot find the requested files 
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]
+retry 2: An error happened while trying to locate the file on the Hub and we cannot find the requested files 
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]
+retry 3: An error happened while trying to locate the file on the Hub and we cannot find the requested files 
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]
+retry 4: An error happened while trying to locate the file on the Hub and we cannot find the requested files 
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]
+retry 5: An error happened while trying to locate the file on the Hub and we cannot find the requested files 
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]
+retry 6: An error happened while trying to locate the file on the Hub and we cannot find the requested files 
+Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]Fetching 11 files:   0%|          | 0/11 [00:00<?, ?it/s]
+retry 7: An error happened while trying to locate the file on the Hub and we cannot find the requested files 

@@ -1,0 +1,31 @@
+38 raster total -> 12 curated demo layers (front->back)
+  raster-13  transparent clear ice cube
+  raster-14  fresh green mint leaf
+  raster-11  fresh green mint leaf
+  raster-9   circular limited edition badge
+  raster-8   transparent clear ice cube
+  raster-10  transparent clear ice cube
+  raster-7   fresh green mint leaf
+  raster-4   brand logo
+  raster-3   small green glass perfume bottle
+  raster-6   transparent clear ice cube
+  raster-2   mint chocolate ice cream scoop
+  raster-1   green dark ice cream tub
+remote removals on GPU 0 ...
+loaded
+REMOVED 0/12 test_inputs/omask_0.png (29s)
+REMOVED 1/12 test_inputs/omask_1.png (24s)
+REMOVED 2/12 test_inputs/omask_2.png (24s)
+REMOVED 3/12 test_inputs/omask_3.png (24s)
+REMOVED 4/12 test_inputs/omask_4.png (25s)
+REMOVED 5/12 test_inputs/omask_5.png (24s)
+REMOVED 6/12 test_inputs/omask_6.png (24s)
+REMOVED 7/12 test_inputs/omask_7.png (25s)
+REMOVED 8/12 test_inputs/omask_8.png (24s)
+REMOVED 9/12 test_inputs/omask_9.png (25s)
+REMOVED 10/12 test_inputs/omask_10.png (24s)
+REMOVED 11/12 test_inputs/omask_11.png (24s)
+PLATE union (25s)
+OMNI_DONE
+
+built 12 layers + raw_plate -> /Users/lizeyan/Desktop/i2e/work/poster/omni_assets

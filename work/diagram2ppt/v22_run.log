@@ -1,0 +1,84 @@
+[global] analyzing framework.png (1672x941)
+[global] 92 elements
+[ocr] snapped 36/41 texts, added 23 lines (89 OCR lines total)
+  [refine] theta_text try=1 residual was 0.0
+  [refine] red_circle_area try=1 residual was 0.5609
+  [refine] high_hetero_text try=1 residual was 0.8061
+  [refine] failure_item2 try=1 residual was 0.6692
+  [refine] box_feature try=1 residual was 0.5404
+  [refine] box_cate try=1 residual was 0.5555
+  [refine] box_ci try=1 residual was 0.4868
+  [refine] step1_num try=1 residual was 0.7453
+  [refine] step1_text_num try=1 residual was 1.0
+  [refine] step2_num try=1 residual was 0.6389
+  [refine] step2_text_num try=1 residual was 0.8227
+  [refine] step3_num try=1 residual was 0.667
+  [refine] step4_num try=1 residual was 0.7535
+  [refine] step4_text_num try=1 residual was 1.0
+  [refine] checklist_box try=1 residual was 0.4966
+  [refine] output_retain try=1 residual was 0.5365
+  [refine] output_defer try=1 residual was 0.4741
+  [refine] output_alert try=1 residual was 0.54
+  [refine] output_report try=1 residual was 0.4741
+  [refine] output_report_text try=1 residual was 0.6256
+  [refine] ocr-51 try=1 residual was 0.7445
+  [identify] [831, 248, 1639, 251] FAILED (VLM call failed after 3 attempts: Client error '400 Bad Request' for url 'https://api.siliconflow.cn/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) — crop fallback
+  [identify] +14 elements
+[round 1] {"elements": 129, "native_count": 104, "demoted_count": 25, "native_fraction_count": 0.8062, "native_fraction_area": 0.6894, "mean_native_residual": 0.4091, "round": 1, "coverage": 0.8757, "vlm_calls": 30}
+  [refine] red_circle_area try=2 residual was 0.5749
+  [refine] high_hetero_text try=2 residual was 0.7158
+  [refine] box_cate try=2 residual was 0.5851
+  [refine] box_ci try=2 residual was 0.5506
+  [refine] step1_num try=2 residual was 0.8821
+  [refine] step2_num try=2 residual was 0.9138
+  [refine] step3_num try=2 residual was 1.0238
+  [refine] step4_num try=2 residual was 1.0055
+  [refine] step5_text_num try=1 residual was 0.708
+  [refine] output_defer try=2 residual was 0.8622
+  [refine] output_alert try=2 residual was 0.6475
+  [refine] ocr-51 try=2 residual was 0.7898
+  [refine] 1xxx try=1 residual was 0.9169
+  [identify] +7 elements
+[round 2] {"elements": 136, "native_count": 109, "demoted_count": 27, "native_fraction_count": 0.8015, "native_fraction_area": 0.6931, "mean_native_residual": 0.3837, "round": 2, "coverage": 0.9669, "vlm_calls": 45}
+  [demote] red_circle_area residual=0.0
+  [demote] high_hetero_text residual=0.0
+  [demote] box_cate residual=0.0
+  [demote] box_ci residual=0.0
+  [demote] step1_num residual=0.0
+  [demote] step2_num residual=0.0
+  [demote] step3_num residual=0.0
+  [demote] step4_num residual=0.0
+  [demote] output_alert residual=0.0
+  [demote] ocr-51 residual=0.0
+  [refine] 1xxx try=2 residual was 0.7853
+[round 3] {"elements": 136, "native_count": 99, "demoted_count": 37, "native_fraction_count": 0.7279, "native_fraction_area": 0.6571, "mean_native_residual": 0.3146, "round": 3, "coverage": 0.9724, "vlm_calls": 46}
+  [final-demote] 1xxx residual=0.0
+[done] {"elements": 136, "native_count": 98, "demoted_count": 38, "native_fraction_count": 0.7206, "native_fraction_area": 0.6528, "mean_native_residual": 0.3038, "round": "final", "coverage": 0.9724, "vlm_calls": 46}
+Traceback (most recent call last):
+  File "/Users/lizeyan/anaconda3/lib/python3.11/site-packages/PIL/ImageFile.py", line 663, in _save
+    fh = fp.fileno()
+         ^^^^^^^^^
+AttributeError: '_idat' object has no attribute 'fileno'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/Users/lizeyan/Desktop/i2e/work/diagram2ppt/v2/run.py", line 60, in <module>
+    main()
+  File "/Users/lizeyan/Desktop/i2e/work/diagram2ppt/v2/run.py", line 52, in main
+    counts = build_pptx(ir, str(pptx_path))
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lizeyan/Desktop/i2e/work/diagram2ppt/v2/build_pptx.py", line 56, in build_pptx
+    faithful_crop(original, el, ir["elements"]).save(crop_path)
+  File "/Users/lizeyan/anaconda3/lib/python3.11/site-packages/PIL/Image.py", line 2713, in save
+    save_handler(self, fp, filename)
+  File "/Users/lizeyan/anaconda3/lib/python3.11/site-packages/PIL/PngImagePlugin.py", line 1507, in _save
+    ImageFile._save(
+  File "/Users/lizeyan/anaconda3/lib/python3.11/site-packages/PIL/ImageFile.py", line 667, in _save
+    _encode_tile(im, fp, tile, bufsize, None, exc)
+  File "/Users/lizeyan/anaconda3/lib/python3.11/site-packages/PIL/ImageFile.py", line 685, in _encode_tile
+    encoder.setimage(im.im, extents)
+ValueError: cannot write empty image

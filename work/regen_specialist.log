@@ -1,0 +1,15 @@
+  [cache] 56 masks
+  selected 26 top-level objects
+Creating new Ultralytics Settings v0.0.6 file ✅ 
+View Ultralytics Settings with 'yolo settings' or at '/tmp/Ultralytics/settings.json'
+Update Settings with 'yolo settings key=value', i.e. 'yolo settings runs_dir=path/to/dir'. For help see https://docs.ultralytics.com/quickstart/#ultralytics-settings.
+  +13 specialist-detected graphics (icons/badges/trim)
+  OCR: 22 text lines
+  VLM-labeled 37 object(s)
+Couldn't connect to the Hub: Cannot reach https://hf-mirror.com/api/models/stable-diffusion-v1-5/stable-diffusion-inpainting: offline mode is enabled. To disable it, please unset the `HF_HUB_OFFLINE` environment variable..
+Will try to load from local cache.
+Loading pipeline components...:   0%|          | 0/6 [00:00<?, ?it/s]Loading pipeline components...:  17%|█▋        | 1/6 [00:00<00:01,  3.65it/s]Loading pipeline components...:  50%|█████     | 3/6 [00:00<00:00,  6.51it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:04<00:00,  1.04it/s]Loading pipeline components...: 100%|██████████| 6/6 [00:04<00:00,  1.22it/s]
+You have disabled the safety checker for <class 'diffusers.pipelines.stable_diffusion.pipeline_stable_diffusion_inpaint.StableDiffusionInpaintPipeline'> by passing `safety_checker=None`. Ensure that you abide to the conditions of the Stable Diffusion license and do not expose unfiltered results in services or applications open to the public. Both the diffusers team and Hugging Face strongly recommend to keep the safety filter enabled in all public facing circumstances, disabling it only for use-cases that involve analyzing network behavior or auditing its results. For more information, please have a look at https://github.com/huggingface/diffusers/pull/254 .
+  amodal-completed 22 object(s)
+  clean bg (modal-mask + lama) -> /Users/lizeyan/Desktop/i2e/work/poster/assets/_bg.png
+  IR -> /Users/lizeyan/Desktop/i2e/work/poster/poster.ir.json {'background': 1, 'raster': 39, 'text': 22}

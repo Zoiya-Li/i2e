@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="zh">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self' 'unsafe-inline'; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<title>i2e editor</title>
+<style>
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 13px -apple-system, system-ui, sans-serif; background: #1b1b1b; color: #eee; display: flex; height: 100vh; }
+  #stage { flex: 1; display: flex; align-items: center; justify-content: center; overflow: auto; padding: 16px; }
+  #canvas { position: relative; box-shadow: 0 6px 30px rgba(0,0,0,.6); background:#000; }
+  #bg { position: absolute; left: 0; top: 0; width: 100%; height: 100%; user-select: none; -webkit-user-drag: none; }
+  .layer { position: absolute; cursor: move; }
+  img.layer { -webkit-user-drag: none; user-select: none; }
+  .layer.sel { outline: 2px solid #fd0; outline-offset: 1px; }
+  .txt { white-space: pre; line-height: 1.15; overflow: visible; }
+  #canvas.point, #canvas.box { cursor: crosshair; }
+  #canvas.point .layer, #canvas.box .layer { cursor: crosshair; }
+  .pt { position:absolute; width:12px; height:12px; border-radius:50%; transform:translate(-50%,-50%); border:2px solid #fff; pointer-events:none; }
+  .pt.pos { background:#3d6; } .pt.neg { background:#e44; }
+  #rubber { position:absolute; border:1.5px dashed #fd0; background:rgba(255,221,0,.12); pointer-events:none; display:none; }
+  #preview { position:absolute; outline:3px dashed #3df; filter:drop-shadow(0 0 6px rgba(61,221,255,.7)); pointer-events:none; }
+  .stroke { position:absolute; width:14px; height:14px; border-radius:50%; transform:translate(-50%,-50%); background:rgba(61,221,255,.7); pointer-events:none; }
+  #pvbar { position:absolute; display:flex; gap:6px; z-index:50; }
+  #pvbar button { margin:0; padding:5px 9px; font-size:12px; }
+  #panel { width: 312px; background: #262626; padding: 14px; overflow: auto; border-left: 1px solid #333; }
+  h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: #888; margin: 0 0 6px; }
+  label { display: block; margin: 8px 0 2px; color: #aaa; font-size: 11px; }
+  input, textarea { width: 100%; background: #1a1a1a; border: 1px solid #444; color: #eee; padding: 5px; border-radius: 4px; font: inherit; }
+  textarea { resize: vertical; min-height: 44px; }
+  .row { display: flex; gap: 6px; } .row>div { flex: 1; }
+  button { padding: 8px; border: 0; border-radius: 5px; cursor: pointer; font-weight: 600; margin-top: 8px; }
+  .tools { display:flex; gap:6px; margin-bottom:8px; }
+  .tools button { flex:1; margin:0; background:#333; color:#ccc; }
+  .tools button.on { background:#fd0; color:#311; }
+  #runseg { width:100%; background:#3d6; color:#042; display:none; }
+  #save { width: 100%; background: #4ad; color: #052; } #export { width: 100%; background: #cb6; color: #311; }
+  #del { width: 100%; background: #c55; color: #fff; }
+  #log { margin-top: 10px; font-size: 12px; color: #9c9; white-space: pre-wrap; }
+  .muted { color: #777; } .hot { color:#fd0; }
+</style>
+</head>
+<body>
+  <div id="stage"><div id="canvas"><img id="bg" alt=""><div id="rubber"></div></div></div>
+  <div id="panel">
+    <h2>i2e — editable layers</h2>
+    <div class="tools">
+      <button id="t-select" class="on">选择/移动</button>
+      <button id="t-point">✂️ 细分(点选)</button>
+      <button id="t-box">▭ 框选提取</button>
+      <button id="t-bulk">📦 批量</button>
+      <button id="t-brush">🖌️ 笔刷</button>
+    </div>
+    <div class="row" style="margin-top:6px"><div><button id="undo" style="background:#444;color:#ccc;width:100%">↶ 撤销 (⌘Z)</button></div></div>
+    <div class="muted" id="hint"></div>
+    <div id="segtools" style="display:none">
+      <div class="muted" style="margin:6px 0"><span style="color:#3d6">●</span> 保留(点击) &nbsp; <span style="color:#e44">●</span> 排除(Shift+点击) &nbsp;·&nbsp; <span id="ptcount">0</span> 点</div>
+      <div class="row"><div><button id="ptundo" style="background:#444;color:#ccc">撤销上一点</button></div><div><button id="ptclear" style="background:#444;color:#ccc">清除点</button></div></div>
+    </div>
+    <button id="runseg">执行分割</button>
+    <button id="findmissing" style="width:100%;background:#a5d;color:#fff">🔍 找遗漏 (VLM)</button>
+    <div id="props"></div>
+    <button id="save">保存并捕获修正</button>
+    <button id="export">导出 PNG</button>
+    <div id="log"></div>
+  </div>
+<script>
+let ir, scale=1, sel=null, mode='select';
+let pts=[], lbls=[], pending=null, rubber=null;
+const canvas=document.getElementById('canvas'), bg=document.getElementById('bg'),
+      props=document.getElementById('props'), log=document.getElementById('log'),
+      hint=document.getElementById('hint'), runseg=document.getElementById('runseg'),
+      rub=document.getElementById('rubber');
+const asset = p => '/asset?p='+encodeURIComponent(p)+'&v='+(p._v||'');
+const bgEl = () => ir.elements.find(e=>e.type==='background');
+const isBaked = e => e.ext && e.ext.baked;
+const cutoutOf = e => (e.ext&&e.ext.cutout) || (e.raster&&e.raster.asset_ref) || (e.logo&&e.logo.raster_ref);
+const fontSize = e => { const t=e.text||{}; const n=(t.content||'').split('\n').length; return t.font_size_px || Math.max(10, e.bbox.h/n*0.82); };
+const fam = e => ((e.text&&e.text.font_family)||'').replace(/\.(ttc|ttf|otf)$/i,'') || 'sans-serif';
+// canvas-relative image-space coords from a mouse event
+const imgXY = ev => { const r=canvas.getBoundingClientRect(); return [ (ev.clientX-r.left)/scale, (ev.clientY-r.top)/scale ]; };
+
+const HINTS = {
+  select: '点选图层：拖动移动；文字可改内容/颜色/字号。背景为重建的干净底图。',
+  point:  '细分：先选中物体，再点要分出的部分。单点给出"子部分/部件/整体"三档；继续点(Shift=排除)可逐步细化，再点"执行分割"。',
+  box:    '框选：拖出矩形即把该区域分成新图层；若落在某物体内，会自动修补该物体表面。',
+  bulk:   '批量：在一片区域拖出矩形，里面所有子物体都会被自动分出来（适合密集小物体：薄荷、冰块、亮点等）。',
+  brush:  '笔刷：沿着细长形状（金边、阴影、贴纸边缘）拖一笔，松开后自动提取覆盖整条笔触的形状。'
+};
+
+async function boot(){
+  ir = await (await fetch('/api/ir')).json();
+  const b=bgEl(); const src = (b&&b.background&&b.background.asset_ref) ? asset(b.background.asset_ref) : '/image';
+  bg.src=src; await new Promise(r=>{ if(bg.complete)r(); else bg.onload=r; });
+  const maxW=Math.min(560, innerWidth-372), maxH=innerHeight-32;
+  scale=Math.min(maxW/ir.canvas.width, maxH/ir.canvas.height);
+  canvas.style.width=ir.canvas.width*scale+'px'; canvas.style.height=ir.canvas.height*scale+'px';
+  setMode('select'); render();
+}
+
+function setMode(m){
+  mode=m; clearSeg();
+  for(const id of ['select','point','box','bulk','brush']) document.getElementById('t-'+id).classList.toggle('on', id===m);
+  canvas.classList.toggle('point', m==='point'||m==='brush'); canvas.classList.toggle('box', m==='box'||m==='bulk');
+  hint.textContent=HINTS[m]; runseg.style.display = m==='point' ? 'block':'none';
+  updateSegTools();
+}
+function updateSegTools(){
+  const st=document.getElementById('segtools');
+  st.style.display = (mode==='point') ? 'block':'none';
+  document.getElementById('ptcount').textContent = pts.length;
+}
+document.getElementById('ptundo').onclick=()=>{ pts.pop(); lbls.pop(); clearPending(); render(); updateSegTools(); };
+document.getElementById('ptclear').onclick=()=>{ pts=[]; lbls=[]; clearPending(); render(); updateSegTools(); };
+document.getElementById('t-select').onclick=()=>setMode('select');
+document.getElementById('t-point').onclick=()=>setMode('point');
+document.getElementById('t-box').onclick=()=>setMode('box');
+document.getElementById('t-bulk').onclick=()=>setMode('bulk');
+document.getElementById('t-brush').onclick=()=>setMode('brush');
+
+// ----- undo: snapshot IR before any mutating op; ⌘Z / Ctrl+Z restores -----
+const history=[];
+function snap(){ history.push(JSON.stringify(ir)); if(history.length>30) history.shift(); }
+function undo(){
+  if(!history.length){ log.textContent='没有可撤销的步骤'; return; }
+  ir=JSON.parse(history.pop()); sel=null; pending=null; pts=[]; lbls=[];
+  render(); showProps(); log.textContent='已撤销';
+}
+document.getElementById('undo').onclick=undo;
+document.addEventListener('keydown',ev=>{
+  if((ev.metaKey||ev.ctrlKey) && ev.key.toLowerCase()==='z'){ ev.preventDefault(); undo(); }
+});
+document.getElementById('findmissing').onclick=async()=>{
+  log.textContent='扫描遗漏中…(VLM)';
+  [...canvas.querySelectorAll('.suggestion')].forEach(n=>n.remove());
+  const r=await (await fetch('/api/find_missing',{method:'POST',headers:{'Content-Type':'application/json'},body:'{}'})).json();
+  if(!r.ok||!r.items||!r.items.length){ log.textContent='VLM 未发现明显遗漏。'; return; }
+  for(const it of r.items){
+    const b=it.bbox;
+    const d=document.createElement('div'); d.className='suggestion';
+    d.style.cssText='position:absolute;outline:2px solid #fd0;background:rgba(255,221,0,.18);cursor:pointer;font-size:11px;color:#311;padding:1px 4px;line-height:1.1;font-weight:600;overflow:hidden';
+    d.style.left=b.x*scale+'px'; d.style.top=b.y*scale+'px';
+    d.style.width=b.w*scale+'px'; d.style.height=b.h*scale+'px';
+    d.title=it.name||''; d.textContent=it.name||'?';
+    d.onclick=ev=>{ ev.stopPropagation(); d.remove(); setMode('select');
+      runSegment({mode:'box', box:[b.x,b.y,b.x+b.w,b.y+b.h]}); };
+    canvas.appendChild(d);
+  }
+  log.textContent='发现 '+r.items.length+' 个候选，点黄色框逐个提取。';
+};
+
+function render(){
+  [...canvas.querySelectorAll('.layer,.pt,#preview,#pvbar,.preview-thumb')].forEach(n=>n.remove());
+  for(const e of [...ir.elements].sort((a,b)=>(a.z||0)-(b.z||0))){
+    if(e.type==='background') continue;
+    if(e.type==='text' && isBaked(e)) continue;
+    const b=e.bbox; let node;
+    if(e.type==='text'){
+      const ext=e.ext||{}; const unchanged = ext.orig_content!=null && e.text && e.text.content===ext.orig_content;
+      if(unchanged && ext.text_crop){
+        node=document.createElement('img'); node.className='layer'; node.src=asset(ext.text_crop);
+      } else {
+        node=document.createElement('div'); node.className='layer txt';
+        node.textContent=e.text?e.text.content:'';
+        node.style.color=(e.text&&e.text.color)||'#fff';
+        node.style.fontFamily='"'+fam(e)+'", sans-serif';
+        node.style.fontSize=fontSize(e)*scale+'px'; node.style.fontWeight=600;
+      }
+    } else {
+      const cp=cutoutOf(e); if(!cp) continue;
+      node=document.createElement('img'); node.className='layer'; node.src=asset(cp);
+    }
+    node.style.left=b.x*scale+'px'; node.style.top=b.y*scale+'px';
+    node.style.width=b.w*scale+'px'; node.style.height=b.h*scale+'px';
+    if(e===sel) node.classList.add('sel');
+    node.onmousedown=ev=>pointerDown(ev,e);
+    node._el=e; canvas.appendChild(node);
+  }
+  for(let i=0;i<pts.length;i++){ const d=document.createElement('div'); d.className='pt '+(lbls[i]?'pos':'neg');
+    d.style.left=pts[i][0]*scale+'px'; d.style.top=pts[i][1]*scale+'px'; canvas.appendChild(d); }
+  if(pending){ if(pending.bulk) drawBulkPreview(); else drawPreview(); }
+}
+
+function pointerDown(ev,e){
+  if(mode==='select'){ ev.preventDefault(); select(e); startDrag(ev,e); return; }
+  if(mode==='point'){ ev.preventDefault(); if(e&&!sel) select(e); addPoint(ev); return; }
+  if(mode==='box'||mode==='bulk'){ ev.preventDefault(); startBox(ev); return; }
+  if(mode==='brush'){ ev.preventDefault(); startBrush(ev); return; }
+}
+function startDrag(ev,e){
+  snap();   // for undo
+  const sx=ev.clientX, sy=ev.clientY, ox=e.bbox.x, oy=e.bbox.y;
+  const mv=ev2=>{ e.bbox.x=ox+(ev2.clientX-sx)/scale; e.bbox.y=oy+(ev2.clientY-sy)/scale; render(); };
+  const up=()=>{ document.removeEventListener('mousemove',mv); document.removeEventListener('mouseup',up); showProps(); };
+  document.addEventListener('mousemove',mv); document.addEventListener('mouseup',up);
+}
+
+function startBrush(ev){
+  // collect a stroke of image-space points; sample every ~12px screen distance
+  const stroke=[]; let lastX=ev.clientX, lastY=ev.clientY;
+  const add=ev2=>{
+    const dx=ev2.clientX-lastX, dy=ev2.clientY-lastY;
+    if(dx*dx+dy*dy < 144) return;
+    lastX=ev2.clientX; lastY=ev2.clientY;
+    const [ix,iy]=imgXY(ev2); stroke.push([ix,iy]);
+    const d=document.createElement('div'); d.className='stroke';
+    const r=canvas.getBoundingClientRect();
+    d.style.left=(ev2.clientX-r.left)+'px'; d.style.top=(ev2.clientY-r.top)+'px';
+    canvas.appendChild(d);
+  };
+  const [x0,y0]=imgXY(ev); stroke.push([x0,y0]); add(ev);
+  const mv=add;
+  const up=()=>{ document.removeEventListener('mousemove',mv); document.removeEventListener('mouseup',up);
+    [...canvas.querySelectorAll('.stroke')].forEach(n=>n.remove());
+    if(stroke.length<2){ log.textContent='笔触太短'; return; }
+    // SAM multi-point: all positives, returns single refined mask
+    runSegment({mode:'point', points:stroke, labels:stroke.map(()=>1), clip_bbox:null});
+  };
+  document.addEventListener('mousemove',mv); document.addEventListener('mouseup',up);
+}
+function addPoint(ev){ const [x,y]=imgXY(ev); pts.push([x,y]); lbls.push(ev.shiftKey?0:1); clearPending(); render(); updateSegTools(); }
+
+function startBox(ev){
+  const r=canvas.getBoundingClientRect(); const sx=ev.clientX, sy=ev.clientY;
+  const [ix,iy]=imgXY(ev);
+  rub.style.display='block'; rub.style.left=(sx-r.left)+'px'; rub.style.top=(sy-r.top)+'px'; rub.style.width='0px'; rub.style.height='0px';
+  const mv=ev2=>{ const x=Math.min(sx,ev2.clientX)-r.left, y=Math.min(sy,ev2.clientY)-r.top;
+    rub.style.left=x+'px'; rub.style.top=y+'px'; rub.style.width=Math.abs(ev2.clientX-sx)+'px'; rub.style.height=Math.abs(ev2.clientY-sy)+'px'; };
+  const up=ev2=>{ document.removeEventListener('mousemove',mv); document.removeEventListener('mouseup',up); rub.style.display='none';
+    const [jx,jy]=imgXY(ev2); const box=[Math.min(ix,jx),Math.min(iy,jy),Math.max(ix,jx),Math.max(iy,jy)];
+    if(box[2]-box[0]<=6 || box[3]-box[1]<=6) return;
+    if(mode==='bulk') runBulk(box); else runSegment({mode:'box', box}); };
+  document.addEventListener('mousemove',mv); document.addEventListener('mouseup',up);
+}
+
+async function runBulk(box){
+  log.textContent='批量分割中…(密集 SAM)';
+  const r=await (await fetch('/api/bulk_segment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({box})})).json();
+  if(!r.ok||!r.candidates||!r.candidates.length){ log.textContent='没分出新物体（可能区域里没有 SAM 能识别的子物体）。'; return; }
+  // dedup vs existing IR elements (bbox IoU)
+  const ex=ir.elements.filter(e=>e.type!=='background').map(e=>e.bbox);
+  const novel=r.candidates.filter(c=>{
+    for(const eb of ex){
+      const ix=Math.max(0, Math.min(c.bbox.x+c.bbox.w,eb.x+eb.w)-Math.max(c.bbox.x,eb.x));
+      const iy=Math.max(0, Math.min(c.bbox.y+c.bbox.h,eb.y+eb.h)-Math.max(c.bbox.y,eb.y));
+      const inter=ix*iy; const u=c.bbox.w*c.bbox.h+eb.w*eb.h-inter;
+      if(inter/u>0.6) return false;
+    }
+    return true;
+  });
+  if(!novel.length){ log.textContent='区域内的子物体都已经是图层了。'; return; }
+  pending={bulk:novel};
+  log.textContent='发现 '+novel.length+' 个新子物体（共 '+r.candidates.length+'）。预览框已显示，点"全部添加"提交。';
+  render();
+}
+
+function drawBulkPreview(){
+  for(const c of pending.bulk){
+    const b=c.bbox;
+    const img=document.createElement('img'); img.className='preview-thumb';
+    img.style.cssText='position:absolute;outline:2px dashed #3df;pointer-events:none';
+    img.src=asset(c.cutout);
+    img.style.left=b.x*scale+'px'; img.style.top=b.y*scale+'px';
+    img.style.width=b.w*scale+'px'; img.style.height=b.h*scale+'px';
+    canvas.appendChild(img);
+  }
+  const bar=document.createElement('div'); bar.id='pvbar';
+  bar.style.left='8px'; bar.style.top='8px';
+  bar.innerHTML='<button id="pv-ok" style="background:#3d6;color:#042">全部添加 '+pending.bulk.length+' 个</button><button id="pv-no" style="background:#666;color:#fff">取消</button>';
+  canvas.appendChild(bar);
+  document.getElementById('pv-ok').onclick=commitBulk;
+  document.getElementById('pv-no').onclick=()=>{ clearPending(); render(); };
+}
+
+function commitBulk(){
+  snap();
+  let z=Math.max(0,...ir.elements.map(e=>e.z||0));
+  for(const c of pending.bulk){
+    z++;
+    ir.elements.push({
+      id:'bulk-'+Date.now().toString(36)+'-'+z, type:'raster', name:'批量:'+c.area,
+      z, bbox:{...c.bbox},
+      nbox:{x:c.bbox.x/ir.canvas.width,y:c.bbox.y/ir.canvas.height,w:c.bbox.w/ir.canvas.width,h:c.bbox.h/ir.canvas.height},
+      ext:{cutout:c.cutout}, raster:{asset_ref:c.cutout, mask_ref:c.mask_ref, kind:'product'},
+      extraction:{confidence:0.85, model:'mobile_sam', model_version:'mobile_sam', method:'sam2-bulk-lasso', extracted_at:new Date().toISOString()},
+      needs_review:true, editable:['bbox']
+    });
+  }
+  const n=pending.bulk.length;
+  pending=null; setMode('select'); render(); showProps();
+  log.textContent='已添加 '+n+' 个新图层（批量提取）。';
+}
+
+runseg.onclick=()=>{ if(!pts.length){ log.textContent='请先在物体上点选要分出来的部分。'; return; }
+  runSegment({mode:'point', points:pts, labels:lbls, clip_bbox: sel?sel.bbox:null}); };
+
+const LV={subpart:'子部分', part:'部件', whole:'整体', region:'区域'};
+async function runSegment(req){
+  log.textContent='分割中…(SAM)';
+  const r=await (await fetch('/api/segment',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(req)})).json();
+  if(!r.ok||!r.candidates||!r.candidates.length){ log.textContent='分割失败: '+(r.error||'无结果'); return; }
+  pending={cands:r.candidates, idx:0, parent:(req.mode==='point'?sel:null)};
+  log.textContent= r.candidates.length>1 ? '已分割。选择粒度（子部分/部件/整体），再点"添加为图层"。' : '已分割。点"添加为图层"确认。';
+  render();
+}
+
+function drawPreview(){
+  const c=pending.cands[pending.idx], b=c.bbox;
+  const img=document.createElement('img'); img.id='preview'; img.src=asset(c.cutout);
+  img.style.left=b.x*scale+'px'; img.style.top=b.y*scale+'px'; img.style.width=b.w*scale+'px'; img.style.height=b.h*scale+'px';
+  canvas.appendChild(img);
+  const bar=document.createElement('div'); bar.id='pvbar';
+  bar.style.left=b.x*scale+'px'; bar.style.top=(Math.max(0,b.y*scale-34))+'px';
+  // build via DOM + textContent — cc.level is segmentation output (untrusted), never HTML
+  if(pending.cands.length>1) pending.cands.forEach((cc,i)=>{
+    const gb=document.createElement('button'); gb.className='pv-g'; gb.dataset.i=i;
+    gb.style.background=i===pending.idx?'#fd0':'#444'; gb.style.color=i===pending.idx?'#311':'#ccc';
+    gb.textContent=LV[cc.level]||cc.level; bar.appendChild(gb);
+  });
+  const mk=(id,bg,fg,txt)=>{const b=document.createElement('button'); b.id=id; b.style.background=bg; b.style.color=fg; b.textContent=txt; return b;};
+  bar.appendChild(mk('pv-ok','#3d6','#042','添加为图层')); bar.appendChild(mk('pv-no','#666','#fff','取消'));
+  canvas.appendChild(bar);
+  [...bar.querySelectorAll('.pv-g')].forEach(btn=>btn.onclick=()=>{ pending.idx=+btn.dataset.i; render(); });
+  document.getElementById('pv-ok').onclick=commitSegment;
+  document.getElementById('pv-no').onclick=()=>{ clearPending(); render(); };
+}
+
+function bbOverlap(a,b){
+  const ix=Math.max(0, Math.min(a.x+a.w,b.x+b.w)-Math.max(a.x,b.x));
+  const iy=Math.max(0, Math.min(a.y+a.h,b.y+b.h)-Math.max(a.y,b.y));
+  return ix*iy;
+}
+// smallest object layer that meaningfully contains a bbox (for box-extract auto-patch)
+function findParent(b){
+  const cx=b.x+b.w/2, cy=b.y+b.h/2, area=(b.w*b.h)||1;
+  let best=null, bestA=Infinity;
+  for(const e of ir.elements){
+    if(e.type==='background'||e.type==='text') continue;
+    const eb=e.bbox, ea=eb.w*eb.h;
+    const inside = eb.x<=cx&&cx<=eb.x+eb.w && eb.y<=cy&&cy<=eb.y+eb.h;
+    const ix=Math.max(0, Math.min(b.x+b.w,eb.x+eb.w)-Math.max(b.x,eb.x));
+    const iy=Math.max(0, Math.min(b.y+b.h,eb.y+eb.h)-Math.max(b.y,eb.y));
+    if(inside && (ix*iy)/area>=0.6 && ea>area*1.3 && ea<bestA){ best=e; bestA=ea; }
+  }
+  return best;
+}
+
+async function commitSegment(){
+  snap();
+  const c=pending.cands[pending.idx];
+  const parent=pending.parent || findParent(c.bbox);
+  let z=Math.max(0,...ir.elements.map(e=>e.z||0))+1;
+  const el={ id:'seg-'+Date.now().toString(36), type:'raster', name:(parent?'细分('+(LV[c.level]||c.level)+'):':'框选:')+(parent?parent.name||parent.id:''),
+    z, bbox:{...c.bbox}, nbox:{x:c.bbox.x/ir.canvas.width,y:c.bbox.y/ir.canvas.height,w:c.bbox.w/ir.canvas.width,h:c.bbox.h/ir.canvas.height},
+    ext:{cutout:c.cutout}, raster:{asset_ref:c.cutout, mask_ref:c.mask_ref, kind:'product'},
+    extraction:{confidence:c.score||0.9, model:'mobile_sam', model_version:'mobile_sam', method:'sam2-interactive-'+(parent?'point':'box'), extracted_at:new Date().toISOString()},
+    needs_review:false, editable:['bbox'] };
+  if(parent){  // remove the split part from the parent's surface so moving the child is clean
+    log.textContent='修补父图层(LaMa)…';
+    const cm=await (await fetch('/api/commit',{method:'POST',headers:{'Content-Type':'application/json'},
+      body:JSON.stringify({parent_cutout:cutoutOf(parent), parent_bbox:parent.bbox, mask_ref:c.mask_ref})})).json();
+    if(cm.ok){ parent.ext=parent.ext||{}; parent.ext.cutout=cm.parent_cutout; if(parent.raster) parent.raster.asset_ref=cm.parent_cutout; }
+  }
+  ir.elements.push(el); pending=null; pts=[]; lbls=[]; sel=el;
+  setMode('select'); render(); showProps();
+  log.textContent='已添加新图层「'+el.id+'」。可独立拖动/删除；父图层表面已用 LaMa 修补。';
+}
+
+function clearPending(){ pending=null; }
+function clearSeg(){ pending=null; pts=[]; lbls=[]; }
+
+function select(e){ sel=e; render(); showProps(); }
+
+function showProps(){
+  const e=sel; if(!e){ props.innerHTML=''; return; }
+  // skeleton carries NO untrusted strings (id/type/name/content/color come from the IR/VLM);
+  // they are assigned via textContent/value properties after, so injected HTML cannot run
+  let h=`<div class="muted" id="phdr"></div>`;
+  if(e.type==='text'){
+    h+=`<label>文案</label><textarea id="c"></textarea>`;
+    h+=`<div class="row"><div><label>颜色</label><input id="col"></div>`;
+    h+=`<div><label>字号</label><input id="fs" type="number" value="${Math.round(fontSize(e))}"></div></div>`;
+  }
+  h+=`<label>位置/大小 (x,y,w,h)</label><div class="row">
+    <div><input id="bx" type="number" value="${Math.round(e.bbox.x)}"></div>
+    <div><input id="by" type="number" value="${Math.round(e.bbox.y)}"></div>
+    <div><input id="bw" type="number" value="${Math.round(e.bbox.w)}"></div>
+    <div><input id="bh" type="number" value="${Math.round(e.bbox.h)}"></div></div>`;
+  if(e.type==='raster'||e.type==='logo') h+=`<button id="complete" style="background:#69c;color:#021">补全被遮挡部分 (LaMa)</button>`;
+  h+=`<button id="del">删除此图层</button>`;
+  props.innerHTML=h;
+  document.getElementById('phdr').textContent = e.id+' · '+e.type+(e.name?' · '+e.name:'');
+  if(e.type==='text'){
+    document.getElementById('c').value = (e.text&&e.text.content)||'';
+    document.getElementById('col').value = (e.text&&e.text.color)||'';
+  }
+  const on=(id,fn)=>{const el=document.getElementById(id); if(el)el.oninput=()=>{fn(el.value);render();};};
+  if(e.type==='text'){
+    on('c',v=>{e.text=e.text||{}; e.text.content=v;});
+    on('col',v=>{e.text.color=v;}); on('fs',v=>{e.text.font_size_px=+v;});
+  }
+  on('bx',v=>e.bbox.x=+v); on('by',v=>e.bbox.y=+v); on('bw',v=>e.bbox.w=+v); on('bh',v=>e.bbox.h=+v);
+  const cb=document.getElementById('complete'); if(cb) cb.onclick=()=>completeLayer(e);
+  const d=document.getElementById('del'); if(d)d.onclick=()=>{ snap(); ir.elements=ir.elements.filter(x=>x!==e); sel=null; render(); showProps(); };
+}
+
+async function completeLayer(e){
+  snap();
+  const occ=ir.elements.filter(o=>o!==e && (o.z||0)>(e.z||0) && (o.type==='raster'||o.type==='logo')
+      && cutoutOf(o) && bbOverlap(e.bbox,o.bbox)>0).map(o=>({cutout:cutoutOf(o), bbox:o.bbox}));
+  if(!occ.length){ log.textContent='该图层没有被其它图层遮挡，无需补全。'; return; }
+  log.textContent='补全被遮挡部分(LaMa)…';
+  const r=await (await fetch('/api/complete',{method:'POST',headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({target_cutout:cutoutOf(e), target_bbox:e.bbox, occluders:occ})})).json();
+  if(!r.ok){ log.textContent='补全失败: '+(r.error||'?'); return; }
+  e.ext=e.ext||{}; e.ext.cutout=r.cutout; if(e.raster) e.raster.asset_ref=r.cutout;
+  e.bbox={...r.bbox}; e.nbox={x:r.bbox.x/ir.canvas.width,y:r.bbox.y/ir.canvas.height,w:r.bbox.w/ir.canvas.width,h:r.bbox.h/ir.canvas.height};
+  render(); showProps();
+  log.textContent='已补全被 '+occ.length+' 个图层遮挡的区域 (+'+r.added_px+'px)。';
+}
+
+document.getElementById('save').onclick=async()=>{
+  // bbox edits/drags don't touch nbox; recompute all normalized boxes so downstream
+  // scaling/reflow can't use stale coordinates (schema would otherwise accept them)
+  const cw=ir.canvas&&ir.canvas.width, chh=ir.canvas&&ir.canvas.height;
+  if(cw&&chh) ir.elements.forEach(e=>{ if(e.bbox) e.nbox={x:e.bbox.x/cw,y:e.bbox.y/chh,w:e.bbox.w/cw,h:e.bbox.h/chh}; });
+  const r=await (await fetch('/api/save',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(ir)})).json();
+  if(r.error){ log.textContent='错误: '+r.error; return; }
+  const k={}; (r.corrections||[]).forEach(c=>k[c.kind]=(k[c.kind]||0)+1);
+  log.textContent=`已捕获 ${r.count} 条修正:\n`+Object.entries(k).map(([a,n])=>`  ${a}: ${n}`).join('\n');
+};
+document.getElementById('export').onclick=async()=>{
+  const r=await fetch('/api/export',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(ir)});
+  if(!r.ok){ log.textContent='导出失败'; return; }
+  window.open(URL.createObjectURL(await r.blob()),'_blank');
+};
+canvas.onmousedown=ev=>{ if(ev.target===bg||ev.target===canvas){
+  if(mode==='select'){ sel=null; render(); showProps(); }
+  else if(mode==='point'){ addPoint(ev); }
+  else if(mode==='box'){ startBox(ev); }
+} };
+boot();
+</script>
+</body>
+</html>

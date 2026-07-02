@@ -1,0 +1,37 @@
+{
+  "schema": "v2-baseline-v1",
+  "note": "Frozen v2 production baseline for framework.png. This is the bar the v3 all-native Decompiler must match or beat at equal fidelity. All structural numbers are MEASURED from the delivered artifact via work.diagram2ppt.v3.pptx_stats, not copied from prose.",
+  "source_image": "framework.png",
+  "artifact": {
+    "path": "work/diagram2ppt/v22_out/diagram_final.pptx",
+    "sha256": "49d61a8026fa2cf0fa44e96b4d4990714c8c9364e43f2c277c8bc3ae12cb2336",
+    "bytes": 468259
+  },
+  "structure": {
+    "slides": 1,
+    "top_level_shapes": 97,
+    "total_shapes_recursive": 97,
+    "shape_histogram": {
+      "AUTO_SHAPE": 38,
+      "CHART": 2,
+      "FREEFORM": 1,
+      "LINE": 6,
+      "PICTURE": 7,
+      "TEXT_BOX": 43
+    },
+    "pictures": 7,
+    "omml_math_runs": 9,
+    "native_object_ratio": 0.9278
+  },
+  "reported_metrics": {
+    "source": "docs/diagram2ppt-progress.md (v2.4) / work/diagram2ppt/STATUS.md",
+    "native_fraction_count": 0.70,
+    "native_fraction_area": 0.696,
+    "coverage": 0.972
+  },
+  "discrepancy": {
+    "status_doc_claims": "STATUS.md / progress notes describe diagram_final.pptx as the v3.3 all-native build with 0 pictures + 402 dots + 12 icons + 6 connectors.",
+    "measured_reality": "The on-disk diagram_final.pptx (468259 bytes) is byte-identical to diagram_hybrid.pptx and contains 7 PICTURE (raster fallback) shapes, no dot-groups, 6 LINE connectors, 2 charts and 9 OMML runs. The all-native 0-picture build is the separate diagram_v33.pptx (~60 KB).",
+    "resolution": "This baseline records the measured hybrid delivery as the frozen v2 bar. Whether the 'final' deliverable should be the hybrid (fidelity via faithful crops) or the v3.3 all-native (editability, 0 pictures) is a product decision left to the maintainer; docs should be reconciled to whichever is chosen."
+  }
+}

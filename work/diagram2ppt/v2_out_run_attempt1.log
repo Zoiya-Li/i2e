@@ -1,0 +1,36 @@
+[global] analyzing framework.png (1672x941)
+[global] 76 elements
+  [refine] title_problem try=1 residual was 0.5782
+  [refine] title_solution try=1 residual was 0.8022
+  [refine] subtitle_solution try=1 residual was 0.4984
+  [refine] text_covariate FAILED (VLM call failed after 3 attempts: Client error '400 Bad Request' for url 'https://api.siliconflow.cn/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) — will demote next round
+  [refine] text_high_hetero FAILED (VLM call failed after 3 attempts: Client error '400 Bad Request' for url 'https://api.siliconflow.cn/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) — will demote next round
+  [refine] text_ci_small_title FAILED (VLM call failed after 3 attempts: Client error '400 Bad Request' for url 'https://api.siliconflow.cn/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) — will demote next round
+  [refine] rect_failure_summary try=1 residual was 0.7911
+  [refine] text_failure_title try=1 residual was 1.0222
+  [refine] text_failure_1 try=1 residual was 0.6403
+  [refine] text_failure_2 try=1 residual was 0.6366
+  [refine] text_failure_3 try=1 residual was 0.7211
+  [refine] text_coverage_title try=1 residual was 0.8848
+  [refine] text_pipeline_context FAILED (VLM call failed after 3 attempts: Client error '400 Bad Request' for url 'https://api.siliconflow.cn/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) — will demote next round
+  [refine] rect_raw_tables try=1 residual was 0.5638
+  [refine] text_raw_tables FAILED (VLM call failed after 3 attempts: Client error '400 Bad Request' for url 'https://api.siliconflow.cn/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) — will demote next round
+  [refine] rect_feature_eng try=1 residual was 0.8097
+  [refine] text_feature_eng FAILED (VLM call failed after 3 attempts: Client error '400 Bad Request' for url 'https://api.siliconflow.cn/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) — will demote next round
+  [refine] rect_cate_est try=1 residual was 0.7462
+  [refine] text_cate_est FAILED (VLM call failed after 3 attempts: Client error '400 Bad Request' for url 'https://api.siliconflow.cn/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) — will demote next round
+  [refine] rect_ci_est try=1 residual was 0.5392
+  [refine] text_ci_est FAILED (VLM call failed after 3 attempts: Client error '400 Bad Request' for url 'https://api.siliconflow.cn/v1/chat/completions'
+For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/Status/400) — will demote next round
+  [refine] text_auditor_title try=1 residual was 0.0
+  [refine] text_step1 try=1 residual was 0.6313
+  [refine] rect_step2 try=1 residual was 0.4735
+  [refine] text_step2 try=1 residual was 0.6048
+  [refine] rect_step3 try=1 residual was 0.4828

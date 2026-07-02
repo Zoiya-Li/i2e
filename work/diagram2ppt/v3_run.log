@@ -1,0 +1,13 @@
+[vectorize] {"forced_shapes": 11, "icons": 18, "dotclouds": 0, "silhouettes": 4}
+vectorize: {"forced_shapes": 11, "icons": 18, "dotclouds": 0, "silhouettes": 4} vlm_calls: 18
+Traceback (most recent call last):
+  File "<stdin>", line 25, in <module>
+  File "/Users/lizeyan/Desktop/i2e/work/diagram2ppt/v2/build_pptx.py", line 66, in build_pptx
+    shape = _add_icon(slide, el, x0, y0, bw, bh, pt_per_px)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lizeyan/Desktop/i2e/work/diagram2ppt/v2/build_pptx.py", line 260, in _add_icon
+    shape = slide.shapes.add_shape(getattr(MSO_SHAPE, mso_name),
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/lizeyan/anaconda3/lib/python3.11/enum.py", line 784, in __getattr__
+    raise AttributeError(name) from None
+AttributeError: ISOCELES_TRIANGLE. Did you mean: 'ISOSCELES_TRIANGLE'?

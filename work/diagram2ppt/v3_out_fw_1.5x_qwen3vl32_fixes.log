@@ -1,0 +1,144 @@
+[AuditAgent] tool=bootstrap_blackboard
+[Planner] planning reconstruction for work/diagram2ppt/v2_out/fw_1.5x.png
+[decompose] CV structure seeds: +18 {'container': 3, 'shape': 15}
+[Perception:VLMStructureAgent] pass 1: 34 boxes
+[Perception:VLMTextAgent] failed: RuntimeError: VLM call failed after 1 attempts: The read operation timed out
+[Perception:OCRTextAgent] 80 usable OCR lines
+[PerceptionBlackboard] fused 132 evidence -> 126 entities {'container': 16, 'chart': 2, 'surface': 1, 'shape': 18, 'arrow': 9, 'formula': 6, 'text': 74}
+[Planner] perception blackboard: evidence=132 entities=126 sources={'cv_geometry': 18, 'vlm_structure': 34, 'ocr_text': 80}
+[Planner] strategy: regions=10 policy={'try_procedural_surfaces': True, 'try_component_motifs': True, 'try_pipeline_context': True, 'try_auditor_cards': True, 'try_failure_summary': True, 'try_q0_coverage': True, 'try_bottom_mini_surface': True, 'try_cross_panel_bridge': True, 'try_residual_replacement': False, 'max_base_candidates': 4, 'procedural_candidate_limit': 2, 'motif_candidate_limit': 2, 'residual_candidate_limit': 0}
+[ContentOrchestrator] tasks=126 ok=126 failed=0 by_agent={'ShapeContentAgent': 34, 'ChartContentAgent': 2, 'SurfaceContentAgent': 1, 'ConnectorContentAgent': 9, 'TextContentAgent': 80}
+[Planner] content tasks: tasks=126 ok=126 failed=0
+[Planner] strategy refined: regions=8 policy={'try_procedural_surfaces': True, 'try_component_motifs': True, 'try_pipeline_context': True, 'try_auditor_cards': True, 'try_failure_summary': True, 'try_q0_coverage': True, 'try_bottom_mini_surface': True, 'try_cross_panel_bridge': True, 'try_residual_replacement': False, 'max_base_candidates': 4, 'procedural_candidate_limit': 2, 'motif_candidate_limit': 2, 'residual_candidate_limit': 0}
+[candidate:current] [dedup] dropped 2 overlapping duplicate texts
+[candidate:current] [junk] dropped 5 degenerate text fragments
+[candidate:current] [postprocess] dropped 1 hollow grouping shape(s)
+[candidate:current] [postprocess] separated 23 overlapping panel pair(s)
+[candidate:current] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=1 component_motifs=0 split_text=0 styled_text=21 recovered_card_containers=0 normalized_formulas=2 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=72 typography_slotted=4 typography_clamped=3
+[candidate:current] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=0 component_motifs=0 split_text=0 styled_text=2 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=3 typography_slotted=4 typography_clamped=3
+[Planner] candidate current: visual_delta=0.4855 critical=19 text=0.3973
+[candidate:current_procedural] [dedup] dropped 2 overlapping duplicate texts
+[candidate:current_procedural] [junk] dropped 5 degenerate text fragments
+[candidate:current_procedural] [postprocess] dropped 1 hollow grouping shape(s)
+[candidate:current_procedural] [postprocess] separated 23 overlapping panel pair(s)
+[candidate:current_procedural] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=1 component_motifs=0 split_text=0 styled_text=21 recovered_card_containers=0 normalized_formulas=2 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=1 procedural_axis_arrows=3 typography_styled=72 typography_slotted=4 typography_clamped=3
+[candidate:current_procedural] [Initializers] ProceduralSurfaceAgent initialized region_surface_0 changed=1
+[candidate:current_procedural] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=1 component_motifs=0 split_text=0 styled_text=2 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=11 typography_slotted=4 typography_clamped=2
+[Planner] candidate current_procedural: visual_delta=0.5523 critical=48 text=0.3
+[candidate:current_motif] [dedup] dropped 2 overlapping duplicate texts
+[candidate:current_motif] [junk] dropped 5 degenerate text fragments
+[candidate:current_motif] [postprocess] dropped 1 hollow grouping shape(s)
+[candidate:current_motif] [postprocess] separated 23 overlapping panel pair(s)
+[candidate:current_motif] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=1 component_motifs=19 split_text=0 styled_text=21 recovered_card_containers=0 normalized_formulas=2 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=72 typography_slotted=4 typography_clamped=3
+[candidate:current_motif] [Initializers] ActionCardAgent initialized region_action_cards changed=77
+[candidate:current_motif] [Initializers] FailureSummaryAgent initialized failure_summary changed=17
+[candidate:current_motif] [Initializers] ChartAgent initialized q0_coverage_charts changed=62
+[candidate:current_motif] [Initializers] BottomMiniSurfaceAgent initialized bottom_mini_surface changed=17
+[candidate:current_motif] [Initializers] PipelineContextAgent initialized region_pipeline_context changed=19
+[candidate:current_motif] [Initializers] AuditorCardAgent initialized region_auditor_cards changed=99
+[candidate:current_motif] [Initializers] CrossPanelBridgeAgent initialized region_cross_panel_bridge changed=1
+[candidate:current_motif] [QualityGate] rejected_text=1 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=0 component_motifs=0 split_text=0 styled_text=3 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=1 captions_normalized=0 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=34 typography_slotted=19 typography_clamped=8
+[Planner] candidate current_motif: visual_delta=0.5629 critical=74 text=0.3111
+[candidate:current_procedural_motif] [dedup] dropped 2 overlapping duplicate texts
+[candidate:current_procedural_motif] [junk] dropped 5 degenerate text fragments
+[candidate:current_procedural_motif] [postprocess] dropped 1 hollow grouping shape(s)
+[candidate:current_procedural_motif] [postprocess] separated 23 overlapping panel pair(s)
+[candidate:current_procedural_motif] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=1 component_motifs=19 split_text=0 styled_text=21 recovered_card_containers=0 normalized_formulas=2 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=1 procedural_axis_arrows=3 typography_styled=72 typography_slotted=4 typography_clamped=3
+[candidate:current_procedural_motif] [Initializers] ProceduralSurfaceAgent initialized region_surface_0 changed=1
+[candidate:current_procedural_motif] [Initializers] ActionCardAgent initialized region_action_cards changed=72
+[candidate:current_procedural_motif] [Initializers] FailureSummaryAgent initialized failure_summary changed=17
+[candidate:current_procedural_motif] [Initializers] ChartAgent initialized q0_coverage_charts changed=58
+[candidate:current_procedural_motif] [Initializers] BottomMiniSurfaceAgent initialized bottom_mini_surface changed=17
+[candidate:current_procedural_motif] [Initializers] PipelineContextAgent initialized region_pipeline_context changed=19
+[candidate:current_procedural_motif] [Initializers] AuditorCardAgent initialized region_auditor_cards changed=99
+[candidate:current_procedural_motif] [Initializers] CrossPanelBridgeAgent initialized region_cross_panel_bridge changed=1
+[candidate:current_procedural_motif] [QualityGate] rejected_text=1 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=0 component_motifs=0 split_text=0 styled_text=3 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=1 captions_normalized=0 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=42 typography_slotted=19 typography_clamped=7
+[Planner] candidate current_procedural_motif: visual_delta=0.5892 critical=103 text=0.2571
+[candidate:cache_04] [dedup] dropped 4 overlapping duplicate texts
+[candidate:cache_04] [junk] dropped 17 degenerate text fragments
+[candidate:cache_04] [postprocess] dropped 1 hollow grouping shape(s)
+[candidate:cache_04] [postprocess] separated 15 overlapping panel pair(s)
+[candidate:cache_04] [QualityGate] rejected_text=1 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=2 component_motifs=0 split_text=0 styled_text=21 recovered_card_containers=0 normalized_formulas=2 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=78 typography_slotted=4 typography_clamped=5
+[candidate:cache_04] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=0 component_motifs=0 split_text=0 styled_text=2 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=3 typography_slotted=4 typography_clamped=5
+[Planner] candidate cache_04: visual_delta=0.483 critical=19 text=0.3418
+[candidate:cache_04_procedural] [dedup] dropped 4 overlapping duplicate texts
+[candidate:cache_04_procedural] [junk] dropped 17 degenerate text fragments
+[candidate:cache_04_procedural] [postprocess] dropped 1 hollow grouping shape(s)
+[candidate:cache_04_procedural] [postprocess] separated 15 overlapping panel pair(s)
+[candidate:cache_04_procedural] [QualityGate] rejected_text=1 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=2 component_motifs=0 split_text=0 styled_text=21 recovered_card_containers=0 normalized_formulas=2 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=1 procedural_axis_arrows=3 typography_styled=78 typography_slotted=4 typography_clamped=5
+[candidate:cache_04_procedural] [Initializers] ProceduralSurfaceAgent initialized region_surface_0 changed=1
+[candidate:cache_04_procedural] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=0 component_motifs=0 split_text=0 styled_text=2 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=11 typography_slotted=4 typography_clamped=3
+[Planner] candidate cache_04_procedural: visual_delta=0.5323 critical=42 text=0.2683
+[candidate:cache_04_motif] [dedup] dropped 4 overlapping duplicate texts
+[candidate:cache_04_motif] [junk] dropped 17 degenerate text fragments
+[candidate:cache_04_motif] [postprocess] dropped 1 hollow grouping shape(s)
+[candidate:cache_04_motif] [postprocess] separated 15 overlapping panel pair(s)
+[candidate:cache_04_motif] [QualityGate] rejected_text=1 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=2 component_motifs=19 split_text=0 styled_text=21 recovered_card_containers=0 normalized_formulas=2 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=78 typography_slotted=4 typography_clamped=5
+[candidate:cache_04_motif] [Initializers] ActionCardAgent initialized region_action_cards changed=91
+[candidate:cache_04_motif] [Initializers] FailureSummaryAgent initialized failure_summary changed=18
+[candidate:cache_04_motif] [Initializers] ChartAgent initialized q0_coverage_charts changed=62
+[candidate:cache_04_motif] [Initializers] BottomMiniSurfaceAgent initialized bottom_mini_surface changed=17
+[candidate:cache_04_motif] [Initializers] PipelineContextAgent initialized region_pipeline_context changed=16
+[candidate:cache_04_motif] [Initializers] AuditorCardAgent initialized region_auditor_cards changed=85
+[candidate:cache_04_motif] [Initializers] CrossPanelBridgeAgent initialized region_cross_panel_bridge changed=1
+[candidate:cache_04_motif] [QualityGate] rejected_text=1 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=1 component_motifs=0 split_text=0 styled_text=3 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=1 captions_normalized=0 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=35 typography_slotted=19 typography_clamped=8
+[Planner] candidate cache_04_motif: visual_delta=0.5596 critical=79 text=0.3043
+[candidate:cache_04_procedural_motif] [dedup] dropped 4 overlapping duplicate texts
+[candidate:cache_04_procedural_motif] [junk] dropped 17 degenerate text fragments
+[candidate:cache_04_procedural_motif] [postprocess] dropped 1 hollow grouping shape(s)
+[candidate:cache_04_procedural_motif] [postprocess] separated 15 overlapping panel pair(s)
+[candidate:cache_04_procedural_motif] [QualityGate] rejected_text=1 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=2 component_motifs=19 split_text=0 styled_text=21 recovered_card_containers=0 normalized_formulas=2 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=1 procedural_axis_arrows=3 typography_styled=78 typography_slotted=4 typography_clamped=5
+[candidate:cache_04_procedural_motif] [Initializers] ProceduralSurfaceAgent initialized region_surface_0 changed=1
+[candidate:cache_04_procedural_motif] [Initializers] ActionCardAgent initialized region_action_cards changed=84
+[candidate:cache_04_procedural_motif] [Initializers] FailureSummaryAgent initialized failure_summary changed=18
+[candidate:cache_04_procedural_motif] [Initializers] ChartAgent initialized q0_coverage_charts changed=58
+[candidate:cache_04_procedural_motif] [Initializers] BottomMiniSurfaceAgent initialized bottom_mini_surface changed=17
+[candidate:cache_04_procedural_motif] [Initializers] PipelineContextAgent initialized region_pipeline_context changed=16
+[candidate:cache_04_procedural_motif] [Initializers] AuditorCardAgent initialized region_auditor_cards changed=85
+[candidate:cache_04_procedural_motif] [Initializers] CrossPanelBridgeAgent initialized region_cross_panel_bridge changed=1
+[candidate:cache_04_procedural_motif] [QualityGate] rejected_text=1 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=0 component_motifs=0 split_text=0 styled_text=3 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=1 captions_normalized=0 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=43 typography_slotted=19 typography_clamped=7
+[Planner] candidate cache_04_procedural_motif: visual_delta=0.5817 critical=100 text=0.2523
+[candidate:cache_01] [dedup] dropped 7 overlapping duplicate texts
+[candidate:cache_01] [junk] dropped 11 degenerate text fragments
+[candidate:cache_01] [postprocess] dropped 1 hollow grouping shape(s)
+[candidate:cache_01] [postprocess] separated 33 overlapping panel pair(s)
+[candidate:cache_01] [QualityGate] rejected_text=6 sanitized_text=0 traced_icons=0 traced_charts=1 traced_surfaces=2 component_motifs=0 split_text=0 styled_text=20 recovered_card_containers=0 normalized_formulas=2 dropped_formula_fragments=2 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=69 typography_slotted=4 typography_clamped=4
+[candidate:cache_01] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=0 component_motifs=0 split_text=0 styled_text=2 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=3 typography_slotted=4 typography_clamped=4
+[Planner] candidate cache_01: visual_delta=0.4785 critical=19 text=0.3857
+[candidate:cache_03] [dedup] dropped 4 overlapping duplicate texts
+[candidate:cache_03] [junk] dropped 12 degenerate text fragments
+[candidate:cache_03] [postprocess] dropped 1 hollow grouping shape(s)
+[candidate:cache_03] [postprocess] separated 15 overlapping panel pair(s)
+[candidate:cache_03] [QualityGate] rejected_text=1 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=2 component_motifs=0 split_text=0 styled_text=21 recovered_card_containers=0 normalized_formulas=2 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=82 typography_slotted=4 typography_clamped=9
+[candidate:cache_03] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=0 component_motifs=0 split_text=0 styled_text=2 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=3 typography_slotted=4 typography_clamped=9
+[Planner] candidate cache_03: visual_delta=0.4999 critical=29 text=0.3855
+[Planner] selected initial candidate cache_01 by real render/verify
+[AuditAgent] tool=render_verify_audit
+[Planner] built work/diagram2ppt/v3_out_fw_1.5x_qwen3vl32_fixes/diagram_v3.pptx: {'shapes': 106, 'pictures': 0, 'connectors': 14, 'dots': 9, 'surfaces': 1, 'charts': 1, 'output_path': 'work/diagram2ppt/v3_out_fw_1.5x_qwen3vl32_fixes/diagram_v3.pptx', 'native': True}
+[Planner] visual review: 8 visual defects; Reconstruction fails to preserve procedural 3D surface geometry, chart semantics, iconography, and connector topology, resulting in fragmented, misaligned, and 
+[Planner] verification: {'elements': 124, 'native_count': 124, 'native_fraction_count': 1.0, 'native_fraction_area': 1.0, 'defect_count': 142, 'critical_defect_count': 19, 'visual_delta': 0.4785, 'coverage_explained': 0.9285, 'coverage_missing_count': 6, 'text_accuracy': 0.3857, 'connector_accuracy': 0.6429, 'typography_role_fraction': 1.0, 'typography_overflow_count': 0, 'text_layout_mismatch_count': 63, 'text_layout_error': 0.5038, 'text_color_mismatch_count': 61, 'text_template_mismatch_count': 7, 'text_template_error': 0.4353}
+[AuditAgent] tool=proposal_phase
+[Planner] proposal task graph: tasks=16 regions=8
+[ProposalPlanner] rejected task_visual_q0_chart_corruption: no candidate improved rendered verification
+[ProposalPlanner] rejected task_visual_r0_surface_degen: no candidate improved rendered verification
+[ProposalPlanner] rejected task_visual_failure_summary_layout_break: no candidate improved rendered verification
+[ProposalPlanner] rejected task_visual_action_cards_connector_loss: no candidate improved rendered verification
+[ProposalPlanner] accepted task_visual_pipeline_context_connector_error via PipelineContextAgent: visual component override; native region rebuild preferred over metric-stable no-op
+[ProposalPlanner] rejected task_visual_bottom_mini_surface_missing: no candidate improved rendered verification
+[AuditAgent] tool=component_cleanup
+[AuditAgent] tool=render_verify_audit
+[Planner] built work/diagram2ppt/v3_out_fw_1.5x_qwen3vl32_fixes/diagram_v3.pptx: {'shapes': 114, 'pictures': 0, 'connectors': 28, 'dots': 23, 'surfaces': 1, 'charts': 1, 'output_path': 'work/diagram2ppt/v3_out_fw_1.5x_qwen3vl32_fixes/diagram_v3.pptx', 'native': True}
+[Planner] visual review: 8 visual defects; Reconstruction fails to preserve structural hierarchy, procedural geometry, and semantic grouping, resulting in fragmented layout, corrupted charts, and missing
+[Planner] verification: {'elements': 148, 'native_count': 148, 'native_fraction_count': 1.0, 'native_fraction_area': 1.0, 'defect_count': 151, 'critical_defect_count': 27, 'visual_delta': 0.4531, 'coverage_explained': 0.9176, 'coverage_missing_count': 8, 'text_accuracy': 0.3824, 'connector_accuracy': 0.8214, 'typography_role_fraction': 1.0, 'typography_overflow_count': 0, 'text_layout_mismatch_count': 61, 'text_layout_error': 0.4951, 'text_color_mismatch_count': 56, 'text_template_mismatch_count': 7, 'text_template_error': 0.4477}
+[AuditAgent] tool=final_render_verify
+[Planner] built work/diagram2ppt/v3_out_fw_1.5x_qwen3vl32_fixes/diagram_v3.pptx: {'shapes': 114, 'pictures': 0, 'connectors': 28, 'dots': 23, 'surfaces': 1, 'charts': 1, 'output_path': 'work/diagram2ppt/v3_out_fw_1.5x_qwen3vl32_fixes/diagram_v3.pptx', 'native': True}
+[Planner] visual review: 8 visual defects; Reconstruction fails to preserve structural hierarchy, procedural geometry, and semantic grouping, resulting in fragmented layout, corrupted charts, and missing
+[Planner] verification: {'elements': 148, 'native_count': 148, 'native_fraction_count': 1.0, 'native_fraction_area': 1.0, 'defect_count': 151, 'critical_defect_count': 27, 'visual_delta': 0.4531, 'coverage_explained': 0.9176, 'coverage_missing_count': 8, 'text_accuracy': 0.3824, 'connector_accuracy': 0.8214, 'typography_role_fraction': 1.0, 'typography_overflow_count': 0, 'text_layout_mismatch_count': 61, 'text_layout_error': 0.4951, 'text_color_mismatch_count': 56, 'text_template_mismatch_count': 7, 'text_template_error': 0.4477}
+
+=== v3 reconstruction result ===
+status: failed
+rounds: 0
+metrics: {'elements': 148, 'native_count': 148, 'native_fraction_count': 1.0, 'native_fraction_area': 1.0, 'defect_count': 151, 'critical_defect_count': 27, 'visual_delta': 0.4531, 'coverage_explained': 0.9176, 'coverage_missing_count': 8, 'text_accuracy': 0.3824, 'connector_accuracy': 0.8214, 'typography_role_fraction': 1.0, 'typography_overflow_count': 0, 'text_layout_mismatch_count': 61, 'text_layout_error': 0.4951, 'text_color_mismatch_count': 56, 'text_template_mismatch_count': 7, 'text_template_error': 0.4477}
+defects: 151
+output: work/diagram2ppt/v3_out_fw_1.5x_qwen3vl32_fixes/diagram_v3.pptx
+compare: work/diagram2ppt/v3_out_fw_1.5x_qwen3vl32_fixes/diagram_v3.compare.png

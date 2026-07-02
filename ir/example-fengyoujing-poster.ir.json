@@ -1,0 +1,241 @@
+{
+  "ir_version": "1.0",
+  "id": "img_fengyoujing_haagendazs_001",
+  "source": {
+    "generator": "jimeng",
+    "original_image_ref": "assets/originals/fengyoujing_haagendazs_001.png",
+    "width": 1080,
+    "height": 1920,
+    "color_space": "srgb",
+    "ingested_at": "2026-05-26T09:02:00Z"
+  },
+  "canvas": {
+    "width": 1080,
+    "height": 1920,
+    "unit": "px",
+    "background_element_id": "bg-1"
+  },
+  "brand_ref": null,
+  "elements": [
+    {
+      "id": "bg-1",
+      "type": "background",
+      "name": "dark mint scene",
+      "z": 0,
+      "bbox": { "x": 0, "y": 0, "w": 1080, "h": 1920 },
+      "nbox": { "x": 0, "y": 0, "w": 1, "h": 1 },
+      "extraction": { "confidence": 0.61, "method": "lama-inpaint", "model": "lama", "model_version": "lama-2026.03", "extracted_at": "2026-05-26T09:02:11Z" },
+      "needs_review": true,
+      "editable": [],
+      "background": {
+        "asset_ref": "assets/layers/001/bg_clean.png",
+        "inpaint": { "model": "lama", "model_version": "lama-2026.03", "confidence": 0.61 }
+      }
+    },
+    {
+      "id": "product-cup",
+      "type": "raster",
+      "name": "Häagen-Dazs cup (product)",
+      "z": 10,
+      "bbox": { "x": 430, "y": 560, "w": 520, "h": 820 },
+      "nbox": { "x": 0.398, "y": 0.292, "w": 0.481, "h": 0.427 },
+      "extraction": { "confidence": 0.93, "method": "sam2", "model": "sam2", "model_version": "sam2.1", "extracted_at": "2026-05-26T09:02:09Z" },
+      "needs_review": false,
+      "editable": ["bbox"],
+      "raster": { "asset_ref": "assets/layers/001/product_cup.png", "mask_ref": "assets/layers/001/product_cup_mask.png", "kind": "product" }
+    },
+    {
+      "id": "product-bottle",
+      "type": "raster",
+      "name": "Feng You Jing bottle",
+      "z": 11,
+      "bbox": { "x": 150, "y": 980, "w": 230, "h": 430 },
+      "nbox": { "x": 0.139, "y": 0.510, "w": 0.213, "h": 0.224 },
+      "extraction": { "confidence": 0.89, "method": "sam2", "model": "sam2", "model_version": "sam2.1", "extracted_at": "2026-05-26T09:02:09Z" },
+      "needs_review": false,
+      "editable": ["bbox"],
+      "raster": { "asset_ref": "assets/layers/001/product_bottle.png", "mask_ref": "assets/layers/001/product_bottle_mask.png", "kind": "product" }
+    },
+    {
+      "id": "logo-fengyoujing",
+      "type": "logo",
+      "name": "风油精 logo",
+      "z": 20,
+      "bbox": { "x": 70, "y": 195, "w": 240, "h": 90 },
+      "nbox": { "x": 0.065, "y": 0.102, "w": 0.222, "h": 0.047 },
+      "extraction": { "confidence": 0.74, "method": "vlm-detect+brandmatch", "model": "i2e-detect", "model_version": "det-0.1", "extracted_at": "2026-05-26T09:02:10Z" },
+      "needs_review": true,
+      "editable": ["logo.matched_asset_id", "bbox"],
+      "logo": { "matched_asset_id": null, "match_confidence": 0.31, "vector_ref": "assets/layers/001/logo_fyj_traced.svg", "raster_ref": "assets/layers/001/logo_fyj.png" }
+    },
+    {
+      "id": "logo-haagendazs",
+      "type": "logo",
+      "name": "Häagen-Dazs logo",
+      "z": 21,
+      "bbox": { "x": 360, "y": 195, "w": 250, "h": 90 },
+      "nbox": { "x": 0.333, "y": 0.102, "w": 0.231, "h": 0.047 },
+      "extraction": { "confidence": 0.88, "method": "vlm-detect+brandmatch", "model": "i2e-detect", "model_version": "det-0.1", "extracted_at": "2026-05-26T09:02:10Z" },
+      "needs_review": false,
+      "editable": ["logo.matched_asset_id", "bbox"],
+      "logo": { "matched_asset_id": "brand/haagen-dazs/wordmark-v2", "match_confidence": 0.88, "vector_ref": null, "raster_ref": "assets/layers/001/logo_hd.png" }
+    },
+    {
+      "id": "text-headline",
+      "type": "text",
+      "name": "headline",
+      "z": 30,
+      "bbox": { "x": 70, "y": 330, "w": 430, "h": 230 },
+      "nbox": { "x": 0.065, "y": 0.172, "w": 0.398, "h": 0.120 },
+      "rotation": 0,
+      "opacity": 1,
+      "extraction": { "confidence": 0.82, "method": "paddleocr+fontid", "model": "i2e-text", "model_version": "text-0.1", "extracted_at": "2026-05-26T09:02:10Z" },
+      "needs_review": false,
+      "editable": ["text.content", "text.color", "text.font_family"],
+      "text": {
+        "content": "一口清醒\n沁凉一夏",
+        "lang": "zh-Hans",
+        "font_family": "思源黑体",
+        "font_size_px": 96,
+        "font_weight": 700,
+        "font_style": "normal",
+        "color": "#F3F6F0",
+        "align": "left",
+        "letter_spacing": 0,
+        "line_height": 1.1,
+        "baked_region_ref": "assets/layers/001/text_headline_crop.png"
+      }
+    },
+    {
+      "id": "text-sub",
+      "type": "text",
+      "name": "subhead",
+      "z": 31,
+      "bbox": { "x": 72, "y": 575, "w": 360, "h": 44 },
+      "nbox": { "x": 0.067, "y": 0.299, "w": 0.333, "h": 0.023 },
+      "extraction": { "confidence": 0.90, "method": "paddleocr+fontid", "model": "i2e-text", "model_version": "text-0.1", "extracted_at": "2026-05-26T09:02:10Z" },
+      "needs_review": false,
+      "editable": ["text.content", "text.color"],
+      "text": { "content": "风油精 × 哈根达斯 联名款", "lang": "zh-Hans", "font_family": "思源黑体", "font_size_px": 34, "font_weight": 400, "color": "#D6E0D2", "align": "left", "baked_region_ref": "assets/layers/001/text_sub_crop.png" }
+    },
+    {
+      "id": "icon-1",
+      "type": "vector",
+      "name": "mint icon",
+      "z": 40,
+      "bbox": { "x": 80, "y": 660, "w": 60, "h": 60 },
+      "nbox": { "x": 0.074, "y": 0.344, "w": 0.056, "h": 0.031 },
+      "extraction": { "confidence": 0.7, "method": "vtracer", "model": "vtracer", "model_version": "vtracer-0.6", "extracted_at": "2026-05-26T09:02:10Z" },
+      "needs_review": true,
+      "editable": ["bbox"],
+      "vector": { "svg_ref": "assets/layers/001/icon_mint.svg", "svg_path": null, "fill": "#FFFFFF", "stroke": null }
+    },
+    {
+      "id": "text-feat-1",
+      "type": "text",
+      "name": "feature label 1",
+      "z": 41,
+      "bbox": { "x": 60, "y": 730, "w": 100, "h": 30 },
+      "nbox": { "x": 0.056, "y": 0.380, "w": 0.093, "h": 0.016 },
+      "extraction": { "confidence": 0.91, "method": "paddleocr+fontid", "model": "i2e-text", "model_version": "text-0.1", "extracted_at": "2026-05-26T09:02:10Z" },
+      "needs_review": false,
+      "editable": ["text.content"],
+      "text": { "content": "清凉薄荷", "lang": "zh-Hans", "font_family": "思源黑体", "font_size_px": 24, "font_weight": 400, "color": "#FFFFFF", "align": "center", "baked_region_ref": "assets/layers/001/text_feat1_crop.png" }
+    },
+    {
+      "id": "group-feat-1",
+      "type": "group",
+      "name": "feature 1 (icon+label)",
+      "z": 42,
+      "bbox": { "x": 60, "y": 660, "w": 100, "h": 100 },
+      "extraction": { "confidence": 0.7, "method": "vlm-detect", "model": "i2e-detect", "model_version": "det-0.1", "extracted_at": "2026-05-26T09:02:10Z" },
+      "needs_review": false,
+      "editable": [],
+      "children": ["icon-1", "text-feat-1"]
+    },
+    {
+      "id": "badge-1",
+      "type": "vector",
+      "name": "limited edition seal",
+      "z": 50,
+      "bbox": { "x": 800, "y": 300, "w": 180, "h": 180 },
+      "nbox": { "x": 0.741, "y": 0.156, "w": 0.167, "h": 0.094 },
+      "extraction": { "confidence": 0.55, "method": "vtracer", "model": "vtracer", "model_version": "vtracer-0.6", "extracted_at": "2026-05-26T09:02:10Z" },
+      "needs_review": true,
+      "editable": ["bbox"],
+      "vector": { "svg_ref": "assets/layers/001/badge_limited.svg", "svg_path": null, "fill": "#F3F6F0", "stroke": "#F3F6F0" }
+    },
+    {
+      "id": "divider-1",
+      "type": "vector",
+      "name": "bottom divider line",
+      "z": 60,
+      "bbox": { "x": 60, "y": 1640, "w": 960, "h": 4 },
+      "nbox": { "x": 0.056, "y": 0.854, "w": 0.889, "h": 0.002 },
+      "extraction": { "confidence": 0.86, "method": "line-detect", "model": "i2e-detect", "model_version": "det-0.1", "extracted_at": "2026-05-26T09:02:10Z" },
+      "needs_review": false,
+      "editable": ["bbox"],
+      "vector": { "svg_ref": null, "svg_path": "M0 0 H960", "fill": null, "stroke": "#9DB39A" }
+    }
+  ],
+  "corrections": [
+    {
+      "id": "corr-001",
+      "image_id": "img_fengyoujing_haagendazs_001",
+      "element_id": "text-headline",
+      "field_path": "text.content",
+      "kind": "text_content",
+      "predicted": "一口清醒\n沁谅一夏",
+      "corrected": "一口清醒\n沁凉一夏",
+      "confidence_at_prediction": 0.82,
+      "model_version": "text-0.1",
+      "session_id": "sess_7af3",
+      "user_hash": "u_9c1e",
+      "corrected_at": "2026-05-26T09:05:12Z"
+    },
+    {
+      "id": "corr-002",
+      "image_id": "img_fengyoujing_haagendazs_001",
+      "element_id": "text-headline",
+      "field_path": "text.font_family",
+      "kind": "font",
+      "predicted": "思源黑体",
+      "corrected": "阿里巴巴普惠体 Bold",
+      "confidence_at_prediction": 0.82,
+      "model_version": "text-0.1",
+      "session_id": "sess_7af3",
+      "user_hash": "u_9c1e",
+      "corrected_at": "2026-05-26T09:05:40Z"
+    },
+    {
+      "id": "corr-003",
+      "image_id": "img_fengyoujing_haagendazs_001",
+      "element_id": "logo-fengyoujing",
+      "field_path": "logo.matched_asset_id",
+      "kind": "brand_apply",
+      "predicted": null,
+      "corrected": "brand/fengyoujing/logo-green-v1",
+      "confidence_at_prediction": 0.31,
+      "model_version": "det-0.1",
+      "session_id": "sess_7af3",
+      "user_hash": "u_9c1e",
+      "corrected_at": "2026-05-26T09:06:02Z"
+    },
+    {
+      "id": "corr-004",
+      "image_id": "img_fengyoujing_haagendazs_001",
+      "element_id": "badge-1",
+      "field_path": "type",
+      "kind": "type_reclassify",
+      "predicted": "vector",
+      "corrected": "logo",
+      "confidence_at_prediction": 0.55,
+      "model_version": "det-0.1",
+      "session_id": "sess_7af3",
+      "user_hash": "u_9c1e",
+      "corrected_at": "2026-05-26T09:06:30Z"
+    }
+  ],
+  "created_at": "2026-05-26T09:02:11Z",
+  "updated_at": "2026-05-26T09:06:30Z"
+}

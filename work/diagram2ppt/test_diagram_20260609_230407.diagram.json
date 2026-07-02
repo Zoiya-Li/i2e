@@ -1,0 +1,131 @@
+{
+  "elements": [
+    {
+      "id": "el-1",
+      "type": "rounded_rect",
+      "x": 0.03,
+      "y": 0.4,
+      "width": 0.15,
+      "height": 0.18,
+      "text": "Input Data",
+      "fill": "#3b86c4",
+      "border_color": "#2c6496",
+      "text_color": "#ffffff",
+      "bold": false
+    },
+    {
+      "id": "el-2",
+      "type": "rounded_rect",
+      "x": 0.23,
+      "y": 0.4,
+      "width": 0.15,
+      "height": 0.18,
+      "text": "Preprocessing",
+      "fill": "#3b86c4",
+      "border_color": "#2c6496",
+      "text_color": "#ffffff",
+      "bold": false
+    },
+    {
+      "id": "el-3",
+      "type": "rounded_rect",
+      "x": 0.43,
+      "y": 0.4,
+      "width": 0.15,
+      "height": 0.18,
+      "text": "Feature\nExtraction",
+      "fill": "#3b86c4",
+      "border_color": "#2c6496",
+      "text_color": "#ffffff",
+      "bold": false
+    },
+    {
+      "id": "el-4",
+      "type": "rounded_rect",
+      "x": 0.63,
+      "y": 0.4,
+      "width": 0.15,
+      "height": 0.18,
+      "text": "Model\nTraining",
+      "fill": "#3b86c4",
+      "border_color": "#2c6496",
+      "text_color": "#ffffff",
+      "bold": false
+    },
+    {
+      "id": "el-5",
+      "type": "rounded_rect",
+      "x": 0.83,
+      "y": 0.4,
+      "width": 0.15,
+      "height": 0.18,
+      "text": "Evaluation",
+      "fill": "#3b86c4",
+      "border_color": "#2c6496",
+      "text_color": "#ffffff",
+      "bold": false
+    },
+    {
+      "id": "el-6",
+      "type": "text",
+      "x": 0.66,
+      "y": 0.2,
+      "width": 0.08,
+      "height": 0.05,
+      "text": "Config",
+      "fill": "transparent",
+      "border_color": "transparent",
+      "text_color": "#1a202c",
+      "bold": false
+    },
+    {
+      "id": "el-7",
+      "type": "text",
+      "x": 0.62,
+      "y": 0.73,
+      "width": 0.17,
+      "height": 0.05,
+      "text": "Feedback Loop",
+      "fill": "transparent",
+      "border_color": "transparent",
+      "text_color": "#1a202c",
+      "bold": false
+    },
+    {
+      "id": "arr-1",
+      "type": "arrow",
+      "from_id": "el-1",
+      "to_id": "el-2"
+    },
+    {
+      "id": "arr-2",
+      "type": "arrow",
+      "from_id": "el-2",
+      "to_id": "el-3"
+    },
+    {
+      "id": "arr-3",
+      "type": "arrow",
+      "from_id": "el-3",
+      "to_id": "el-4"
+    },
+    {
+      "id": "arr-4",
+      "type": "arrow",
+      "from_id": "el-6",
+      "to_id": "el-4"
+    },
+    {
+      "id": "arr-5",
+      "type": "arrow",
+      "from_id": "el-4",
+      "to_id": "el-5"
+    },
+    {
+      "id": "arr-6",
+      "type": "arrow",
+      "from_id": "el-5",
+      "to_id": "el-3"
+    }
+  ]
+}

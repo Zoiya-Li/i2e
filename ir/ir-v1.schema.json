@@ -1,0 +1,291 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://i2e.dev/schema/ir-v1.schema.json",
+  "title": "i2e Intermediate Representation (IR) v1",
+  "description": "Load-bearing wall of the flywheel. Node ② (de-layer -> IR) WRITES this; the editor RENDERS it; Node ⑤ (correction capture) appends to `corrections`. Designed model-agnostic, format-neutral, serializable, third-party readable, and versioned. v1 scope: flat marketing images; edits = copy / localization / resize. Forward-compat: every object permits an `ext` bag for vendor extensions; unknown top-level fields are rejected to keep the standard tight.",
+  "type": "object",
+  "required": ["ir_version", "id", "source", "canvas", "elements"],
+  "additionalProperties": false,
+  "properties": {
+    "ir_version": {
+      "type": "string",
+      "const": "1.0",
+      "description": "Schema version. Bump on breaking change; migrators key off this."
+    },
+    "id": { "type": "string", "description": "Document id (== image_id used by corrections)." },
+    "source": { "$ref": "#/$defs/SourceInfo" },
+    "canvas": { "$ref": "#/$defs/Canvas" },
+    "brand_ref": {
+      "type": ["string", "null"],
+      "description": "Id of the brand profile applied (Node ⑦ brand memory). Null until a brand is bound."
+    },
+    "elements": {
+      "type": "array",
+      "description": "Scene-graph elements, ordered bottom -> top (index 0 = backmost). Explicit `z` is authoritative; array order is a convenience mirror.",
+      "items": { "$ref": "#/$defs/Element" }
+    },
+    "corrections": {
+      "type": "array",
+      "description": "Node ⑤ moat data. Append-only log of (predicted -> corrected) pairs produced as a side effect of the user editing to ship. Each entry is a labeled training example tagged with the sub-model that produced the prediction.",
+      "items": { "$ref": "#/$defs/Correction" }
+    },
+    "created_at": { "type": "string", "format": "date-time" },
+    "updated_at": { "type": "string", "format": "date-time" },
+    "ext": { "type": "object", "description": "Vendor/extension bag. Never read by the core spec." }
+  },
+  "$defs": {
+    "SourceInfo": {
+      "type": "object",
+      "required": ["original_image_ref", "width", "height"],
+      "additionalProperties": false,
+      "properties": {
+        "generator": {
+          "type": "string",
+          "description": "Best-effort origin of the flat image. Open vocabulary; common values below.",
+          "examples": ["jimeng", "midjourney", "flux", "gpt-image", "screenshot", "unknown"]
+        },
+        "original_image_ref": { "type": "string", "description": "URI/path to the original flattened raster (immutable; ground truth for the verification loop)." },
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "color_space": { "type": "string", "examples": ["srgb", "display-p3"] },
+        "ingested_at": { "type": "string", "format": "date-time" }
+      }
+    },
+    "Canvas": {
+      "type": "object",
+      "required": ["width", "height", "unit"],
+      "additionalProperties": false,
+      "properties": {
+        "width": { "type": "integer", "minimum": 1 },
+        "height": { "type": "integer", "minimum": 1 },
+        "unit": { "type": "string", "const": "px", "description": "v1 is pixel-space; physical units deferred." },
+        "background_element_id": { "type": ["string", "null"], "description": "Element id of the reconstructed clean background (Node ④ output of inpaint)." }
+      }
+    },
+
+    "BBox": {
+      "type": "object",
+      "description": "Absolute pixel box, origin top-left.",
+      "required": ["x", "y", "w", "h"],
+      "additionalProperties": false,
+      "properties": {
+        "x": { "type": "number" },
+        "y": { "type": "number" },
+        "w": { "type": "number", "minimum": 0 },
+        "h": { "type": "number", "minimum": 0 }
+      }
+    },
+    "NBox": {
+      "type": "object",
+      "description": "Normalized box (fractions of canvas). Carried alongside BBox so resize/reflow has a basis without a full constraint solver in v1.",
+      "required": ["x", "y", "w", "h"],
+      "additionalProperties": false,
+      "properties": {
+        "x": { "type": "number", "minimum": 0, "maximum": 1 },
+        "y": { "type": "number", "minimum": 0, "maximum": 1 },
+        "w": { "type": "number", "minimum": 0, "maximum": 1 },
+        "h": { "type": "number", "minimum": 0, "maximum": 1 }
+      }
+    },
+
+    "ExtractionMeta": {
+      "type": "object",
+      "description": "Provenance from Node ②. Confidence drives `needs_review` and the flywheel north-star metric (corrections per image).",
+      "required": ["confidence", "model_version"],
+      "additionalProperties": false,
+      "properties": {
+        "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "method": { "type": "string", "examples": ["sam2+paddleocr", "vlm-detect", "vtracer", "lama-inpaint"] },
+        "model": { "type": "string" },
+        "model_version": { "type": "string", "description": "REQUIRED so every later correction can be attributed to the exact model that erred." },
+        "extracted_at": { "type": "string", "format": "date-time" }
+      }
+    },
+
+    "ElementType": {
+      "type": "string",
+      "enum": ["text", "raster", "background", "logo", "vector", "group"]
+    },
+
+    "ElementBase": {
+      "type": "object",
+      "description": "Common fields on every element. Concrete element types add exactly one payload object matching `type`.",
+      "required": ["id", "type", "z", "bbox", "extraction"],
+      "properties": {
+        "id": { "type": "string" },
+        "type": { "$ref": "#/$defs/ElementType" },
+        "name": { "type": "string", "description": "Human label, e.g. 'headline'." },
+        "z": { "type": "integer", "description": "Stacking order; higher = front." },
+        "bbox": { "$ref": "#/$defs/BBox" },
+        "nbox": { "$ref": "#/$defs/NBox" },
+        "rotation": { "type": "number", "default": 0, "description": "Degrees, clockwise." },
+        "opacity": { "type": "number", "minimum": 0, "maximum": 1, "default": 1 },
+        "extraction": { "$ref": "#/$defs/ExtractionMeta" },
+        "needs_review": { "type": "boolean", "default": false, "description": "Derived: extraction.confidence < threshold. The editor surfaces these first (HITL)." },
+        "editable": {
+          "type": "array",
+          "description": "Field paths the v1 editor exposes for this element (e.g. ['text.content','text.color']). Keeps the UI honest about what is safely editable.",
+          "items": { "type": "string" }
+        },
+        "ext": { "type": "object" }
+      }
+    },
+
+    "Element": {
+      "oneOf": [
+        { "$ref": "#/$defs/TextElement" },
+        { "$ref": "#/$defs/RasterElement" },
+        { "$ref": "#/$defs/BackgroundElement" },
+        { "$ref": "#/$defs/LogoElement" },
+        { "$ref": "#/$defs/VectorElement" },
+        { "$ref": "#/$defs/GroupElement" }
+      ]
+    },
+
+    "TextElement": {
+      "allOf": [{ "$ref": "#/$defs/ElementBase" }],
+      "properties": { "type": { "const": "text" }, "text": { "$ref": "#/$defs/TextPayload" } },
+      "required": ["text"]
+    },
+    "TextPayload": {
+      "type": "object",
+      "required": ["content"],
+      "additionalProperties": false,
+      "properties": {
+        "content": { "type": "string", "description": "Recognized text (OCR). The primary v1 editable field (copy edit + localization)." },
+        "lang": { "type": "string", "examples": ["zh-Hans", "en"] },
+        "font_family": { "type": "string", "description": "Recognized font; matched to a real family when possible (else best guess)." },
+        "font_size_px": { "type": "number", "minimum": 0 },
+        "font_weight": { "type": ["integer", "string"], "examples": [400, 700, "bold"] },
+        "font_style": { "type": "string", "enum": ["normal", "italic"], "default": "normal" },
+        "color": { "type": "string", "description": "Hex RGB(A), e.g. #FFFFFF.", "pattern": "^#([0-9a-fA-F]{6}|[0-9a-fA-F]{8})$" },
+        "align": { "type": "string", "enum": ["left", "center", "right", "justify"], "default": "left" },
+        "letter_spacing": { "type": "number" },
+        "line_height": { "type": "number" },
+        "baked_region_ref": { "type": ["string", "null"], "description": "URI/path to the original raster crop where this text sat. Required input for inpainting the background behind it." },
+        "font_file": { "type": ["string", "null"], "description": "Resolved local font file path for rendering (set by font matching)." },
+        "font_index": { "type": "integer", "description": "Face index within a .ttc collection." }
+      }
+    },
+
+    "RasterElement": {
+      "allOf": [{ "$ref": "#/$defs/ElementBase" }],
+      "properties": { "type": { "const": "raster" }, "raster": { "$ref": "#/$defs/RasterPayload" } },
+      "required": ["raster"]
+    },
+    "RasterPayload": {
+      "type": "object",
+      "description": "A photographic foreground kept as pixels (e.g. the product shot). Not re-synthesizable in v1.",
+      "required": ["asset_ref"],
+      "additionalProperties": false,
+      "properties": {
+        "asset_ref": { "type": "string", "description": "URI/path to the RGBA cutout PNG." },
+        "mask_ref": { "type": ["string", "null"], "description": "URI/path to the alpha/segmentation mask." },
+        "kind": { "type": "string", "enum": ["foreground", "product", "decoration"], "default": "foreground" }
+      }
+    },
+
+    "BackgroundElement": {
+      "allOf": [{ "$ref": "#/$defs/ElementBase" }],
+      "properties": { "type": { "const": "background" }, "background": { "$ref": "#/$defs/BackgroundPayload" } },
+      "required": ["background"]
+    },
+    "BackgroundPayload": {
+      "type": "object",
+      "description": "Reconstructed clean background (Node ④). The biggest lossy point; its confidence is tracked separately so the flywheel can target it.",
+      "required": ["asset_ref"],
+      "additionalProperties": false,
+      "properties": {
+        "asset_ref": { "type": "string", "description": "URI/path to the inpainted background raster." },
+        "inpaint": {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "model": { "type": "string" },
+            "model_version": { "type": "string" },
+            "confidence": { "type": "number", "minimum": 0, "maximum": 1 }
+          }
+        }
+      }
+    },
+
+    "LogoElement": {
+      "allOf": [{ "$ref": "#/$defs/ElementBase" }],
+      "properties": { "type": { "const": "logo" }, "logo": { "$ref": "#/$defs/LogoPayload" } },
+      "required": ["logo"]
+    },
+    "LogoPayload": {
+      "type": "object",
+      "description": "Brand mark. Prefer a matched real asset from the brand library (clean vector); fall back to traced vector, then raster.",
+      "additionalProperties": false,
+      "properties": {
+        "matched_asset_id": { "type": ["string", "null"], "description": "Id in the brand asset library if recognized (Node ⑦). Best case: swap in the real vector." },
+        "match_confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+        "vector_ref": { "type": ["string", "null"], "description": "Traced SVG fallback." },
+        "raster_ref": { "type": ["string", "null"], "description": "Raster cutout fallback." }
+      }
+    },
+
+    "VectorElement": {
+      "allOf": [{ "$ref": "#/$defs/ElementBase" }],
+      "properties": { "type": { "const": "vector" }, "vector": { "$ref": "#/$defs/VectorPayload" } },
+      "required": ["vector"]
+    },
+    "VectorPayload": {
+      "type": "object",
+      "description": "Icons, dividers, badges, simple shapes recovered as vectors.",
+      "additionalProperties": false,
+      "properties": {
+        "svg_ref": { "type": ["string", "null"], "description": "URI/path to an SVG file." },
+        "svg_path": { "type": ["string", "null"], "description": "Inline SVG path data, for small shapes." },
+        "fill": { "type": ["string", "null"] },
+        "stroke": { "type": ["string", "null"] }
+      }
+    },
+
+    "GroupElement": {
+      "allOf": [{ "$ref": "#/$defs/ElementBase" }],
+      "properties": {
+        "type": { "const": "group" },
+        "children": {
+          "type": "array",
+          "description": "Ids of member elements (e.g. an icon + its label, or a co-brand lockup).",
+          "items": { "type": "string" }
+        }
+      },
+      "required": ["children"]
+    },
+
+    "Correction": {
+      "type": "object",
+      "description": "Node ⑤ unit of moat data. ONE field changed from the model's prediction to the user's shipped value. The genius: the user makes these to ship, not to label; we capture them for free.",
+      "required": ["id", "image_id", "field_path", "kind", "predicted", "corrected", "model_version", "corrected_at"],
+      "additionalProperties": false,
+      "properties": {
+        "id": { "type": "string" },
+        "image_id": { "type": "string", "description": "== document id, so corrections join back to the source image." },
+        "element_id": { "type": ["string", "null"], "description": "Target element; null for document-level ops (e.g. element_add)." },
+        "field_path": {
+          "type": "string",
+          "description": "Dotted path of the corrected field, e.g. 'text.content', 'text.font_family', 'bbox', 'type', 'z'. Routes the training pair to the right sub-model."
+        },
+        "kind": {
+          "type": "string",
+          "description": "Correction category -> which extraction sub-model to retrain.",
+          "enum": [
+            "text_content", "font", "color", "geometry", "type_reclassify",
+            "layer_split", "layer_merge", "zorder", "mask_refine", "inpaint_redo",
+            "element_add", "element_delete", "brand_apply"
+          ]
+        },
+        "predicted": { "description": "What Node ② produced. Any JSON value." },
+        "corrected": { "description": "What the user finalized. Any JSON value." },
+        "confidence_at_prediction": { "type": "number", "minimum": 0, "maximum": 1, "description": "Lets us check calibration: were low-confidence items the ones actually corrected?" },
+        "model_version": { "type": "string", "description": "Which model erred. Required for attributing the training signal." },
+        "session_id": { "type": "string" },
+        "user_hash": { "type": ["string", "null"], "description": "Pseudonymous user id for dedup/abuse, never PII." },
+        "corrected_at": { "type": "string", "format": "date-time" }
+      }
+    }
+  }
+}

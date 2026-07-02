@@ -1,0 +1,18 @@
+# core — mock provider + openai-compatible cheap providers
+jsonschema>=4.20
+pillow>=10
+httpx>=0.27
+# optional — only needed for --provider anthropic (Claude)
+anthropic>=0.96
+# optional — precise text boxes via --ocr auto (PP-OCR family; light, onnxruntime)
+rapidocr-onnxruntime>=1.4
+# alternative OCR engine: paddleocr (heavier) — `--ocr paddle`
+# optional — foreground cutout layers via --assets rembg (onnxruntime, CPU-ok)
+rembg>=2.0
+# optional — background reconstruction via --inpaint flat|opencv (cv2.inpaint)
+opencv-python>=4.8
+# optional — PHOTOGRAPHIC background reconstruction via --inpaint lama (torch, heavy).
+# NOTE: simple-lama pins old pillow/numpy that conflict with rembg's; works at
+# runtime but install in a SEPARATE env/process (heavy specialist behind the seam).
+# Run LaMa at <=~1000px long edge on CPU (full-res OOMs).
+# simple-lama-inpainting>=0.1.2

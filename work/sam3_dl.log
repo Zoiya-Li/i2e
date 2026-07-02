@@ -1,0 +1,8997 @@
+Downloading Model from https://www.modelscope.cn to directory: /Users/lizeyan/Desktop/i2e/work/ms_cache/facebook/sam3
+2026-05-31 08:29:27,365 - modelscope - INFO - Got 9 files, start to download ...
+Processing 9 items:   0%|          | 0.00/9.00 [00:00<?, ?it/s]
+Downloading [config.json]:   0%|          | 0.00/25.2k [00:00<?, ?B/s][A
+
+Downloading [configuration.json]:   0%|          | 0.00/73.0 [00:00<?, ?B/s][A[A
+
+
+Downloading [merges.txt]:   0%|          | 0.00/512k [00:00<?, ?B/s][A[A[A
+
+
+
+Downloading [processor_config.json]:   0%|          | 0.00/1.67k [00:00<?, ?B/s][A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   0%|          | 0.00/3.21G [00:00<?, ?B/s][A[A[A[A[A
+
+
+
+
+
+Downloading [special_tokens_map.json]:   0%|          | 0.00/588 [00:00<?, ?B/s][A[A[A[A[A[A
+
+
+
+
+
+
+Downloading [tokenizer.json]:   0%|          | 0.00/3.47M [00:00<?, ?B/s][A[A[A[A[A[A[A
+
+
+
+
+
+
+
+Downloading [tokenizer_config.json]:   0%|          | 0.00/799 [00:00<?, ?B/s][A[A[A[A[A[A[A[A
+
+Downloading [configuration.json]: 100%|██████████| 73.0/73.0 [00:02<00:00, 34.2B/s][A[A
+
+
+
+
+
+Downloading [special_tokens_map.json]: 100%|██████████| 588/588 [00:02<00:00, 276B/s][A[A[A[A[A[A
+Downloading [config.json]:  15%|█▌        | 3.81k/25.2k [00:02<00:12, 1.82kB/s][ADownloading [special_tokens_map.json]: 100%|██████████| 588/588 [00:02<00:00, 276B/s]
+Downloading [configuration.json]: 100%|██████████| 73.0/73.0 [00:02<00:00, 34.2B/s]
+Downloading [config.json]: 100%|██████████| 25.2k/25.2k [00:02<00:00, 12.1kB/s]
+
+Downloading [vocab.json]:   0%|          | 0.00/842k [00:00<?, ?B/s][AProcessing 9 items:  11%|█         | 1.00/9.00 [00:02<00:17, 2.14s/it]
+
+
+
+
+
+
+
+Downloading [tokenizer_config.json]: 100%|██████████| 799/799 [00:02<00:00, 373B/s][A[A[A[A[A[A[A[ADownloading [tokenizer_config.json]: 100%|██████████| 799/799 [00:02<00:00, 373B/s]
+
+
+
+
+Downloading [processor_config.json]: 100%|██████████| 1.67k/1.67k [00:02<00:00, 777B/s][A[A[A[ADownloading [processor_config.json]: 100%|██████████| 1.67k/1.67k [00:02<00:00, 776B/s]
+
+
+
+
+
+
+
+Downloading [tokenizer.json]:   0%|          | 3.80k/3.47M [00:02<35:29, 1.71kB/s][A[A[A[A[A[A[A
+
+
+
+
+
+
+Downloading [tokenizer.json]:   3%|▎         | 95.8k/3.47M [00:02<01:02, 56.5kB/s][A[A[A[A[A[A[A
+
+
+
+
+
+
+Downloading [tokenizer.json]:   4%|▍         | 144k/3.47M [00:02<00:39, 88.6kB/s] [A[A[A[A[A[A[A
+
+
+
+
+
+
+Downloading [tokenizer.json]:   7%|▋         | 252k/3.47M [00:02<00:19, 176kB/s] [A[A[A[A[A[A[A
+
+
+Downloading [merges.txt]:   1%|          | 3.80k/512k [00:02<06:12, 1.40kB/s][A[A[A
+
+
+
+
+
+
+Downloading [tokenizer.json]:   9%|▉         | 320k/3.47M [00:02<00:16, 198kB/s][A[A[A[A[A[A[A
+
+
+Downloading [merges.txt]:  17%|█▋        | 87.8k/512k [00:02<00:10, 41.5kB/s][A[A[A
+
+
+Downloading [merges.txt]:  51%|█████     | 260k/512k [00:03<00:01, 149kB/s]  [A[A[A
+
+
+
+
+
+
+Downloading [tokenizer.json]:  25%|██▍       | 872k/3.47M [00:03<00:03, 778kB/s][A[A[A[A[A[A[A
+
+
+Downloading [merges.txt]:  69%|██████▊   | 352k/512k [00:03<00:00, 204kB/s][A[A[A
+
+
+
+
+
+
+Downloading [tokenizer.json]:  45%|████▍     | 1.55M/3.47M [00:03<00:01, 1.67MB/s][A[A[A[A[A[A[ADownloading [merges.txt]: 100%|██████████| 512k/512k [00:03<00:00, 160kB/s]
+Processing 9 items:  67%|██████▋   | 6.00/9.00 [00:03<00:01, 2.16it/s]
+
+
+
+
+Downloading [sam3.pt]:   0%|          | 1.00M/3.21G [00:03<3:03:42, 313kB/s][A[A[A[A[A
+
+
+
+
+
+
+Downloading [tokenizer.json]:  54%|█████▍    | 1.87M/3.47M [00:03<00:00, 1.88MB/s][A[A[A[A[A[A[A
+
+
+
+
+
+
+Downloading [tokenizer.json]:  70%|███████   | 2.45M/3.47M [00:03<00:00, 2.56MB/s][A[A[A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   0%|          | 2.00M/3.21G [00:03<1:20:27, 714kB/s][A[A[A[A[A
+
+
+
+
+
+
+Downloading [tokenizer.json]:  93%|█████████▎| 3.23M/3.47M [00:03<00:00, 3.48MB/s][A[A[A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   0%|          | 3.00M/3.21G [00:03<46:33, 1.23MB/s] [A[A[A[A[ADownloading [tokenizer.json]: 100%|██████████| 3.47M/3.47M [00:03<00:00, 1.00MB/s]
+Processing 9 items:  78%|███████▊  | 7.00/9.00 [00:03<00:00, 2.25it/s]
+
+
+
+
+Downloading [sam3.pt]:   0%|          | 4.00M/3.21G [00:03<31:25, 1.83MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   0%|          | 5.00M/3.21G [00:03<22:37, 2.54MB/s][A[A[A[A[A
+Downloading [vocab.json]:   0%|          | 3.80k/842k [00:02<07:33, 1.89kB/s][A
+
+
+
+
+Downloading [sam3.pt]:   0%|          | 10.0M/3.21G [00:04<08:54, 6.44MB/s][A[A[A[A[A
+Downloading [vocab.json]:   6%|▌         | 47.8k/842k [00:02<00:28, 28.9kB/s][A
+
+
+
+
+Downloading [sam3.pt]:   0%|          | 15.0M/3.21G [00:04<05:43, 9.99MB/s][A[A[A[A[A
+Downloading [vocab.json]:  19%|█▉        | 160k/842k [00:02<00:05, 118kB/s]  [A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 17.0M/3.21G [00:04<05:08, 11.1MB/s][A[A[A[A[A
+Downloading [vocab.json]:  31%|███       | 260k/842k [00:02<00:03, 195kB/s][A
+Downloading [vocab.json]:  38%|███▊      | 320k/842k [00:03<00:03, 153kB/s][A
+Downloading [vocab.json]:  51%|█████▏    | 432k/842k [00:03<00:01, 233kB/s][A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 19.0M/3.21G [00:05<10:00, 5.71MB/s][A[A[A[A[A
+Downloading [vocab.json]:  61%|██████▏   | 516k/842k [00:03<00:01, 281kB/s][ADownloading [vocab.json]: 100%|██████████| 842k/842k [00:03<00:00, 240kB/s]
+Processing 9 items:  89%|████████▉ | 8.00/9.00 [00:05<00:00, 1.23it/s]
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 21.0M/3.21G [00:06<13:23, 4.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 22.0M/3.21G [00:06<16:09, 3.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 23.0M/3.21G [00:07<19:25, 2.94MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 24.0M/3.21G [00:08<20:45, 2.75MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 25.0M/3.21G [00:08<22:42, 2.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 26.0M/3.21G [00:08<21:40, 2.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 27.0M/3.21G [00:09<20:52, 2.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 28.0M/3.21G [00:09<22:13, 2.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 29.0M/3.21G [00:09<18:53, 3.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 30.0M/3.21G [00:10<19:38, 2.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 31.0M/3.21G [00:10<15:44, 3.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 32.0M/3.21G [00:10<15:00, 3.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 33.0M/3.21G [00:10<15:44, 3.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 34.0M/3.21G [00:11<13:09, 4.32MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 35.0M/3.21G [00:11<12:38, 4.50MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 36.0M/3.21G [00:11<12:01, 4.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 37.0M/3.21G [00:11<13:50, 4.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 38.0M/3.21G [00:12<13:14, 4.29MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 40.0M/3.21G [00:12<10:19, 5.50MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|          | 41.0M/3.21G [00:12<10:45, 5.28MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|▏         | 43.0M/3.21G [00:12<09:44, 5.82MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|▏         | 44.0M/3.21G [00:13<09:09, 6.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|▏         | 46.0M/3.21G [00:13<07:45, 7.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|▏         | 47.0M/3.21G [00:13<07:38, 7.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|▏         | 48.0M/3.21G [00:13<07:22, 7.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   1%|▏         | 49.0M/3.21G [00:13<09:34, 5.91MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 50.0M/3.21G [00:14<19:35, 2.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 51.0M/3.21G [00:14<19:12, 2.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 52.0M/3.21G [00:15<25:51, 2.19MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 53.0M/3.21G [00:15<21:17, 2.66MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 54.0M/3.21G [00:16<18:03, 3.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 55.0M/3.21G [00:16<18:10, 3.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 56.0M/3.21G [00:16<15:56, 3.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 57.0M/3.21G [00:16<13:04, 4.32MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 58.0M/3.21G [00:16<11:15, 5.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 59.0M/3.21G [00:17<11:47, 4.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 60.0M/3.21G [00:17<10:43, 5.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 62.0M/3.21G [00:17<08:06, 6.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 63.0M/3.21G [00:17<08:54, 6.33MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 64.0M/3.21G [00:17<09:53, 5.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 66.0M/3.21G [00:18<07:05, 7.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 68.0M/3.21G [00:18<05:54, 9.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 70.0M/3.21G [00:18<07:23, 7.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 72.0M/3.21G [00:18<06:04, 9.27MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 74.0M/3.21G [00:18<05:44, 9.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 76.0M/3.21G [00:19<05:57, 9.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 78.0M/3.21G [00:19<05:02, 11.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 80.0M/3.21G [00:19<04:40, 12.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   2%|▏         | 82.0M/3.21G [00:19<05:52, 9.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 84.0M/3.21G [00:20<06:39, 8.42MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 85.0M/3.21G [00:20<06:35, 8.49MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 87.0M/3.21G [00:20<06:18, 8.86MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 88.0M/3.21G [00:20<07:08, 7.83MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 90.0M/3.21G [00:20<06:29, 8.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 93.0M/3.21G [00:20<04:37, 12.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 95.0M/3.21G [00:21<05:54, 9.46MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 97.0M/3.21G [00:21<05:25, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 99.0M/3.21G [00:21<05:25, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 101M/3.21G [00:22<07:18, 7.63MB/s] [A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 104M/3.21G [00:22<05:48, 9.60MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 106M/3.21G [00:22<05:51, 9.50MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 108M/3.21G [00:22<05:02, 11.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 110M/3.21G [00:22<04:56, 11.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 112M/3.21G [00:23<06:13, 8.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 114M/3.21G [00:23<06:03, 9.16MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   3%|▎         | 115M/3.21G [00:23<06:33, 8.46MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   4%|▎         | 118M/3.21G [00:23<05:35, 9.92MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   4%|▎         | 121M/3.21G [00:23<04:27, 12.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   4%|▍         | 124M/3.21G [00:24<03:36, 15.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   4%|▍         | 126M/3.21G [00:24<04:44, 11.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   4%|▍         | 128M/3.21G [00:24<04:30, 12.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   4%|▍         | 130M/3.21G [00:24<04:00, 13.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   4%|▍         | 132M/3.21G [00:24<03:43, 14.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   4%|▍         | 134M/3.21G [00:24<04:19, 12.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   4%|▍         | 136M/3.21G [00:25<04:45, 11.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   4%|▍         | 140M/3.21G [00:25<04:05, 13.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   4%|▍         | 142M/3.21G [00:25<04:31, 12.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   4%|▍         | 144M/3.21G [00:25<04:09, 13.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   4%|▍         | 146M/3.21G [00:25<04:45, 11.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   5%|▍         | 151M/3.21G [00:26<03:08, 17.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   5%|▍         | 153M/3.21G [00:26<03:18, 16.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   5%|▍         | 155M/3.21G [00:26<03:10, 17.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   5%|▍         | 157M/3.21G [00:28<14:55, 3.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   5%|▍         | 160M/3.21G [00:28<10:15, 5.33MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   5%|▍         | 162M/3.21G [00:28<09:06, 6.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   5%|▍         | 164M/3.21G [00:28<09:18, 5.87MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   5%|▌         | 167M/3.21G [00:29<06:37, 8.24MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   5%|▌         | 169M/3.21G [00:29<07:49, 6.96MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   5%|▌         | 172M/3.21G [00:29<06:25, 8.47MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   5%|▌         | 174M/3.21G [00:29<05:58, 9.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   5%|▌         | 176M/3.21G [00:30<06:55, 7.85MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   5%|▌         | 179M/3.21G [00:30<05:11, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▌         | 181M/3.21G [00:30<06:36, 8.23MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▌         | 183M/3.21G [00:31<06:16, 8.65MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▌         | 186M/3.21G [00:31<05:23, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▌         | 188M/3.21G [00:31<05:44, 9.45MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▌         | 190M/3.21G [00:31<05:26, 9.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▌         | 192M/3.21G [00:31<05:12, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▌         | 194M/3.21G [00:32<04:57, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▌         | 196M/3.21G [00:32<04:20, 12.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▌         | 198M/3.21G [00:32<03:52, 14.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▌         | 200M/3.21G [00:32<05:35, 9.65MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▌         | 202M/3.21G [00:32<04:52, 11.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▌         | 204M/3.21G [00:33<07:18, 7.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▋         | 206M/3.21G [00:33<07:00, 7.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▋         | 208M/3.21G [00:33<05:49, 9.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▋         | 210M/3.21G [00:34<07:06, 7.58MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   6%|▋         | 213M/3.21G [00:34<08:18, 6.47MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 214M/3.21G [00:34<08:41, 6.18MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 215M/3.21G [00:35<17:12, 3.12MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 216M/3.21G [00:36<23:29, 2.29MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 217M/3.21G [00:37<27:45, 1.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 218M/3.21G [00:38<26:18, 2.04MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 219M/3.21G [00:38<26:19, 2.04MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 220M/3.21G [00:38<24:34, 2.18MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 221M/3.21G [00:39<22:56, 2.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 222M/3.21G [00:39<21:12, 2.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 223M/3.21G [00:39<19:20, 2.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 224M/3.21G [00:40<18:55, 2.83MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 225M/3.21G [00:40<16:16, 3.29MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 226M/3.21G [00:40<16:16, 3.29MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 227M/3.21G [00:41<14:05, 3.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 228M/3.21G [00:41<15:04, 3.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 229M/3.21G [00:41<15:28, 3.46MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 230M/3.21G [00:41<13:03, 4.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 231M/3.21G [00:41<11:49, 4.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 232M/3.21G [00:42<11:25, 4.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 233M/3.21G [00:42<10:49, 4.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 234M/3.21G [00:42<12:37, 4.23MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 236M/3.21G [00:42<08:49, 6.04MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 237M/3.21G [00:43<10:08, 5.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 238M/3.21G [00:43<11:32, 4.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 240M/3.21G [00:43<08:44, 6.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 242M/3.21G [00:43<06:44, 7.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 243M/3.21G [00:44<08:47, 6.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   7%|▋         | 245M/3.21G [00:44<07:42, 6.91MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 247M/3.21G [00:44<06:43, 7.91MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 248M/3.21G [00:44<06:28, 8.21MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 251M/3.21G [00:44<04:51, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 253M/3.21G [00:45<04:46, 11.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 255M/3.21G [00:45<06:10, 8.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 259M/3.21G [00:45<04:02, 13.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 261M/3.21G [00:45<03:55, 13.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 263M/3.21G [00:46<06:04, 8.72MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 265M/3.21G [00:46<05:40, 9.31MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 267M/3.21G [00:46<05:00, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 269M/3.21G [00:46<05:28, 9.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 271M/3.21G [00:46<04:52, 10.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 273M/3.21G [00:47<06:22, 8.27MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 275M/3.21G [00:47<07:45, 6.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 276M/3.21G [00:48<09:35, 5.49MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 277M/3.21G [00:48<13:47, 3.82MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   8%|▊         | 279M/3.21G [00:48<11:02, 4.76MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▊         | 282M/3.21G [00:49<07:22, 7.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▊         | 283M/3.21G [00:49<07:15, 7.24MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▊         | 285M/3.21G [00:49<06:09, 8.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▊         | 287M/3.21G [00:49<06:52, 7.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▉         | 288M/3.21G [00:49<07:14, 7.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▉         | 290M/3.21G [00:50<05:47, 9.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▉         | 292M/3.21G [00:50<04:56, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▉         | 294M/3.21G [00:50<04:14, 12.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▉         | 296M/3.21G [00:50<04:47, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▉         | 300M/3.21G [00:50<03:16, 16.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▉         | 302M/3.21G [00:50<04:13, 12.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▉         | 304M/3.21G [00:50<03:48, 13.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▉         | 306M/3.21G [00:51<05:53, 8.86MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:   9%|▉         | 310M/3.21G [00:51<04:52, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  10%|▉         | 313M/3.21G [00:52<05:35, 9.29MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  10%|▉         | 317M/3.21G [00:52<05:36, 9.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  10%|▉         | 320M/3.21G [00:52<04:46, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  10%|▉         | 322M/3.21G [00:53<05:27, 9.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  10%|▉         | 327M/3.21G [00:53<03:38, 14.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  10%|▉         | 329M/3.21G [00:53<03:25, 15.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  10%|█         | 331M/3.21G [00:53<04:52, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  10%|█         | 336M/3.21G [00:53<03:17, 15.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  10%|█         | 339M/3.21G [00:54<06:40, 7.72MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  10%|█         | 341M/3.21G [00:55<06:12, 8.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  10%|█         | 343M/3.21G [00:55<06:03, 8.49MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  10%|█         | 345M/3.21G [00:55<06:00, 8.57MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  11%|█         | 348M/3.21G [00:55<06:21, 8.09MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  11%|█         | 352M/3.21G [00:56<04:32, 11.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  11%|█         | 354M/3.21G [00:56<05:36, 9.16MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  11%|█         | 358M/3.21G [00:56<04:01, 12.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  11%|█         | 360M/3.21G [00:57<05:53, 8.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  11%|█         | 364M/3.21G [00:57<04:48, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  11%|█         | 366M/3.21G [00:57<04:26, 11.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  11%|█         | 370M/3.21G [00:57<03:21, 15.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  11%|█▏        | 372M/3.21G [00:59<10:39, 4.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  11%|█▏        | 375M/3.21G [00:59<09:46, 5.21MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  11%|█▏        | 377M/3.21G [00:59<08:35, 5.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 379M/3.21G [00:59<07:23, 6.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 381M/3.21G [01:00<08:26, 6.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 382M/3.21G [01:00<08:03, 6.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 383M/3.21G [01:00<07:40, 6.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 385M/3.21G [01:00<06:08, 8.27MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 387M/3.21G [01:01<06:52, 7.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 388M/3.21G [01:01<07:09, 7.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 391M/3.21G [01:01<05:09, 9.83MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 393M/3.21G [01:01<05:07, 9.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 395M/3.21G [01:02<06:31, 7.75MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 398M/3.21G [01:02<04:45, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 400M/3.21G [01:02<04:27, 11.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 402M/3.21G [01:02<04:15, 11.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 404M/3.21G [01:02<05:58, 8.45MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 407M/3.21G [01:03<04:50, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  12%|█▏        | 411M/3.21G [01:03<03:38, 13.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  13%|█▎        | 413M/3.21G [01:03<03:33, 14.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  13%|█▎        | 415M/3.21G [01:03<03:31, 14.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  13%|█▎        | 417M/3.21G [01:03<03:26, 14.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  13%|█▎        | 419M/3.21G [01:04<07:30, 6.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  13%|█▎        | 421M/3.21G [01:04<08:17, 6.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  13%|█▎        | 426M/3.21G [01:05<04:56, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  13%|█▎        | 428M/3.21G [01:05<04:34, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  13%|█▎        | 430M/3.21G [01:05<05:51, 8.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  13%|█▎        | 435M/3.21G [01:05<03:49, 13.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  13%|█▎        | 437M/3.21G [01:05<03:36, 13.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  13%|█▎        | 439M/3.21G [01:06<05:05, 9.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  13%|█▎        | 442M/3.21G [01:06<04:41, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  13%|█▎        | 444M/3.21G [01:06<04:57, 10.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▎        | 447M/3.21G [01:07<04:44, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▎        | 449M/3.21G [01:07<05:13, 9.50MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▎        | 451M/3.21G [01:07<04:38, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 454M/3.21G [01:08<07:09, 6.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 455M/3.21G [01:08<10:32, 4.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 456M/3.21G [01:09<11:32, 4.29MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 457M/3.21G [01:09<11:32, 4.29MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 458M/3.21G [01:10<22:02, 2.24MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 459M/3.21G [01:11<21:31, 2.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 460M/3.21G [01:11<24:00, 2.06MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 461M/3.21G [01:12<22:17, 2.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 462M/3.21G [01:12<22:11, 2.23MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 463M/3.21G [01:12<19:22, 2.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 464M/3.21G [01:13<22:21, 2.21MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 465M/3.21G [01:13<18:26, 2.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 466M/3.21G [01:14<16:01, 3.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 467M/3.21G [01:14<13:39, 3.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 468M/3.21G [01:14<12:39, 3.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 469M/3.21G [01:14<12:59, 3.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 470M/3.21G [01:14<11:43, 4.21MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 471M/3.21G [01:15<13:04, 3.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 472M/3.21G [01:15<14:09, 3.48MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 473M/3.21G [01:15<12:44, 3.86MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 474M/3.21G [01:16<12:00, 4.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 475M/3.21G [01:16<11:09, 4.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 476M/3.21G [01:16<10:28, 4.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  14%|█▍        | 477M/3.21G [01:16<09:28, 5.19MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▍        | 479M/3.21G [01:16<07:38, 6.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▍        | 480M/3.21G [01:16<07:30, 6.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▍        | 481M/3.21G [01:17<07:51, 6.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▍        | 482M/3.21G [01:17<07:28, 6.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▍        | 483M/3.21G [01:17<07:09, 6.86MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▍        | 484M/3.21G [01:17<06:48, 7.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▍        | 485M/3.21G [01:17<09:23, 5.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▍        | 486M/3.21G [01:18<09:38, 5.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▍        | 488M/3.21G [01:18<06:33, 7.48MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▍        | 489M/3.21G [01:18<06:29, 7.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▍        | 490M/3.21G [01:18<07:03, 6.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▍        | 491M/3.21G [01:18<08:03, 6.07MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▍        | 492M/3.21G [01:18<08:21, 5.85MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▌        | 495M/3.21G [01:19<06:52, 7.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▌        | 496M/3.21G [01:19<07:06, 6.86MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▌        | 498M/3.21G [01:19<05:56, 8.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▌        | 499M/3.21G [01:19<06:07, 7.96MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▌        | 500M/3.21G [01:20<08:34, 5.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▌        | 502M/3.21G [01:20<06:13, 7.82MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▌        | 503M/3.21G [01:20<07:39, 6.36MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▌        | 504M/3.21G [01:20<07:28, 6.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▌        | 506M/3.21G [01:20<06:09, 7.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▌        | 507M/3.21G [01:21<06:19, 7.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▌        | 508M/3.21G [01:21<06:30, 7.47MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  15%|█▌        | 509M/3.21G [01:21<09:06, 5.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 511M/3.21G [01:21<06:24, 7.58MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 512M/3.21G [01:21<06:30, 7.46MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 513M/3.21G [01:22<09:34, 5.07MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 514M/3.21G [01:22<08:58, 5.40MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 515M/3.21G [01:22<08:18, 5.84MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 516M/3.21G [01:22<07:51, 6.17MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 517M/3.21G [01:22<08:02, 6.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 519M/3.21G [01:23<06:33, 7.39MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 520M/3.21G [01:23<06:49, 7.09MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 521M/3.21G [01:23<06:54, 7.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 522M/3.21G [01:23<08:49, 5.48MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 524M/3.21G [01:23<06:41, 7.23MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 526M/3.21G [01:24<07:45, 6.23MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 528M/3.21G [01:24<05:49, 8.28MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 530M/3.21G [01:24<05:28, 8.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▌        | 532M/3.21G [01:25<07:46, 6.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▋        | 535M/3.21G [01:25<05:33, 8.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▋        | 537M/3.21G [01:25<07:49, 6.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▋        | 538M/3.21G [01:26<08:53, 5.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▋        | 539M/3.21G [01:26<11:31, 4.17MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  16%|█▋        | 542M/3.21G [01:27<08:52, 5.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 546M/3.21G [01:27<05:53, 8.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 548M/3.21G [01:27<06:38, 7.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 552M/3.21G [01:27<04:24, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 554M/3.21G [01:28<05:27, 8.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 556M/3.21G [01:28<04:45, 10.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 558M/3.21G [01:28<04:15, 11.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 560M/3.21G [01:28<04:55, 9.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 562M/3.21G [01:29<06:52, 6.94MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 563M/3.21G [01:29<07:03, 6.75MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 565M/3.21G [01:29<05:50, 8.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 567M/3.21G [01:29<06:12, 7.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 569M/3.21G [01:29<05:14, 9.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 573M/3.21G [01:30<03:19, 14.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  17%|█▋        | 575M/3.21G [01:30<03:11, 14.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 577M/3.21G [01:30<04:12, 11.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 579M/3.21G [01:30<04:03, 11.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 582M/3.21G [01:31<06:15, 7.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 584M/3.21G [01:31<08:20, 5.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 585M/3.21G [01:32<08:17, 5.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 588M/3.21G [01:32<05:34, 8.48MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 590M/3.21G [01:32<05:14, 9.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 592M/3.21G [01:33<08:19, 5.66MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 595M/3.21G [01:33<05:46, 8.17MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 597M/3.21G [01:33<07:27, 6.31MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 601M/3.21G [01:33<04:54, 9.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 603M/3.21G [01:34<04:36, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 605M/3.21G [01:34<04:23, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  18%|█▊        | 607M/3.21G [01:34<05:28, 8.57MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▊        | 609M/3.21G [01:34<05:04, 9.23MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▊        | 611M/3.21G [01:35<05:35, 8.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▊        | 613M/3.21G [01:35<07:26, 6.29MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▉        | 617M/3.21G [01:35<04:40, 10.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▉        | 619M/3.21G [01:35<04:20, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▉        | 621M/3.21G [01:36<06:33, 7.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▉        | 624M/3.21G [01:37<06:38, 7.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▉        | 626M/3.21G [01:37<05:41, 8.17MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▉        | 628M/3.21G [01:37<07:15, 6.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▉        | 631M/3.21G [01:37<05:20, 8.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▉        | 633M/3.21G [01:38<08:10, 5.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▉        | 634M/3.21G [01:38<09:14, 5.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▉        | 637M/3.21G [01:38<06:15, 7.42MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  19%|█▉        | 640M/3.21G [01:39<04:47, 9.65MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|█▉        | 642M/3.21G [01:39<04:22, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|█▉        | 644M/3.21G [01:39<06:05, 7.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|█▉        | 646M/3.21G [01:40<06:16, 7.36MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|█▉        | 648M/3.21G [01:40<05:42, 8.09MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|█▉        | 650M/3.21G [01:40<05:54, 7.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|█▉        | 654M/3.21G [01:40<04:50, 9.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|██        | 659M/3.21G [01:41<03:17, 14.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|██        | 661M/3.21G [01:41<04:41, 9.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|██        | 663M/3.21G [01:41<04:33, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|██        | 665M/3.21G [01:41<04:25, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|██        | 668M/3.21G [01:42<05:59, 7.65MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|██        | 671M/3.21G [01:42<05:14, 8.72MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|██        | 673M/3.21G [01:44<10:38, 4.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  20%|██        | 674M/3.21G [01:44<10:05, 4.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 675M/3.21G [01:44<10:20, 4.42MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 676M/3.21G [01:44<09:41, 4.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 677M/3.21G [01:45<11:04, 4.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 680M/3.21G [01:45<07:08, 6.39MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 681M/3.21G [01:45<08:07, 5.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 682M/3.21G [01:45<08:26, 5.40MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 683M/3.21G [01:45<08:30, 5.35MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 685M/3.21G [01:46<06:21, 7.16MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 687M/3.21G [01:46<05:01, 9.06MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 690M/3.21G [01:46<04:45, 9.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 692M/3.21G [01:46<04:22, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 695M/3.21G [01:46<03:27, 13.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 697M/3.21G [01:47<07:43, 5.87MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██        | 699M/3.21G [01:47<07:09, 6.33MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██▏       | 701M/3.21G [01:48<06:14, 7.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██▏       | 703M/3.21G [01:48<05:49, 7.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  21%|██▏       | 705M/3.21G [01:48<05:20, 8.46MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 708M/3.21G [01:48<03:58, 11.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 711M/3.21G [01:49<04:35, 9.82MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 714M/3.21G [01:49<03:55, 11.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 716M/3.21G [01:49<04:31, 9.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 718M/3.21G [01:50<06:12, 7.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 721M/3.21G [01:50<05:22, 8.35MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 722M/3.21G [01:50<06:38, 6.76MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 724M/3.21G [01:51<07:03, 6.36MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 727M/3.21G [01:51<05:48, 7.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 730M/3.21G [01:51<04:20, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 732M/3.21G [01:51<04:56, 9.04MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 734M/3.21G [01:52<05:24, 8.27MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 736M/3.21G [01:52<04:35, 9.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  22%|██▏       | 739M/3.21G [01:52<05:08, 8.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 741M/3.21G [01:52<04:27, 9.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 743M/3.21G [01:53<05:18, 8.40MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 745M/3.21G [01:53<06:28, 6.87MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 746M/3.21G [01:53<07:37, 5.84MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 748M/3.21G [01:54<06:30, 6.83MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 749M/3.21G [01:54<06:17, 7.07MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 750M/3.21G [01:54<07:16, 6.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 752M/3.21G [01:54<06:19, 7.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 755M/3.21G [01:54<04:51, 9.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 757M/3.21G [01:55<04:13, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 759M/3.21G [01:55<04:46, 9.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 761M/3.21G [01:55<04:42, 9.39MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 762M/3.21G [01:55<04:46, 9.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 765M/3.21G [01:56<05:29, 8.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 767M/3.21G [01:56<05:02, 8.76MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 768M/3.21G [01:56<05:06, 8.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 770M/3.21G [01:56<05:43, 7.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  23%|██▎       | 773M/3.21G [01:56<04:12, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▎       | 775M/3.21G [01:57<04:15, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▎       | 777M/3.21G [01:57<05:49, 7.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▎       | 780M/3.21G [01:57<04:13, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▍       | 782M/3.21G [01:57<04:12, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▍       | 784M/3.21G [01:58<05:04, 8.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▍       | 786M/3.21G [01:58<04:38, 9.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▍       | 788M/3.21G [01:58<05:58, 7.31MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▍       | 791M/3.21G [01:58<04:28, 9.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▍       | 793M/3.21G [01:59<03:57, 11.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▍       | 795M/3.21G [01:59<03:45, 11.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▍       | 797M/3.21G [01:59<04:40, 9.31MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▍       | 799M/3.21G [01:59<04:05, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▍       | 801M/3.21G [02:00<05:23, 8.06MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▍       | 803M/3.21G [02:00<05:17, 8.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▍       | 805M/3.21G [02:00<05:20, 8.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  24%|██▍       | 806M/3.21G [02:00<05:26, 7.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▍       | 810M/3.21G [02:00<03:25, 12.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▍       | 812M/3.21G [02:01<05:41, 7.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▍       | 816M/3.21G [02:01<03:47, 11.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▍       | 818M/3.21G [02:02<04:51, 8.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▍       | 820M/3.21G [02:03<08:36, 5.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▍       | 822M/3.21G [02:03<09:20, 4.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▌       | 823M/3.21G [02:03<08:37, 5.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▌       | 824M/3.21G [02:03<09:18, 4.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▌       | 826M/3.21G [02:04<08:17, 5.19MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▌       | 828M/3.21G [02:04<06:50, 6.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▌       | 830M/3.21G [02:04<05:53, 7.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▌       | 831M/3.21G [02:04<07:02, 6.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▌       | 832M/3.21G [02:05<08:28, 5.07MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▌       | 836M/3.21G [02:05<04:54, 8.74MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▌       | 838M/3.21G [02:05<05:11, 8.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  25%|██▌       | 839M/3.21G [02:05<05:23, 7.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 840M/3.21G [02:06<05:56, 7.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 843M/3.21G [02:06<07:12, 5.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 844M/3.21G [02:06<07:18, 5.85MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 845M/3.21G [02:07<07:25, 5.75MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 846M/3.21G [02:07<07:39, 5.58MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 847M/3.21G [02:07<10:19, 4.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 848M/3.21G [02:07<09:05, 4.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 849M/3.21G [02:08<08:49, 4.83MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 850M/3.21G [02:08<12:25, 3.43MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 851M/3.21G [02:09<16:10, 2.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 852M/3.21G [02:09<17:09, 2.48MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 853M/3.21G [02:09<13:32, 3.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 854M/3.21G [02:10<12:36, 3.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 855M/3.21G [02:10<11:37, 3.66MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 856M/3.21G [02:10<10:54, 3.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 857M/3.21G [02:10<10:05, 4.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 858M/3.21G [02:11<10:21, 4.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 859M/3.21G [02:11<10:38, 3.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 861M/3.21G [02:11<07:07, 5.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 862M/3.21G [02:11<06:48, 6.23MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▌       | 863M/3.21G [02:11<06:33, 6.48MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▋       | 864M/3.21G [02:12<08:38, 4.91MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▋       | 866M/3.21G [02:12<05:49, 7.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▋       | 867M/3.21G [02:12<06:46, 6.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▋       | 868M/3.21G [02:12<07:39, 5.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▋       | 869M/3.21G [02:12<06:44, 6.27MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  26%|██▋       | 871M/3.21G [02:13<04:55, 8.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 873M/3.21G [02:13<06:06, 6.91MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 874M/3.21G [02:13<06:39, 6.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 877M/3.21G [02:14<08:54, 4.74MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 879M/3.21G [02:14<07:01, 6.01MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 880M/3.21G [02:14<06:44, 6.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 881M/3.21G [02:15<07:14, 5.82MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 882M/3.21G [02:15<07:51, 5.36MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 885M/3.21G [02:15<04:37, 9.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 887M/3.21G [02:15<04:05, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 889M/3.21G [02:15<05:05, 8.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 891M/3.21G [02:16<05:59, 6.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 894M/3.21G [02:16<04:38, 9.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 896M/3.21G [02:16<03:59, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 899M/3.21G [02:16<03:43, 11.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 901M/3.21G [02:17<05:04, 8.24MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  27%|██▋       | 903M/3.21G [02:17<04:48, 8.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 905M/3.21G [02:17<04:57, 8.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 908M/3.21G [02:17<03:54, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 910M/3.21G [02:18<04:21, 9.54MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 913M/3.21G [02:18<03:40, 11.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 915M/3.21G [02:18<03:37, 11.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 917M/3.21G [02:19<06:38, 6.24MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 919M/3.21G [02:19<06:15, 6.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 920M/3.21G [02:19<06:50, 6.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 922M/3.21G [02:19<05:33, 7.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 924M/3.21G [02:20<04:31, 9.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 926M/3.21G [02:20<05:06, 8.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 928M/3.21G [02:20<05:30, 7.49MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 929M/3.21G [02:20<06:17, 6.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 933M/3.21G [02:21<04:14, 9.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  28%|██▊       | 935M/3.21G [02:21<06:13, 6.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▊       | 939M/3.21G [02:21<04:02, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▊       | 941M/3.21G [02:22<04:55, 8.33MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▊       | 943M/3.21G [02:22<06:02, 6.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▊       | 945M/3.21G [02:23<06:02, 6.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 946M/3.21G [02:23<05:52, 6.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 947M/3.21G [02:23<09:04, 4.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 948M/3.21G [02:24<12:02, 3.40MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 950M/3.21G [02:24<08:31, 4.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 951M/3.21G [02:24<10:01, 4.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 952M/3.21G [02:25<08:40, 4.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 954M/3.21G [02:25<06:00, 6.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 957M/3.21G [02:25<03:57, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 959M/3.21G [02:25<03:30, 11.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 961M/3.21G [02:25<03:13, 12.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 963M/3.21G [02:25<04:03, 10.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 965M/3.21G [02:26<04:46, 8.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 968M/3.21G [02:26<03:37, 11.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  29%|██▉       | 970M/3.21G [02:27<06:33, 6.18MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|██▉       | 972M/3.21G [02:27<07:56, 5.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|██▉       | 973M/3.21G [02:27<07:32, 5.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|██▉       | 974M/3.21G [02:27<06:56, 5.83MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|██▉       | 975M/3.21G [02:28<06:55, 5.84MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|██▉       | 976M/3.21G [02:28<10:32, 3.84MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|██▉       | 977M/3.21G [02:28<09:34, 4.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|██▉       | 979M/3.21G [02:29<08:14, 4.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|██▉       | 980M/3.21G [02:29<08:23, 4.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|██▉       | 982M/3.21G [02:29<05:59, 6.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|██▉       | 983M/3.21G [02:29<07:32, 5.35MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|██▉       | 986M/3.21G [02:30<05:14, 7.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|██▉       | 987M/3.21G [02:30<05:12, 7.72MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|███       | 988M/3.21G [02:30<06:36, 6.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|███       | 989M/3.21G [02:30<06:01, 6.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|███       | 991M/3.21G [02:30<05:19, 7.54MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|███       | 993M/3.21G [02:31<04:30, 8.91MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|███       | 994M/3.21G [02:31<04:24, 9.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|███       | 995M/3.21G [02:31<04:18, 9.31MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|███       | 996M/3.21G [02:31<06:08, 6.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|███       | 999M/3.21G [02:31<03:47, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|███       | 0.98G/3.21G [02:31<03:37, 11.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  30%|███       | 0.98G/3.21G [02:32<03:31, 11.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  31%|███       | 0.98G/3.21G [02:32<03:20, 12.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  31%|███       | 0.98G/3.21G [02:32<03:39, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  31%|███       | 0.99G/3.21G [02:32<03:04, 13.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  31%|███       | 0.99G/3.21G [02:33<05:14, 7.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  31%|███       | 0.99G/3.21G [02:33<05:53, 6.76MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  31%|███       | 0.99G/3.21G [02:33<05:00, 7.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  31%|███       | 0.99G/3.21G [02:34<05:09, 7.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  31%|███       | 1.00G/3.21G [02:34<04:02, 9.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  31%|███       | 1.00G/3.21G [02:34<03:21, 11.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  31%|███       | 1.00G/3.21G [02:34<02:42, 14.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  31%|███▏      | 1.01G/3.21G [02:34<03:05, 12.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  31%|███▏      | 1.01G/3.21G [02:35<03:42, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  31%|███▏      | 1.01G/3.21G [02:35<03:17, 12.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.01G/3.21G [02:35<03:18, 11.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.02G/3.21G [02:35<03:11, 12.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.02G/3.21G [02:35<02:55, 13.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.02G/3.21G [02:36<03:20, 11.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.02G/3.21G [02:36<02:46, 14.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.02G/3.21G [02:36<05:16, 7.42MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.03G/3.21G [02:37<04:56, 7.92MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.03G/3.21G [02:37<04:08, 9.43MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.03G/3.21G [02:37<03:41, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.03G/3.21G [02:37<03:38, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.03G/3.21G [02:37<03:28, 11.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.04G/3.21G [02:38<04:07, 9.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.04G/3.21G [02:38<04:25, 8.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.04G/3.21G [02:38<04:03, 9.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  32%|███▏      | 1.04G/3.21G [02:38<04:19, 8.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  33%|███▎      | 1.05G/3.21G [02:39<03:28, 11.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  33%|███▎      | 1.05G/3.21G [02:39<03:46, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  33%|███▎      | 1.05G/3.21G [02:39<03:33, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  33%|███▎      | 1.05G/3.21G [02:39<03:54, 9.87MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  33%|███▎      | 1.06G/3.21G [02:40<03:20, 11.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  33%|███▎      | 1.06G/3.21G [02:40<05:22, 7.17MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  33%|███▎      | 1.06G/3.21G [02:40<05:32, 6.96MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  33%|███▎      | 1.06G/3.21G [02:40<03:22, 11.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  33%|███▎      | 1.07G/3.21G [02:41<03:04, 12.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  33%|███▎      | 1.07G/3.21G [02:41<04:18, 8.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  33%|███▎      | 1.07G/3.21G [02:41<04:25, 8.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  33%|███▎      | 1.07G/3.21G [02:41<03:02, 12.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  33%|███▎      | 1.08G/3.21G [02:42<04:12, 9.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  34%|███▎      | 1.08G/3.21G [02:42<03:17, 11.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  34%|███▎      | 1.08G/3.21G [02:43<05:08, 7.42MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  34%|███▎      | 1.08G/3.21G [02:43<05:12, 7.31MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  34%|███▍      | 1.08G/3.21G [02:43<04:23, 8.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  34%|███▍      | 1.09G/3.21G [02:43<04:45, 7.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  34%|███▍      | 1.09G/3.21G [02:44<04:53, 7.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  34%|███▍      | 1.09G/3.21G [02:44<04:22, 8.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  34%|███▍      | 1.09G/3.21G [02:44<05:22, 7.06MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  34%|███▍      | 1.10G/3.21G [02:45<04:07, 9.17MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  34%|███▍      | 1.10G/3.21G [02:45<03:43, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  34%|███▍      | 1.10G/3.21G [02:45<04:08, 9.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  34%|███▍      | 1.10G/3.21G [02:45<03:46, 9.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  34%|███▍      | 1.11G/3.21G [02:46<03:52, 9.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  35%|███▍      | 1.11G/3.21G [02:46<02:39, 14.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  35%|███▍      | 1.11G/3.21G [02:46<02:31, 14.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  35%|███▍      | 1.12G/3.21G [02:46<02:22, 15.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  35%|███▍      | 1.12G/3.21G [02:47<03:27, 10.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  35%|███▍      | 1.12G/3.21G [02:47<02:52, 13.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  35%|███▌      | 1.13G/3.21G [02:47<02:40, 14.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  35%|███▌      | 1.13G/3.21G [02:47<03:12, 11.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  35%|███▌      | 1.13G/3.21G [02:48<03:14, 11.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  35%|███▌      | 1.13G/3.21G [02:48<03:28, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  35%|███▌      | 1.13G/3.21G [02:48<03:42, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  35%|███▌      | 1.14G/3.21G [02:48<03:51, 9.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  35%|███▌      | 1.14G/3.21G [02:48<03:01, 12.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  36%|███▌      | 1.14G/3.21G [02:49<03:28, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  36%|███▌      | 1.15G/3.21G [02:49<03:02, 12.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  36%|███▌      | 1.15G/3.21G [02:49<03:27, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  36%|███▌      | 1.15G/3.21G [02:50<02:23, 15.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  36%|███▌      | 1.16G/3.21G [02:50<03:26, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  36%|███▌      | 1.16G/3.21G [02:50<03:34, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  36%|███▌      | 1.16G/3.21G [02:51<03:22, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  36%|███▌      | 1.16G/3.21G [02:51<03:17, 11.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  36%|███▋      | 1.17G/3.21G [02:51<03:18, 11.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  36%|███▋      | 1.17G/3.21G [02:52<03:50, 9.49MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.17G/3.21G [02:52<04:01, 9.06MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.17G/3.21G [02:52<04:17, 8.48MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.18G/3.21G [02:52<03:53, 9.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.18G/3.21G [02:53<04:37, 7.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.18G/3.21G [02:53<06:23, 5.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.18G/3.21G [02:53<07:31, 4.84MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.18G/3.21G [02:54<05:19, 6.83MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.18G/3.21G [02:54<07:26, 4.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.19G/3.21G [02:54<06:21, 5.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.19G/3.21G [02:55<06:11, 5.86MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.19G/3.21G [02:55<06:02, 6.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.19G/3.21G [02:55<05:51, 6.19MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.19G/3.21G [02:55<05:18, 6.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.19G/3.21G [02:55<05:04, 7.12MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.19G/3.21G [02:55<04:23, 8.24MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.19G/3.21G [02:56<04:17, 8.43MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.20G/3.21G [02:56<04:28, 8.07MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.20G/3.21G [02:56<03:49, 9.45MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.20G/3.21G [02:56<02:16, 15.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  37%|███▋      | 1.20G/3.21G [02:56<03:49, 9.42MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  38%|███▊      | 1.21G/3.21G [02:57<03:58, 9.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  38%|███▊      | 1.21G/3.21G [02:57<03:40, 9.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  38%|███▊      | 1.21G/3.21G [02:57<04:08, 8.66MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  38%|███▊      | 1.21G/3.21G [02:57<03:51, 9.28MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  38%|███▊      | 1.21G/3.21G [02:57<02:52, 12.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  38%|███▊      | 1.22G/3.21G [02:58<03:13, 11.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  38%|███▊      | 1.22G/3.21G [02:58<03:08, 11.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  38%|███▊      | 1.22G/3.21G [02:58<02:59, 11.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  38%|███▊      | 1.22G/3.21G [02:58<02:28, 14.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  38%|███▊      | 1.23G/3.21G [02:58<02:00, 17.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  38%|███▊      | 1.23G/3.21G [02:59<02:16, 15.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  38%|███▊      | 1.23G/3.21G [02:59<02:38, 13.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  38%|███▊      | 1.23G/3.21G [02:59<02:37, 13.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  39%|███▊      | 1.24G/3.21G [02:59<02:36, 13.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  39%|███▊      | 1.24G/3.21G [03:00<02:59, 11.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  39%|███▊      | 1.24G/3.21G [03:00<02:13, 15.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  39%|███▉      | 1.25G/3.21G [03:00<02:42, 13.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  39%|███▉      | 1.25G/3.21G [03:00<03:15, 10.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  39%|███▉      | 1.25G/3.21G [03:00<02:46, 12.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  39%|███▉      | 1.25G/3.21G [03:01<02:41, 13.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  39%|███▉      | 1.26G/3.21G [03:01<02:31, 13.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  39%|███▉      | 1.26G/3.21G [03:01<03:03, 11.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  39%|███▉      | 1.26G/3.21G [03:01<02:42, 12.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  39%|███▉      | 1.26G/3.21G [03:01<02:25, 14.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  39%|███▉      | 1.26G/3.21G [03:02<02:37, 13.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  39%|███▉      | 1.27G/3.21G [03:02<02:52, 12.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  40%|███▉      | 1.27G/3.21G [03:02<01:59, 17.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  40%|███▉      | 1.28G/3.21G [03:02<02:38, 13.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  40%|███▉      | 1.28G/3.21G [03:03<02:40, 12.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  40%|███▉      | 1.28G/3.21G [03:03<02:34, 13.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  40%|███▉      | 1.28G/3.21G [03:03<03:02, 11.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  40%|███▉      | 1.28G/3.21G [03:03<03:42, 9.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  40%|████      | 1.29G/3.21G [03:04<02:31, 13.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  40%|████      | 1.29G/3.21G [03:04<03:32, 9.72MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  40%|████      | 1.29G/3.21G [03:04<03:08, 11.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  40%|████      | 1.29G/3.21G [03:04<03:38, 9.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  40%|████      | 1.30G/3.21G [03:05<04:51, 7.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  40%|████      | 1.30G/3.21G [03:05<04:19, 7.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  41%|████      | 1.30G/3.21G [03:05<03:44, 9.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  41%|████      | 1.30G/3.21G [03:06<04:03, 8.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  41%|████      | 1.31G/3.21G [03:06<02:32, 13.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  41%|████      | 1.31G/3.21G [03:06<04:00, 8.48MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  41%|████      | 1.31G/3.21G [03:07<03:47, 8.94MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  41%|████      | 1.32G/3.21G [03:07<03:11, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  41%|████      | 1.32G/3.21G [03:07<03:32, 9.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  41%|████      | 1.32G/3.21G [03:07<03:12, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  41%|████      | 1.32G/3.21G [03:08<03:40, 9.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  41%|████      | 1.33G/3.21G [03:08<03:40, 9.19MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  41%|████▏     | 1.33G/3.21G [03:08<03:39, 9.24MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  41%|████▏     | 1.33G/3.21G [03:08<04:00, 8.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  41%|████▏     | 1.33G/3.21G [03:09<03:04, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.33G/3.21G [03:09<03:27, 9.74MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.34G/3.21G [03:09<03:18, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.34G/3.21G [03:09<04:26, 7.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.34G/3.21G [03:10<03:20, 10.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.34G/3.21G [03:10<03:54, 8.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.34G/3.21G [03:10<03:21, 9.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.35G/3.21G [03:10<03:46, 8.87MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.35G/3.21G [03:11<03:08, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.35G/3.21G [03:11<03:43, 8.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.35G/3.21G [03:11<03:15, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.35G/3.21G [03:11<02:58, 11.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.36G/3.21G [03:12<04:29, 7.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.36G/3.21G [03:12<03:49, 8.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  42%|████▏     | 1.36G/3.21G [03:12<03:03, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.37G/3.21G [03:12<02:07, 15.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.37G/3.21G [03:13<03:11, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.37G/3.21G [03:13<03:05, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.37G/3.21G [03:13<03:27, 9.54MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.38G/3.21G [03:13<03:16, 10.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.38G/3.21G [03:14<03:06, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.38G/3.21G [03:14<03:24, 9.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.38G/3.21G [03:14<02:19, 14.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.38G/3.21G [03:14<02:10, 15.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.39G/3.21G [03:15<03:24, 9.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.39G/3.21G [03:15<02:43, 12.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.39G/3.21G [03:15<04:22, 7.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.39G/3.21G [03:16<04:21, 7.48MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.40G/3.21G [03:16<03:56, 8.24MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  43%|████▎     | 1.40G/3.21G [03:16<04:23, 7.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▎     | 1.40G/3.21G [03:17<05:06, 6.36MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▎     | 1.40G/3.21G [03:17<03:20, 9.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.41G/3.21G [03:17<03:17, 9.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.41G/3.21G [03:17<03:27, 9.35MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.41G/3.21G [03:18<03:34, 9.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.41G/3.21G [03:18<03:46, 8.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.42G/3.21G [03:18<03:47, 8.47MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.42G/3.21G [03:18<03:14, 9.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.42G/3.21G [03:19<03:20, 9.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.42G/3.21G [03:19<03:12, 9.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.42G/3.21G [03:19<03:26, 9.33MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.42G/3.21G [03:20<07:10, 4.47MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.42G/3.21G [03:20<06:30, 4.91MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.43G/3.21G [03:20<08:20, 3.84MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.43G/3.21G [03:21<07:53, 4.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.43G/3.21G [03:21<08:20, 3.83MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.43G/3.21G [03:21<08:18, 3.84MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  44%|████▍     | 1.43G/3.21G [03:22<08:40, 3.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▍     | 1.43G/3.21G [03:22<07:17, 4.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▍     | 1.43G/3.21G [03:22<05:24, 5.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▍     | 1.44G/3.21G [03:22<05:04, 6.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▍     | 1.44G/3.21G [03:23<04:57, 6.42MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▍     | 1.44G/3.21G [03:23<03:17, 9.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▍     | 1.44G/3.21G [03:23<03:59, 7.96MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▍     | 1.44G/3.21G [03:23<03:21, 9.42MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▌     | 1.45G/3.21G [03:23<03:18, 9.54MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▌     | 1.45G/3.21G [03:24<02:52, 11.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▌     | 1.45G/3.21G [03:24<03:06, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▌     | 1.45G/3.21G [03:24<02:40, 11.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▌     | 1.45G/3.21G [03:24<02:51, 11.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▌     | 1.46G/3.21G [03:24<02:36, 12.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▌     | 1.46G/3.21G [03:25<02:37, 11.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  45%|████▌     | 1.46G/3.21G [03:25<02:57, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▌     | 1.46G/3.21G [03:25<02:19, 13.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▌     | 1.47G/3.21G [03:25<02:00, 15.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▌     | 1.47G/3.21G [03:26<03:04, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▌     | 1.47G/3.21G [03:26<02:59, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▌     | 1.47G/3.21G [03:26<02:45, 11.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▌     | 1.48G/3.21G [03:26<03:14, 9.58MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▌     | 1.48G/3.21G [03:26<02:59, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▌     | 1.48G/3.21G [03:27<03:51, 8.06MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▌     | 1.48G/3.21G [03:27<03:42, 8.37MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▌     | 1.48G/3.21G [03:28<05:30, 5.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▌     | 1.48G/3.21G [03:29<11:12, 2.76MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▌     | 1.48G/3.21G [03:29<11:10, 2.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▌     | 1.49G/3.21G [03:29<10:53, 2.84MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▋     | 1.49G/3.21G [03:30<09:10, 3.37MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▋     | 1.49G/3.21G [03:30<10:55, 2.83MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▋     | 1.49G/3.21G [03:30<08:47, 3.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▋     | 1.49G/3.21G [03:30<08:22, 3.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▋     | 1.49G/3.21G [03:31<08:45, 3.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  46%|████▋     | 1.49G/3.21G [03:31<05:18, 5.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.50G/3.21G [03:31<04:34, 6.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.50G/3.21G [03:32<04:20, 7.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.50G/3.21G [03:32<03:44, 8.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.50G/3.21G [03:32<05:17, 5.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.50G/3.21G [03:33<06:29, 4.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.50G/3.21G [03:33<05:35, 5.47MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.51G/3.21G [03:33<03:47, 8.04MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.51G/3.21G [03:33<03:54, 7.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.51G/3.21G [03:34<03:15, 9.37MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.51G/3.21G [03:34<02:47, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.51G/3.21G [03:34<02:58, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.52G/3.21G [03:34<03:42, 8.19MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.52G/3.21G [03:35<05:06, 5.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.52G/3.21G [03:35<05:02, 6.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.52G/3.21G [03:35<05:20, 5.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.52G/3.21G [03:36<08:02, 3.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.52G/3.21G [03:36<08:00, 3.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.52G/3.21G [03:36<06:39, 4.54MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.52G/3.21G [03:36<07:46, 3.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.52G/3.21G [03:36<06:40, 4.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  47%|████▋     | 1.53G/3.21G [03:37<05:36, 5.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.53G/3.21G [03:37<05:53, 5.12MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.53G/3.21G [03:37<05:48, 5.19MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.53G/3.21G [03:37<05:48, 5.19MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.53G/3.21G [03:37<05:29, 5.49MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.53G/3.21G [03:38<03:46, 7.97MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.53G/3.21G [03:38<03:27, 8.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.53G/3.21G [03:38<03:54, 7.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.54G/3.21G [03:38<03:54, 7.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.54G/3.21G [03:38<02:58, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.54G/3.21G [03:38<02:53, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.54G/3.21G [03:39<02:45, 10.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.54G/3.21G [03:39<03:09, 9.45MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.54G/3.21G [03:39<03:55, 7.60MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.55G/3.21G [03:39<02:59, 9.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.55G/3.21G [03:39<02:44, 10.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.55G/3.21G [03:40<02:35, 11.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.55G/3.21G [03:40<02:08, 13.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.56G/3.21G [03:40<02:09, 13.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  48%|████▊     | 1.56G/3.21G [03:40<02:54, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▊     | 1.56G/3.21G [03:41<03:44, 7.92MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▊     | 1.56G/3.21G [03:41<03:15, 9.09MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▊     | 1.56G/3.21G [03:41<03:47, 7.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▊     | 1.56G/3.21G [03:41<03:40, 8.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▉     | 1.57G/3.21G [03:41<02:43, 10.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▉     | 1.57G/3.21G [03:42<02:09, 13.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▉     | 1.57G/3.21G [03:42<02:06, 13.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▉     | 1.57G/3.21G [03:42<02:00, 14.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▉     | 1.58G/3.21G [03:42<01:57, 15.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▉     | 1.58G/3.21G [03:42<02:19, 12.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▉     | 1.58G/3.21G [03:42<02:27, 11.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▉     | 1.58G/3.21G [03:43<03:38, 8.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▉     | 1.59G/3.21G [03:43<02:44, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  49%|████▉     | 1.59G/3.21G [03:43<02:47, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|████▉     | 1.59G/3.21G [03:44<02:18, 12.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|████▉     | 1.59G/3.21G [03:44<03:55, 7.39MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|████▉     | 1.60G/3.21G [03:44<03:25, 8.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|████▉     | 1.60G/3.21G [03:44<02:58, 9.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|████▉     | 1.60G/3.21G [03:45<02:39, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|████▉     | 1.60G/3.21G [03:45<02:45, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|████▉     | 1.60G/3.21G [03:45<02:44, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|█████     | 1.61G/3.21G [03:45<01:53, 15.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|█████     | 1.61G/3.21G [03:45<01:48, 15.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|█████     | 1.61G/3.21G [03:45<01:43, 16.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|█████     | 1.61G/3.21G [03:46<05:01, 5.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|█████     | 1.62G/3.21G [03:46<04:00, 7.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|█████     | 1.62G/3.21G [03:47<03:23, 8.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|█████     | 1.62G/3.21G [03:47<03:15, 8.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  50%|█████     | 1.62G/3.21G [03:47<02:43, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  51%|█████     | 1.62G/3.21G [03:47<02:43, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  51%|█████     | 1.63G/3.21G [03:47<02:04, 13.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  51%|█████     | 1.63G/3.21G [03:48<02:42, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  51%|█████     | 1.63G/3.21G [03:48<01:46, 15.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  51%|█████     | 1.63G/3.21G [03:48<01:58, 14.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  51%|█████     | 1.64G/3.21G [03:48<02:02, 13.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  51%|█████     | 1.64G/3.21G [03:48<02:00, 14.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  51%|█████     | 1.64G/3.21G [03:49<03:56, 7.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  51%|█████     | 1.64G/3.21G [03:49<04:01, 6.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  51%|█████     | 1.64G/3.21G [03:49<03:15, 8.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  51%|█████     | 1.65G/3.21G [03:49<02:46, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  51%|█████▏    | 1.65G/3.21G [03:50<03:03, 9.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  51%|█████▏    | 1.65G/3.21G [03:50<02:41, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  52%|█████▏    | 1.66G/3.21G [03:50<01:45, 15.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  52%|█████▏    | 1.66G/3.21G [03:51<03:07, 8.92MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  52%|█████▏    | 1.66G/3.21G [03:51<02:51, 9.72MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  52%|█████▏    | 1.66G/3.21G [03:51<03:02, 9.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  52%|█████▏    | 1.66G/3.21G [03:51<02:38, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  52%|█████▏    | 1.67G/3.21G [03:52<02:50, 9.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  52%|█████▏    | 1.67G/3.21G [03:52<02:45, 10.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  52%|█████▏    | 1.67G/3.21G [03:52<03:24, 8.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  52%|█████▏    | 1.67G/3.21G [03:52<02:54, 9.46MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  52%|█████▏    | 1.68G/3.21G [03:53<02:46, 9.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  52%|█████▏    | 1.68G/3.21G [03:53<02:20, 11.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  52%|█████▏    | 1.68G/3.21G [03:53<01:43, 15.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  52%|█████▏    | 1.69G/3.21G [03:53<01:36, 16.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.69G/3.21G [03:54<02:43, 9.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.69G/3.21G [03:54<02:12, 12.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.69G/3.21G [03:54<02:26, 11.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.70G/3.21G [03:54<02:50, 9.57MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.70G/3.21G [03:55<02:59, 9.06MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.70G/3.21G [03:55<02:44, 9.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.70G/3.21G [03:55<02:29, 10.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.70G/3.21G [03:55<02:20, 11.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.71G/3.21G [03:56<03:17, 8.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.71G/3.21G [03:56<02:47, 9.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.71G/3.21G [03:56<02:05, 12.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.71G/3.21G [03:56<01:53, 14.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.71G/3.21G [03:56<02:53, 9.28MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.72G/3.21G [03:56<02:28, 10.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  53%|█████▎    | 1.72G/3.21G [03:57<02:13, 12.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  54%|█████▎    | 1.72G/3.21G [03:57<02:47, 9.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  54%|█████▎    | 1.72G/3.21G [03:57<02:37, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  54%|█████▎    | 1.73G/3.21G [03:57<02:31, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  54%|█████▍    | 1.73G/3.21G [03:58<02:32, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  54%|█████▍    | 1.73G/3.21G [03:58<02:49, 9.37MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  54%|█████▍    | 1.73G/3.21G [03:59<03:41, 7.17MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  54%|█████▍    | 1.74G/3.21G [03:59<02:44, 9.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  54%|█████▍    | 1.74G/3.21G [03:59<02:45, 9.57MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  54%|█████▍    | 1.74G/3.21G [04:00<03:51, 6.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  54%|█████▍    | 1.75G/3.21G [04:00<02:53, 9.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  54%|█████▍    | 1.75G/3.21G [04:01<04:45, 5.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  54%|█████▍    | 1.75G/3.21G [04:01<05:05, 5.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  54%|█████▍    | 1.75G/3.21G [04:01<04:53, 5.35MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▍    | 1.75G/3.21G [04:02<03:50, 6.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▍    | 1.75G/3.21G [04:02<03:19, 7.86MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▍    | 1.76G/3.21G [04:02<03:38, 7.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▍    | 1.76G/3.21G [04:02<03:00, 8.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▍    | 1.76G/3.21G [04:03<02:58, 8.75MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▍    | 1.76G/3.21G [04:03<02:24, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▍    | 1.77G/3.21G [04:03<02:59, 8.66MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▌    | 1.77G/3.21G [04:05<07:39, 3.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▌    | 1.77G/3.21G [04:05<07:49, 3.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▌    | 1.77G/3.21G [04:05<07:18, 3.54MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▌    | 1.77G/3.21G [04:06<06:47, 3.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▌    | 1.77G/3.21G [04:06<07:22, 3.50MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▌    | 1.77G/3.21G [04:06<04:06, 6.27MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▌    | 1.78G/3.21G [04:06<03:29, 7.36MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▌    | 1.78G/3.21G [04:06<03:03, 8.39MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▌    | 1.78G/3.21G [04:07<04:02, 6.35MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  55%|█████▌    | 1.78G/3.21G [04:07<03:13, 7.92MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▌    | 1.78G/3.21G [04:07<02:42, 9.45MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▌    | 1.79G/3.21G [04:08<04:51, 5.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▌    | 1.79G/3.21G [04:08<03:01, 8.42MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▌    | 1.79G/3.21G [04:08<02:42, 9.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▌    | 1.79G/3.21G [04:09<03:15, 7.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▌    | 1.80G/3.21G [04:09<02:58, 8.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▌    | 1.80G/3.21G [04:09<03:31, 7.19MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▌    | 1.80G/3.21G [04:09<03:23, 7.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▌    | 1.80G/3.21G [04:09<02:52, 8.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▌    | 1.80G/3.21G [04:10<02:34, 9.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▌    | 1.80G/3.21G [04:10<02:55, 8.60MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▌    | 1.81G/3.21G [04:10<02:45, 9.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▋    | 1.81G/3.21G [04:11<03:58, 6.31MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▋    | 1.81G/3.21G [04:11<04:31, 5.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▋    | 1.81G/3.21G [04:11<02:46, 9.01MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  56%|█████▋    | 1.81G/3.21G [04:11<02:28, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.82G/3.21G [04:11<02:59, 8.37MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.82G/3.21G [04:12<02:53, 8.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.82G/3.21G [04:12<02:11, 11.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.82G/3.21G [04:12<02:25, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.82G/3.21G [04:12<02:52, 8.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.83G/3.21G [04:13<02:26, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.83G/3.21G [04:13<02:46, 8.96MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.83G/3.21G [04:13<02:28, 10.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.83G/3.21G [04:13<02:09, 11.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.84G/3.21G [04:13<01:42, 14.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.84G/3.21G [04:13<01:49, 13.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.84G/3.21G [04:14<01:40, 14.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.84G/3.21G [04:14<02:46, 8.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.85G/3.21G [04:15<03:51, 6.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  57%|█████▋    | 1.85G/3.21G [04:15<04:57, 4.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.85G/3.21G [04:16<05:55, 4.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.85G/3.21G [04:17<08:11, 2.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.85G/3.21G [04:17<08:09, 2.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.85G/3.21G [04:17<08:19, 2.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.85G/3.21G [04:17<07:04, 3.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.85G/3.21G [04:18<04:54, 4.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.85G/3.21G [04:18<05:46, 4.21MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.86G/3.21G [04:18<03:21, 7.23MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.86G/3.21G [04:19<03:42, 6.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.86G/3.21G [04:19<03:31, 6.85MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.86G/3.21G [04:19<05:07, 4.72MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.86G/3.21G [04:20<07:30, 3.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.86G/3.21G [04:21<09:17, 2.60MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.87G/3.21G [04:21<10:17, 2.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.87G/3.21G [04:22<10:08, 2.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.87G/3.21G [04:22<09:36, 2.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.87G/3.21G [04:22<09:00, 2.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.87G/3.21G [04:23<09:18, 2.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.87G/3.21G [04:23<07:50, 3.07MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.87G/3.21G [04:23<07:23, 3.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.87G/3.21G [04:24<07:04, 3.39MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.87G/3.21G [04:24<05:47, 4.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.87G/3.21G [04:24<05:37, 4.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.88G/3.21G [04:24<06:52, 3.48MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.88G/3.21G [04:25<06:05, 3.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.88G/3.21G [04:25<05:25, 4.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.88G/3.21G [04:25<05:47, 4.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  58%|█████▊    | 1.88G/3.21G [04:25<06:27, 3.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▊    | 1.88G/3.21G [04:25<05:15, 4.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▊    | 1.88G/3.21G [04:26<04:35, 5.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▊    | 1.88G/3.21G [04:26<04:26, 5.37MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▊    | 1.88G/3.21G [04:26<04:59, 4.76MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▊    | 1.88G/3.21G [04:26<04:56, 4.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▊    | 1.88G/3.21G [04:26<04:44, 5.01MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▊    | 1.89G/3.21G [04:27<04:37, 5.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▊    | 1.89G/3.21G [04:27<04:48, 4.94MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.89G/3.21G [04:27<03:42, 6.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.89G/3.21G [04:27<03:30, 6.74MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.89G/3.21G [04:27<03:13, 7.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.89G/3.21G [04:28<03:54, 6.04MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.89G/3.21G [04:28<04:03, 5.82MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.89G/3.21G [04:28<03:47, 6.23MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.90G/3.21G [04:28<03:55, 6.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.90G/3.21G [04:28<03:41, 6.40MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.90G/3.21G [04:29<03:21, 7.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.90G/3.21G [04:29<03:17, 7.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.90G/3.21G [04:29<03:27, 6.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.90G/3.21G [04:29<02:54, 8.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.90G/3.21G [04:29<02:45, 8.49MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.91G/3.21G [04:29<02:11, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.91G/3.21G [04:30<02:05, 11.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.91G/3.21G [04:30<04:17, 5.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  59%|█████▉    | 1.91G/3.21G [04:31<04:55, 4.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|█████▉    | 1.91G/3.21G [04:31<03:16, 7.12MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|█████▉    | 1.92G/3.21G [04:31<03:02, 7.65MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|█████▉    | 1.92G/3.21G [04:31<02:54, 8.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|█████▉    | 1.92G/3.21G [04:32<03:52, 5.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|█████▉    | 1.92G/3.21G [04:32<05:19, 4.35MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|█████▉    | 1.92G/3.21G [04:33<05:56, 3.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|█████▉    | 1.92G/3.21G [04:33<04:08, 5.58MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|█████▉    | 1.92G/3.21G [04:33<03:51, 5.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|█████▉    | 1.92G/3.21G [04:33<05:04, 4.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|█████▉    | 1.93G/3.21G [04:34<03:42, 6.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|██████    | 1.93G/3.21G [04:34<03:07, 7.36MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|██████    | 1.93G/3.21G [04:34<03:28, 6.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|██████    | 1.93G/3.21G [04:34<03:16, 7.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|██████    | 1.94G/3.21G [04:35<02:40, 8.57MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|██████    | 1.94G/3.21G [04:35<03:12, 7.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|██████    | 1.94G/3.21G [04:35<03:52, 5.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|██████    | 1.94G/3.21G [04:36<03:24, 6.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  60%|██████    | 1.94G/3.21G [04:37<05:16, 4.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.95G/3.21G [04:37<04:10, 5.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.95G/3.21G [04:37<04:08, 5.47MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.95G/3.21G [04:38<07:05, 3.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.95G/3.21G [04:38<07:00, 3.23MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.95G/3.21G [04:39<07:04, 3.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.95G/3.21G [04:40<08:38, 2.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.95G/3.21G [04:40<07:31, 3.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.95G/3.21G [04:40<07:36, 2.96MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.95G/3.21G [04:40<07:41, 2.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.96G/3.21G [04:41<05:51, 3.84MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.96G/3.21G [04:41<04:25, 5.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.96G/3.21G [04:41<05:09, 4.36MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.96G/3.21G [04:41<04:30, 4.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.96G/3.21G [04:42<03:34, 6.27MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.96G/3.21G [04:42<04:30, 4.97MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.96G/3.21G [04:42<04:57, 4.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.97G/3.21G [04:42<03:32, 6.29MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████    | 1.97G/3.21G [04:43<03:06, 7.18MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████▏   | 1.97G/3.21G [04:43<03:33, 6.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████▏   | 1.97G/3.21G [04:43<04:09, 5.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████▏   | 1.97G/3.21G [04:43<03:14, 6.84MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████▏   | 1.97G/3.21G [04:44<03:39, 6.06MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████▏   | 1.97G/3.21G [04:44<03:25, 6.47MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  61%|██████▏   | 1.97G/3.21G [04:44<03:06, 7.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 1.98G/3.21G [04:44<02:30, 8.82MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 1.98G/3.21G [04:44<03:08, 7.04MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 1.98G/3.21G [04:44<02:53, 7.65MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 1.98G/3.21G [04:45<03:11, 6.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 1.98G/3.21G [04:45<02:26, 9.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 1.98G/3.21G [04:45<01:55, 11.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 1.99G/3.21G [04:45<02:41, 8.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 1.99G/3.21G [04:45<02:33, 8.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 1.99G/3.21G [04:46<02:25, 9.04MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 1.99G/3.21G [04:46<01:54, 11.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 2.00G/3.21G [04:46<02:10, 10.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 2.00G/3.21G [04:46<02:10, 10.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 2.00G/3.21G [04:47<01:55, 11.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 2.00G/3.21G [04:47<02:07, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 2.00G/3.21G [04:47<02:06, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 2.00G/3.21G [04:48<03:34, 6.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  62%|██████▏   | 2.01G/3.21G [04:48<02:52, 7.49MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.01G/3.21G [04:48<03:21, 6.42MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.01G/3.21G [04:48<03:20, 6.43MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.01G/3.21G [04:49<03:34, 6.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.01G/3.21G [04:49<04:32, 4.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.01G/3.21G [04:50<05:54, 3.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.01G/3.21G [04:50<05:57, 3.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.01G/3.21G [04:50<06:23, 3.35MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.02G/3.21G [04:51<07:06, 3.01MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.02G/3.21G [04:51<08:47, 2.43MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.02G/3.21G [04:52<07:45, 2.76MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.02G/3.21G [04:52<06:52, 3.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.02G/3.21G [04:52<05:52, 3.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.02G/3.21G [04:52<05:44, 3.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.02G/3.21G [04:52<05:22, 3.96MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.02G/3.21G [04:53<04:36, 4.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.02G/3.21G [04:53<04:13, 5.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.03G/3.21G [04:53<03:36, 5.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.03G/3.21G [04:53<03:28, 6.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.03G/3.21G [04:54<03:32, 5.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.03G/3.21G [04:54<03:38, 5.82MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.03G/3.21G [04:54<03:32, 5.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.03G/3.21G [04:54<02:46, 7.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.03G/3.21G [04:54<02:47, 7.57MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.03G/3.21G [04:54<03:13, 6.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.04G/3.21G [04:55<02:33, 8.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.04G/3.21G [04:55<02:23, 8.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  63%|██████▎   | 2.04G/3.21G [04:55<02:39, 7.91MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▎   | 2.04G/3.21G [04:55<02:54, 7.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▎   | 2.04G/3.21G [04:55<02:18, 9.09MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▎   | 2.04G/3.21G [04:56<02:41, 7.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▍   | 2.05G/3.21G [04:56<02:29, 8.36MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▍   | 2.05G/3.21G [04:56<01:51, 11.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▍   | 2.05G/3.21G [04:57<02:15, 9.18MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▍   | 2.06G/3.21G [04:57<02:08, 9.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▍   | 2.06G/3.21G [04:57<01:54, 10.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▍   | 2.06G/3.21G [04:57<01:52, 11.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▍   | 2.06G/3.21G [04:57<01:44, 11.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▍   | 2.06G/3.21G [04:58<01:32, 13.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▍   | 2.07G/3.21G [04:58<01:52, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▍   | 2.07G/3.21G [04:58<02:09, 9.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▍   | 2.07G/3.21G [04:58<02:01, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  64%|██████▍   | 2.07G/3.21G [04:58<01:51, 11.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  65%|██████▍   | 2.07G/3.21G [04:59<01:48, 11.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  65%|██████▍   | 2.08G/3.21G [04:59<01:42, 11.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  65%|██████▍   | 2.08G/3.21G [04:59<01:34, 12.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  65%|██████▍   | 2.08G/3.21G [04:59<01:27, 13.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  65%|██████▍   | 2.08G/3.21G [04:59<01:34, 12.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  65%|██████▍   | 2.09G/3.21G [05:00<01:28, 13.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  65%|██████▍   | 2.09G/3.21G [05:00<01:48, 11.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  65%|██████▌   | 2.09G/3.21G [05:00<01:22, 14.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  65%|██████▌   | 2.09G/3.21G [05:00<01:08, 17.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  65%|██████▌   | 2.10G/3.21G [05:00<01:21, 14.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  65%|██████▌   | 2.10G/3.21G [05:01<01:25, 14.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  65%|██████▌   | 2.10G/3.21G [05:01<01:21, 14.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  66%|██████▌   | 2.11G/3.21G [05:01<01:20, 14.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  66%|██████▌   | 2.11G/3.21G [05:01<01:17, 15.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  66%|██████▌   | 2.11G/3.21G [05:01<01:15, 15.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  66%|██████▌   | 2.11G/3.21G [05:01<01:10, 16.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  66%|██████▌   | 2.11G/3.21G [05:01<01:24, 13.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  66%|██████▌   | 2.12G/3.21G [05:02<01:12, 16.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  66%|██████▌   | 2.12G/3.21G [05:02<02:28, 7.91MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  66%|██████▌   | 2.12G/3.21G [05:03<02:16, 8.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  66%|██████▌   | 2.12G/3.21G [05:03<02:05, 9.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  66%|██████▌   | 2.13G/3.21G [05:03<01:36, 12.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  66%|██████▋   | 2.13G/3.21G [05:03<01:23, 14.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  66%|██████▋   | 2.13G/3.21G [05:04<02:22, 8.16MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  66%|██████▋   | 2.14G/3.21G [05:04<01:38, 11.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  67%|██████▋   | 2.14G/3.21G [05:04<01:59, 9.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  67%|██████▋   | 2.14G/3.21G [05:05<01:47, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  67%|██████▋   | 2.14G/3.21G [05:05<01:48, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  67%|██████▋   | 2.15G/3.21G [05:05<01:47, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  67%|██████▋   | 2.15G/3.21G [05:06<02:46, 6.86MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  67%|██████▋   | 2.15G/3.21G [05:06<02:18, 8.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  67%|██████▋   | 2.15G/3.21G [05:06<03:05, 6.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  67%|██████▋   | 2.16G/3.21G [05:07<02:26, 7.74MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  67%|██████▋   | 2.16G/3.21G [05:07<02:22, 7.97MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  67%|██████▋   | 2.16G/3.21G [05:07<01:35, 11.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  67%|██████▋   | 2.16G/3.21G [05:07<01:58, 9.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  67%|██████▋   | 2.17G/3.21G [05:07<01:36, 11.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  67%|██████▋   | 2.17G/3.21G [05:08<02:17, 8.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  68%|██████▊   | 2.17G/3.21G [05:08<01:39, 11.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  68%|██████▊   | 2.17G/3.21G [05:09<02:11, 8.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  68%|██████▊   | 2.18G/3.21G [05:09<01:53, 9.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  68%|██████▊   | 2.18G/3.21G [05:09<02:01, 9.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  68%|██████▊   | 2.18G/3.21G [05:09<01:31, 12.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  68%|██████▊   | 2.19G/3.21G [05:10<01:54, 9.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  68%|██████▊   | 2.19G/3.21G [05:10<01:47, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  68%|██████▊   | 2.19G/3.21G [05:10<01:23, 13.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  68%|██████▊   | 2.19G/3.21G [05:10<01:17, 14.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  68%|██████▊   | 2.19G/3.21G [05:10<01:13, 14.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  68%|██████▊   | 2.20G/3.21G [05:11<01:40, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  68%|██████▊   | 2.20G/3.21G [05:11<01:33, 11.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  68%|██████▊   | 2.20G/3.21G [05:11<01:37, 11.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▊   | 2.20G/3.21G [05:11<02:27, 7.36MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▊   | 2.21G/3.21G [05:12<02:22, 7.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▊   | 2.21G/3.21G [05:12<02:26, 7.40MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▊   | 2.21G/3.21G [05:13<03:03, 5.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▊   | 2.21G/3.21G [05:13<04:19, 4.16MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.21G/3.21G [05:13<04:36, 3.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.21G/3.21G [05:14<04:15, 4.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.21G/3.21G [05:14<03:47, 4.72MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.21G/3.21G [05:14<04:28, 4.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.21G/3.21G [05:15<05:06, 3.50MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.22G/3.21G [05:15<03:32, 5.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.22G/3.21G [05:15<03:12, 5.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.22G/3.21G [05:16<03:31, 5.04MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.22G/3.21G [05:16<03:42, 4.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.22G/3.21G [05:16<04:04, 4.35MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.22G/3.21G [05:16<02:52, 6.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.23G/3.21G [05:17<02:14, 7.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.23G/3.21G [05:17<01:57, 8.96MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.23G/3.21G [05:17<02:09, 8.17MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  69%|██████▉   | 2.23G/3.21G [05:17<01:57, 8.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|██████▉   | 2.23G/3.21G [05:17<01:50, 9.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|██████▉   | 2.24G/3.21G [05:18<01:47, 9.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|██████▉   | 2.24G/3.21G [05:18<02:13, 7.87MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|██████▉   | 2.24G/3.21G [05:18<02:01, 8.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|██████▉   | 2.24G/3.21G [05:19<02:13, 7.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|██████▉   | 2.25G/3.21G [05:19<01:51, 9.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|██████▉   | 2.25G/3.21G [05:19<01:56, 8.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|██████▉   | 2.25G/3.21G [05:19<02:07, 8.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|███████   | 2.25G/3.21G [05:20<01:46, 9.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|███████   | 2.25G/3.21G [05:20<02:04, 8.29MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|███████   | 2.26G/3.21G [05:20<01:38, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|███████   | 2.26G/3.21G [05:20<02:11, 7.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|███████   | 2.26G/3.21G [05:21<02:12, 7.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  70%|███████   | 2.26G/3.21G [05:21<01:45, 9.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████   | 2.27G/3.21G [05:21<01:39, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████   | 2.27G/3.21G [05:22<02:07, 7.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████   | 2.27G/3.21G [05:22<01:52, 9.01MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████   | 2.27G/3.21G [05:22<02:25, 6.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████   | 2.27G/3.21G [05:22<01:49, 9.24MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████   | 2.28G/3.21G [05:23<01:56, 8.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████   | 2.28G/3.21G [05:23<02:22, 7.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████   | 2.28G/3.21G [05:23<01:49, 9.16MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████   | 2.28G/3.21G [05:24<02:16, 7.35MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████   | 2.29G/3.21G [05:24<02:17, 7.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████   | 2.29G/3.21G [05:24<01:57, 8.46MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████   | 2.29G/3.21G [05:24<02:04, 7.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████▏  | 2.29G/3.21G [05:25<01:51, 8.85MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████▏  | 2.29G/3.21G [05:25<02:02, 8.04MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████▏  | 2.29G/3.21G [05:25<01:46, 9.29MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████▏  | 2.29G/3.21G [05:25<02:09, 7.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  71%|███████▏  | 2.30G/3.21G [05:26<02:36, 6.31MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.30G/3.21G [05:26<01:47, 9.12MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.30G/3.21G [05:26<01:59, 8.17MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.30G/3.21G [05:26<01:42, 9.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.31G/3.21G [05:27<01:51, 8.76MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.31G/3.21G [05:27<01:44, 9.28MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.31G/3.21G [05:27<01:46, 9.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.31G/3.21G [05:27<01:31, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.31G/3.21G [05:27<01:33, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.32G/3.21G [05:28<02:02, 7.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.32G/3.21G [05:28<02:26, 6.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.32G/3.21G [05:29<02:09, 7.43MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.32G/3.21G [05:29<01:52, 8.49MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.32G/3.21G [05:29<01:57, 8.12MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.33G/3.21G [05:29<01:47, 8.86MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  72%|███████▏  | 2.33G/3.21G [05:29<01:51, 8.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.33G/3.21G [05:30<01:41, 9.32MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.33G/3.21G [05:30<01:43, 9.19MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.33G/3.21G [05:30<01:37, 9.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.33G/3.21G [05:30<01:40, 9.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.34G/3.21G [05:30<01:28, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.34G/3.21G [05:30<01:31, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.34G/3.21G [05:31<01:34, 9.87MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.34G/3.21G [05:31<01:35, 9.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.34G/3.21G [05:31<01:29, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.35G/3.21G [05:31<01:02, 15.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.35G/3.21G [05:31<01:28, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.35G/3.21G [05:32<01:30, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.35G/3.21G [05:32<01:38, 9.40MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.35G/3.21G [05:32<02:29, 6.18MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.35G/3.21G [05:33<03:05, 4.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.36G/3.21G [05:33<02:01, 7.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  73%|███████▎  | 2.36G/3.21G [05:33<01:57, 7.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▎  | 2.37G/3.21G [05:34<01:21, 11.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▎  | 2.37G/3.21G [05:34<01:42, 8.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▎  | 2.37G/3.21G [05:34<01:29, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.37G/3.21G [05:34<01:33, 9.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.37G/3.21G [05:35<01:46, 8.45MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.38G/3.21G [05:36<02:37, 5.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.38G/3.21G [05:36<02:50, 5.27MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.38G/3.21G [05:37<04:30, 3.32MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.38G/3.21G [05:37<04:17, 3.47MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.38G/3.21G [05:37<04:00, 3.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.38G/3.21G [05:38<03:53, 3.83MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.38G/3.21G [05:38<04:26, 3.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.38G/3.21G [05:38<03:54, 3.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.38G/3.21G [05:38<03:23, 4.37MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.39G/3.21G [05:39<03:12, 4.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.39G/3.21G [05:39<03:12, 4.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.39G/3.21G [05:39<02:48, 5.24MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.39G/3.21G [05:39<03:04, 4.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.39G/3.21G [05:39<02:47, 5.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.39G/3.21G [05:40<03:09, 4.65MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  74%|███████▍  | 2.39G/3.21G [05:40<02:47, 5.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.39G/3.21G [05:40<02:10, 6.75MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.40G/3.21G [05:40<02:07, 6.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.40G/3.21G [05:41<02:25, 6.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.40G/3.21G [05:41<02:37, 5.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.40G/3.21G [05:41<02:27, 5.94MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.40G/3.21G [05:41<02:01, 7.16MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.40G/3.21G [05:41<02:10, 6.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.40G/3.21G [05:41<02:09, 6.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.40G/3.21G [05:42<02:08, 6.75MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.40G/3.21G [05:42<01:58, 7.31MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.41G/3.21G [05:42<01:58, 7.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.41G/3.21G [05:42<01:55, 7.47MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.41G/3.21G [05:42<01:51, 7.72MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▍  | 2.41G/3.21G [05:42<02:08, 6.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▌  | 2.41G/3.21G [05:43<02:09, 6.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▌  | 2.41G/3.21G [05:43<01:40, 8.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▌  | 2.41G/3.21G [05:43<01:36, 8.94MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▌  | 2.42G/3.21G [05:43<01:38, 8.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▌  | 2.42G/3.21G [05:43<01:37, 8.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▌  | 2.42G/3.21G [05:44<02:02, 6.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▌  | 2.42G/3.21G [05:44<01:36, 8.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▌  | 2.42G/3.21G [05:44<01:33, 9.04MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▌  | 2.42G/3.21G [05:44<01:58, 7.19MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  75%|███████▌  | 2.43G/3.21G [05:45<01:34, 8.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▌  | 2.43G/3.21G [05:45<01:42, 8.19MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▌  | 2.43G/3.21G [05:45<01:34, 8.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▌  | 2.43G/3.21G [05:45<01:19, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▌  | 2.43G/3.21G [05:46<01:42, 8.16MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▌  | 2.44G/3.21G [05:46<01:25, 9.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▌  | 2.44G/3.21G [05:46<01:18, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▌  | 2.44G/3.21G [05:46<01:22, 10.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▌  | 2.44G/3.21G [05:46<01:22, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▌  | 2.45G/3.21G [05:47<01:17, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▌  | 2.45G/3.21G [05:47<01:21, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▌  | 2.45G/3.21G [05:47<01:40, 8.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▋  | 2.45G/3.21G [05:48<01:47, 7.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▋  | 2.46G/3.21G [05:48<01:33, 8.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  76%|███████▋  | 2.46G/3.21G [05:48<01:23, 9.74MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.46G/3.21G [05:48<01:15, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.46G/3.21G [05:49<01:50, 7.32MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.46G/3.21G [05:50<02:51, 4.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.46G/3.21G [05:50<03:10, 4.21MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.46G/3.21G [05:50<03:35, 3.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.47G/3.21G [05:51<02:59, 4.46MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.47G/3.21G [05:51<03:02, 4.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.47G/3.21G [05:51<02:49, 4.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.47G/3.21G [05:51<02:46, 4.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.47G/3.21G [05:51<02:37, 5.07MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.47G/3.21G [05:52<02:53, 4.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.47G/3.21G [05:52<02:27, 5.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.47G/3.21G [05:52<02:23, 5.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.47G/3.21G [05:52<02:38, 5.01MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.48G/3.21G [05:52<02:18, 5.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.48G/3.21G [05:53<01:55, 6.84MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.48G/3.21G [05:53<02:03, 6.40MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.48G/3.21G [05:53<01:57, 6.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.48G/3.21G [05:53<02:02, 6.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.48G/3.21G [05:53<01:53, 6.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.48G/3.21G [05:54<01:47, 7.32MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.48G/3.21G [05:54<01:48, 7.21MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.49G/3.21G [05:54<01:33, 8.33MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.49G/3.21G [05:54<01:27, 8.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  77%|███████▋  | 2.49G/3.21G [05:54<01:30, 8.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.49G/3.21G [05:54<01:30, 8.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.49G/3.21G [05:55<01:37, 7.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.49G/3.21G [05:55<01:56, 6.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.49G/3.21G [05:55<01:51, 6.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.50G/3.21G [05:55<02:51, 4.50MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.50G/3.21G [05:56<02:34, 4.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.50G/3.21G [05:56<02:18, 5.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.50G/3.21G [05:56<02:24, 5.32MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.50G/3.21G [05:56<01:38, 7.76MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.50G/3.21G [05:56<01:37, 7.82MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.50G/3.21G [05:57<01:25, 8.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.50G/3.21G [05:57<01:33, 8.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.51G/3.21G [05:57<01:29, 8.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.51G/3.21G [05:57<01:38, 7.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.51G/3.21G [05:57<01:08, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.51G/3.21G [05:58<01:11, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.52G/3.21G [05:58<01:39, 7.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  78%|███████▊  | 2.52G/3.21G [05:58<01:20, 9.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▊  | 2.52G/3.21G [05:59<01:08, 10.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▊  | 2.52G/3.21G [05:59<02:06, 5.86MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▊  | 2.53G/3.21G [06:00<02:08, 5.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▊  | 2.53G/3.21G [06:00<02:02, 6.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▊  | 2.53G/3.21G [06:00<02:02, 6.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▊  | 2.53G/3.21G [06:00<02:47, 4.39MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▊  | 2.53G/3.21G [06:01<03:34, 3.42MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.53G/3.21G [06:01<03:06, 3.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.53G/3.21G [06:02<02:51, 4.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.53G/3.21G [06:02<02:00, 6.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.54G/3.21G [06:02<01:49, 6.66MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.54G/3.21G [06:02<01:44, 6.97MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.54G/3.21G [06:02<01:40, 7.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.54G/3.21G [06:02<01:33, 7.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.54G/3.21G [06:02<01:28, 8.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.54G/3.21G [06:02<01:23, 8.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.54G/3.21G [06:02<01:19, 9.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.54G/3.21G [06:03<01:17, 9.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.54G/3.21G [06:03<01:57, 6.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.54G/3.21G [06:03<01:25, 8.39MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.55G/3.21G [06:03<01:25, 8.39MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.55G/3.21G [06:03<00:57, 12.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.55G/3.21G [06:04<01:18, 9.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  79%|███████▉  | 2.55G/3.21G [06:04<01:32, 7.66MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|███████▉  | 2.56G/3.21G [06:04<01:10, 9.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|███████▉  | 2.56G/3.21G [06:04<01:15, 9.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|███████▉  | 2.56G/3.21G [06:05<01:15, 9.29MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|███████▉  | 2.56G/3.21G [06:05<01:21, 8.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|███████▉  | 2.56G/3.21G [06:05<02:07, 5.49MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|███████▉  | 2.56G/3.21G [06:06<02:18, 5.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|███████▉  | 2.56G/3.21G [06:06<02:06, 5.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|███████▉  | 2.56G/3.21G [06:06<02:22, 4.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|███████▉  | 2.57G/3.21G [06:06<01:47, 6.45MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|███████▉  | 2.57G/3.21G [06:06<01:45, 6.57MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|███████▉  | 2.57G/3.21G [06:07<01:39, 6.94MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|███████▉  | 2.57G/3.21G [06:07<02:40, 4.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|████████  | 2.57G/3.21G [06:07<02:03, 5.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|████████  | 2.57G/3.21G [06:07<01:31, 7.50MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|████████  | 2.58G/3.21G [06:08<01:46, 6.41MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|████████  | 2.58G/3.21G [06:08<01:27, 7.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|████████  | 2.58G/3.21G [06:08<01:19, 8.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|████████  | 2.58G/3.21G [06:08<01:09, 9.76MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|████████  | 2.58G/3.21G [06:09<02:04, 5.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|████████  | 2.58G/3.21G [06:09<02:19, 4.85MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  80%|████████  | 2.59G/3.21G [06:10<03:11, 3.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.59G/3.21G [06:10<02:52, 3.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.59G/3.21G [06:10<02:01, 5.50MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.59G/3.21G [06:11<01:52, 5.96MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.59G/3.21G [06:11<01:40, 6.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.59G/3.21G [06:11<01:31, 7.27MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.59G/3.21G [06:11<02:00, 5.54MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.59G/3.21G [06:11<02:02, 5.45MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.60G/3.21G [06:11<01:22, 8.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.60G/3.21G [06:12<01:48, 6.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.60G/3.21G [06:12<01:50, 5.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.60G/3.21G [06:12<02:07, 5.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.60G/3.21G [06:12<01:52, 5.85MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.60G/3.21G [06:13<02:25, 4.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.60G/3.21G [06:13<02:11, 5.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.60G/3.21G [06:13<01:58, 5.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.61G/3.21G [06:13<01:31, 7.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.61G/3.21G [06:13<01:35, 6.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████  | 2.61G/3.21G [06:14<01:18, 8.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████▏ | 2.61G/3.21G [06:14<00:55, 11.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████▏ | 2.61G/3.21G [06:14<00:54, 11.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████▏ | 2.62G/3.21G [06:14<01:01, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  81%|████████▏ | 2.62G/3.21G [06:15<01:13, 8.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.62G/3.21G [06:15<01:21, 7.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.62G/3.21G [06:15<01:36, 6.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.62G/3.21G [06:15<01:44, 6.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.62G/3.21G [06:16<01:44, 6.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.62G/3.21G [06:16<01:24, 7.47MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.63G/3.21G [06:16<01:27, 7.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.63G/3.21G [06:16<01:08, 9.19MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.63G/3.21G [06:16<01:03, 9.85MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.63G/3.21G [06:16<00:58, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.63G/3.21G [06:17<01:07, 9.16MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.63G/3.21G [06:17<01:12, 8.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.64G/3.21G [06:17<01:10, 8.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.64G/3.21G [06:17<01:09, 8.97MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.64G/3.21G [06:17<01:01, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.64G/3.21G [06:18<01:18, 7.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.64G/3.21G [06:18<01:17, 7.97MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.64G/3.21G [06:18<01:06, 9.18MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.65G/3.21G [06:18<00:55, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.65G/3.21G [06:18<00:58, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  82%|████████▏ | 2.65G/3.21G [06:19<01:13, 8.27MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.65G/3.21G [06:19<01:11, 8.43MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.65G/3.21G [06:19<01:09, 8.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.65G/3.21G [06:19<01:34, 6.36MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.66G/3.21G [06:20<01:03, 9.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.66G/3.21G [06:20<01:13, 8.06MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.66G/3.21G [06:20<00:59, 9.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.66G/3.21G [06:20<01:15, 7.87MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.66G/3.21G [06:21<01:11, 8.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.67G/3.21G [06:21<01:15, 7.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.67G/3.21G [06:21<01:14, 7.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.67G/3.21G [06:21<01:01, 9.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.67G/3.21G [06:22<01:20, 7.21MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.67G/3.21G [06:22<01:34, 6.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.67G/3.21G [06:22<01:06, 8.65MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.68G/3.21G [06:23<01:30, 6.37MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.68G/3.21G [06:23<01:24, 6.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.68G/3.21G [06:23<01:21, 7.07MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.68G/3.21G [06:23<01:22, 6.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.68G/3.21G [06:23<01:06, 8.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  83%|████████▎ | 2.68G/3.21G [06:23<01:10, 8.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▎ | 2.68G/3.21G [06:24<01:33, 6.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▎ | 2.68G/3.21G [06:24<01:41, 5.60MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▎ | 2.69G/3.21G [06:25<04:35, 2.06MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▎ | 2.69G/3.21G [06:26<05:13, 1.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▎ | 2.69G/3.21G [06:27<05:29, 1.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▎ | 2.69G/3.21G [06:27<03:36, 2.60MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▎ | 2.69G/3.21G [06:27<03:10, 2.94MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.69G/3.21G [06:27<02:37, 3.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.69G/3.21G [06:28<02:57, 3.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.69G/3.21G [06:28<02:41, 3.46MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.69G/3.21G [06:28<02:15, 4.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.70G/3.21G [06:28<01:39, 5.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.70G/3.21G [06:29<01:55, 4.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.70G/3.21G [06:29<01:39, 5.54MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.70G/3.21G [06:29<01:58, 4.66MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.70G/3.21G [06:29<01:43, 5.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.70G/3.21G [06:30<02:02, 4.49MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.70G/3.21G [06:30<01:26, 6.35MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.71G/3.21G [06:30<01:25, 6.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.71G/3.21G [06:30<01:16, 7.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.71G/3.21G [06:30<01:10, 7.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.71G/3.21G [06:31<01:38, 5.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.71G/3.21G [06:31<01:26, 6.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.71G/3.21G [06:31<01:16, 7.01MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  84%|████████▍ | 2.71G/3.21G [06:31<01:37, 5.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▍ | 2.72G/3.21G [06:32<01:02, 8.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▍ | 2.72G/3.21G [06:32<01:24, 6.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▍ | 2.72G/3.21G [06:32<01:01, 8.64MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▍ | 2.72G/3.21G [06:32<01:01, 8.50MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▍ | 2.72G/3.21G [06:33<01:00, 8.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▍ | 2.73G/3.21G [06:33<01:04, 8.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▍ | 2.73G/3.21G [06:33<00:54, 9.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▍ | 2.73G/3.21G [06:33<00:53, 9.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▌ | 2.73G/3.21G [06:33<00:50, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▌ | 2.73G/3.21G [06:34<00:51, 9.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▌ | 2.74G/3.21G [06:34<00:52, 9.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▌ | 2.74G/3.21G [06:34<00:52, 9.76MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▌ | 2.74G/3.21G [06:34<00:51, 9.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▌ | 2.74G/3.21G [06:34<00:51, 9.97MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▌ | 2.74G/3.21G [06:34<01:03, 8.04MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▌ | 2.74G/3.21G [06:34<00:47, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▌ | 2.74G/3.21G [06:35<00:44, 11.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▌ | 2.75G/3.21G [06:35<00:48, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  85%|████████▌ | 2.75G/3.21G [06:35<00:46, 10.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▌ | 2.75G/3.21G [06:35<00:54, 9.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▌ | 2.75G/3.21G [06:36<01:03, 7.83MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▌ | 2.75G/3.21G [06:36<00:50, 9.82MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▌ | 2.75G/3.21G [06:36<00:53, 9.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▌ | 2.76G/3.21G [06:36<00:51, 9.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▌ | 2.76G/3.21G [06:36<00:49, 9.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▌ | 2.76G/3.21G [06:37<00:52, 9.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▌ | 2.76G/3.21G [06:37<00:47, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▌ | 2.76G/3.21G [06:37<00:42, 11.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▌ | 2.77G/3.21G [06:37<00:45, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▌ | 2.77G/3.21G [06:38<00:51, 9.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▌ | 2.77G/3.21G [06:38<00:43, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▋ | 2.77G/3.21G [06:38<00:56, 8.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▋ | 2.77G/3.21G [06:38<01:00, 7.75MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▋ | 2.78G/3.21G [06:38<00:44, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  86%|████████▋ | 2.78G/3.21G [06:39<00:45, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.78G/3.21G [06:39<00:53, 8.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.78G/3.21G [06:39<00:44, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.79G/3.21G [06:39<00:47, 9.58MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.79G/3.21G [06:40<00:46, 9.84MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.79G/3.21G [06:40<00:48, 9.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.79G/3.21G [06:40<01:04, 7.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.79G/3.21G [06:41<01:09, 6.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.79G/3.21G [06:41<00:56, 7.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.79G/3.21G [06:41<00:59, 7.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.80G/3.21G [06:41<00:48, 9.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.80G/3.21G [06:41<00:49, 8.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.80G/3.21G [06:41<00:44, 9.97MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.80G/3.21G [06:42<00:41, 10.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.80G/3.21G [06:42<00:45, 9.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.81G/3.21G [06:42<00:57, 7.60MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.81G/3.21G [06:42<00:39, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  87%|████████▋ | 2.81G/3.21G [06:42<00:39, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  88%|████████▊ | 2.81G/3.21G [06:43<00:35, 12.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  88%|████████▊ | 2.82G/3.21G [06:43<00:37, 11.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  88%|████████▊ | 2.82G/3.21G [06:43<00:36, 11.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  88%|████████▊ | 2.82G/3.21G [06:43<00:48, 8.76MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  88%|████████▊ | 2.82G/3.21G [06:44<00:42, 9.86MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  88%|████████▊ | 2.82G/3.21G [06:44<00:42, 9.85MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  88%|████████▊ | 2.83G/3.21G [06:44<00:29, 13.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  88%|████████▊ | 2.83G/3.21G [06:44<00:39, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  88%|████████▊ | 2.83G/3.21G [06:45<00:37, 11.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  88%|████████▊ | 2.83G/3.21G [06:45<00:29, 13.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  88%|████████▊ | 2.84G/3.21G [06:45<00:30, 13.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  88%|████████▊ | 2.84G/3.21G [06:45<00:31, 12.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  88%|████████▊ | 2.84G/3.21G [06:45<00:30, 12.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▊ | 2.84G/3.21G [06:46<00:46, 8.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▊ | 2.85G/3.21G [06:46<00:30, 12.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▊ | 2.85G/3.21G [06:46<00:28, 13.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▊ | 2.85G/3.21G [06:46<00:32, 11.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▉ | 2.85G/3.21G [06:47<00:40, 9.45MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▉ | 2.86G/3.21G [06:47<00:44, 8.57MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▉ | 2.86G/3.21G [06:47<00:40, 9.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▉ | 2.86G/3.21G [06:47<00:39, 9.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▉ | 2.86G/3.21G [06:48<00:54, 6.92MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▉ | 2.86G/3.21G [06:48<00:45, 8.33MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▉ | 2.87G/3.21G [06:48<00:45, 8.24MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▉ | 2.87G/3.21G [06:48<00:38, 9.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▉ | 2.87G/3.21G [06:48<00:34, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▉ | 2.87G/3.21G [06:49<00:36, 10.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  89%|████████▉ | 2.87G/3.21G [06:49<00:37, 9.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|████████▉ | 2.88G/3.21G [06:49<00:38, 9.49MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|████████▉ | 2.88G/3.21G [06:49<00:32, 11.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|████████▉ | 2.88G/3.21G [06:50<00:33, 10.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|████████▉ | 2.88G/3.21G [06:50<00:27, 13.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|████████▉ | 2.89G/3.21G [06:50<00:31, 11.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|████████▉ | 2.89G/3.21G [06:50<00:33, 10.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|█████████ | 2.89G/3.21G [06:51<00:46, 7.39MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|█████████ | 2.89G/3.21G [06:52<00:50, 6.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|█████████ | 2.90G/3.21G [06:52<00:41, 8.15MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|█████████ | 2.90G/3.21G [06:52<00:44, 7.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|█████████ | 2.90G/3.21G [06:52<00:47, 7.16MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|█████████ | 2.90G/3.21G [06:53<00:42, 7.82MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|█████████ | 2.90G/3.21G [06:53<00:45, 7.28MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  90%|█████████ | 2.91G/3.21G [06:53<00:37, 8.87MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████ | 2.91G/3.21G [06:53<00:50, 6.43MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████ | 2.91G/3.21G [06:54<00:42, 7.65MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████ | 2.91G/3.21G [06:54<00:34, 9.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████ | 2.91G/3.21G [06:54<00:29, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████ | 2.92G/3.21G [06:55<00:56, 5.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████ | 2.92G/3.21G [06:55<00:51, 6.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████ | 2.92G/3.21G [06:55<00:47, 6.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████ | 2.92G/3.21G [06:55<00:45, 6.91MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████ | 2.92G/3.21G [06:55<00:36, 8.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████ | 2.92G/3.21G [06:55<00:32, 9.59MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████ | 2.93G/3.21G [06:56<00:37, 8.23MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████ | 2.93G/3.21G [06:56<00:31, 9.72MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████ | 2.93G/3.21G [06:56<00:33, 9.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████▏| 2.93G/3.21G [06:57<00:38, 7.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████▏| 2.94G/3.21G [06:57<00:35, 8.31MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  91%|█████████▏| 2.94G/3.21G [06:57<00:31, 9.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.94G/3.21G [06:58<00:32, 9.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.94G/3.21G [06:58<00:34, 8.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.94G/3.21G [06:59<01:04, 4.47MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.95G/3.21G [06:59<01:21, 3.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.95G/3.21G [07:00<01:42, 2.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.95G/3.21G [07:01<02:03, 2.32MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.95G/3.21G [07:01<01:11, 3.94MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.95G/3.21G [07:01<01:07, 4.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.95G/3.21G [07:01<00:59, 4.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.95G/3.21G [07:02<01:10, 3.94MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.95G/3.21G [07:02<01:04, 4.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.96G/3.21G [07:02<01:15, 3.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.96G/3.21G [07:03<01:10, 3.94MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.96G/3.21G [07:03<01:18, 3.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.96G/3.21G [07:03<00:54, 4.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.96G/3.21G [07:03<00:58, 4.65MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.96G/3.21G [07:04<00:44, 6.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.96G/3.21G [07:04<00:46, 5.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.96G/3.21G [07:04<00:37, 7.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.97G/3.21G [07:04<00:32, 8.09MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.97G/3.21G [07:04<00:41, 6.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.97G/3.21G [07:05<00:38, 6.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.97G/3.21G [07:05<00:35, 7.29MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.97G/3.21G [07:05<00:41, 6.27MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  92%|█████████▏| 2.97G/3.21G [07:05<00:54, 4.75MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.97G/3.21G [07:06<00:54, 4.77MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.97G/3.21G [07:06<00:46, 5.53MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.97G/3.21G [07:06<00:47, 5.35MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.98G/3.21G [07:06<00:54, 4.70MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.98G/3.21G [07:07<01:15, 3.39MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.98G/3.21G [07:08<02:15, 1.86MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.98G/3.21G [07:08<02:08, 1.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.98G/3.21G [07:09<02:11, 1.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.98G/3.21G [07:09<01:55, 2.17MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.98G/3.21G [07:10<01:42, 2.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.98G/3.21G [07:10<01:36, 2.56MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.98G/3.21G [07:10<01:21, 3.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.98G/3.21G [07:10<01:18, 3.14MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.99G/3.21G [07:11<01:13, 3.33MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.99G/3.21G [07:11<01:11, 3.42MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.99G/3.21G [07:11<01:07, 3.60MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.99G/3.21G [07:11<01:01, 3.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.99G/3.21G [07:12<01:01, 3.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.99G/3.21G [07:12<00:56, 4.21MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.99G/3.21G [07:12<00:51, 4.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.99G/3.21G [07:12<00:47, 5.01MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 2.99G/3.21G [07:13<01:00, 3.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 3.00G/3.21G [07:13<00:44, 5.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 3.00G/3.21G [07:13<00:42, 5.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 3.00G/3.21G [07:13<00:41, 5.65MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 3.00G/3.21G [07:13<00:48, 4.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 3.00G/3.21G [07:14<00:46, 4.97MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 3.00G/3.21G [07:14<00:33, 6.80MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  93%|█████████▎| 3.00G/3.21G [07:14<00:35, 6.37MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▎| 3.00G/3.21G [07:15<00:35, 6.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▎| 3.01G/3.21G [07:15<00:35, 6.32MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▎| 3.01G/3.21G [07:15<00:31, 7.10MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▎| 3.01G/3.21G [07:15<00:29, 7.31MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▎| 3.01G/3.21G [07:16<00:31, 6.95MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▍| 3.01G/3.21G [07:16<00:23, 8.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▍| 3.02G/3.21G [07:16<00:26, 8.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▍| 3.02G/3.21G [07:16<00:23, 8.92MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▍| 3.02G/3.21G [07:16<00:21, 9.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▍| 3.02G/3.21G [07:17<00:25, 8.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▍| 3.02G/3.21G [07:17<00:23, 8.60MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▍| 3.02G/3.21G [07:17<00:20, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▍| 3.03G/3.21G [07:17<00:18, 11.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▍| 3.03G/3.21G [07:17<00:15, 12.6MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▍| 3.03G/3.21G [07:17<00:12, 15.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▍| 3.03G/3.21G [07:17<00:12, 15.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  94%|█████████▍| 3.04G/3.21G [07:18<00:17, 11.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▍| 3.04G/3.21G [07:18<00:15, 12.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▍| 3.04G/3.21G [07:18<00:13, 14.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▍| 3.04G/3.21G [07:18<00:15, 11.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▍| 3.04G/3.21G [07:19<00:19, 9.37MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▍| 3.05G/3.21G [07:19<00:21, 8.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▍| 3.05G/3.21G [07:20<00:34, 5.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▍| 3.05G/3.21G [07:20<00:34, 5.07MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▍| 3.05G/3.21G [07:20<00:35, 4.91MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▍| 3.05G/3.21G [07:21<00:37, 4.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.05G/3.21G [07:21<00:32, 5.26MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.05G/3.21G [07:21<00:35, 4.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.05G/3.21G [07:21<00:31, 5.40MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.06G/3.21G [07:21<00:28, 5.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.06G/3.21G [07:22<00:29, 5.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.06G/3.21G [07:22<00:30, 5.46MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.06G/3.21G [07:22<00:31, 5.22MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.06G/3.21G [07:22<00:28, 5.89MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.06G/3.21G [07:22<00:26, 6.28MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.06G/3.21G [07:22<00:25, 6.43MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.06G/3.21G [07:23<00:25, 6.37MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.06G/3.21G [07:23<00:21, 7.45MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.07G/3.21G [07:23<00:26, 5.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.07G/3.21G [07:23<00:26, 6.03MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  95%|█████████▌| 3.07G/3.21G [07:23<00:23, 6.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.07G/3.21G [07:24<00:21, 7.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.07G/3.21G [07:24<00:24, 6.37MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.07G/3.21G [07:24<00:22, 6.71MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.08G/3.21G [07:24<00:16, 8.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.08G/3.21G [07:25<00:17, 8.48MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.08G/3.21G [07:25<00:13, 10.4MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.08G/3.21G [07:25<00:15, 9.01MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.08G/3.21G [07:25<00:16, 8.45MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.08G/3.21G [07:25<00:17, 7.91MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.08G/3.21G [07:25<00:18, 7.63MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.09G/3.21G [07:26<00:12, 10.9MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.09G/3.21G [07:26<00:11, 11.8MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.09G/3.21G [07:26<00:13, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▌| 3.09G/3.21G [07:26<00:12, 10.1MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▋| 3.09G/3.21G [07:27<00:15, 8.04MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▋| 3.10G/3.21G [07:27<00:11, 11.0MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▋| 3.10G/3.21G [07:27<00:14, 8.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  96%|█████████▋| 3.10G/3.21G [07:27<00:12, 9.98MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.10G/3.21G [07:28<00:13, 8.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.11G/3.21G [07:28<00:10, 11.5MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.11G/3.21G [07:28<00:10, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.11G/3.21G [07:28<00:10, 10.3MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.11G/3.21G [07:28<00:10, 10.2MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.11G/3.21G [07:29<00:11, 9.33MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.12G/3.21G [07:29<00:09, 10.7MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.12G/3.21G [07:29<00:12, 7.92MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.12G/3.21G [07:30<00:09, 9.84MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.12G/3.21G [07:30<00:10, 9.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.13G/3.21G [07:30<00:10, 9.06MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.13G/3.21G [07:31<00:10, 8.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.13G/3.21G [07:31<00:14, 6.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  97%|█████████▋| 3.13G/3.21G [07:31<00:14, 6.05MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.13G/3.21G [07:31<00:11, 7.62MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.14G/3.21G [07:32<00:11, 7.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.14G/3.21G [07:32<00:11, 7.18MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.14G/3.21G [07:32<00:10, 7.50MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.14G/3.21G [07:32<00:11, 6.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.14G/3.21G [07:34<00:31, 2.49MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.14G/3.21G [07:34<00:35, 2.18MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.14G/3.21G [07:35<00:36, 2.07MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.14G/3.21G [07:35<00:29, 2.54MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.14G/3.21G [07:36<00:35, 2.09MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.15G/3.21G [07:37<00:40, 1.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.15G/3.21G [07:37<00:38, 1.87MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.15G/3.21G [07:37<00:33, 2.08MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.15G/3.21G [07:38<00:29, 2.38MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.15G/3.21G [07:38<00:23, 2.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.15G/3.21G [07:38<00:19, 3.52MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.15G/3.21G [07:38<00:17, 3.90MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.15G/3.21G [07:38<00:15, 4.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.15G/3.21G [07:39<00:15, 4.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.15G/3.21G [07:39<00:13, 4.69MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.16G/3.21G [07:39<00:12, 5.11MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.16G/3.21G [07:39<00:12, 4.72MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.16G/3.21G [07:39<00:10, 5.55MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.16G/3.21G [07:40<00:10, 5.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.16G/3.21G [07:40<00:11, 4.85MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.16G/3.21G [07:40<00:09, 5.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.16G/3.21G [07:40<00:09, 5.99MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.16G/3.21G [07:40<00:08, 6.24MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  98%|█████████▊| 3.16G/3.21G [07:41<00:08, 5.97MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▊| 3.17G/3.21G [07:41<00:08, 6.20MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▊| 3.17G/3.21G [07:41<00:07, 7.06MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▊| 3.17G/3.21G [07:41<00:06, 7.00MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▊| 3.17G/3.21G [07:41<00:06, 7.54MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▊| 3.17G/3.21G [07:41<00:05, 8.13MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▊| 3.17G/3.21G [07:42<00:05, 8.16MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▊| 3.17G/3.21G [07:42<00:05, 8.07MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▊| 3.17G/3.21G [07:42<00:06, 6.50MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.17G/3.21G [07:42<00:09, 4.28MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.17G/3.21G [07:43<00:09, 4.39MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.18G/3.21G [07:43<00:09, 4.21MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.18G/3.21G [07:43<00:06, 5.60MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.18G/3.21G [07:43<00:07, 4.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.18G/3.21G [07:44<00:09, 3.73MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.18G/3.21G [07:44<00:10, 3.17MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.18G/3.21G [07:45<00:11, 2.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.18G/3.21G [07:45<00:11, 2.81MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.18G/3.21G [07:45<00:10, 3.02MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.18G/3.21G [07:46<00:10, 2.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.19G/3.21G [07:46<00:10, 2.91MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.19G/3.21G [07:47<00:08, 3.32MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.19G/3.21G [07:47<00:08, 3.25MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.19G/3.21G [07:47<00:07, 3.51MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.19G/3.21G [07:48<00:05, 4.21MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.19G/3.21G [07:48<00:04, 4.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.19G/3.21G [07:48<00:04, 4.57MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.20G/3.21G [07:48<00:04, 4.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]:  99%|█████████▉| 3.20G/3.21G [07:49<00:03, 5.39MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.20G/3.21G [07:49<00:02, 6.44MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.20G/3.21G [07:49<00:02, 6.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.20G/3.21G [07:49<00:02, 5.88MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.20G/3.21G [07:50<00:02, 4.61MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.20G/3.21G [07:50<00:03, 3.67MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.20G/3.21G [07:50<00:02, 3.86MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.20G/3.21G [07:51<00:02, 3.79MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.21G/3.21G [07:51<00:02, 3.34MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.21G/3.21G [07:51<00:02, 2.75MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.21G/3.21G [07:52<00:01, 3.30MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.21G/3.21G [07:52<00:01, 3.78MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.21G/3.21G [07:52<00:01, 4.17MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.21G/3.21G [07:52<00:00, 4.93MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.21G/3.21G [07:52<00:00, 5.68MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.21G/3.21G [07:52<00:00, 6.42MB/s][A[A[A[A[A
+
+
+
+
+Downloading [sam3.pt]: 100%|█████████▉| 3.21G/3.21G [07:52<00:00, 7.17MB/s][A[A[A[A[ADownloading [sam3.pt]: 100%|██████████| 3.21G/3.21G [07:52<00:00, 7.29MB/s]
+Processing 9 items: 100%|██████████| 9.00/9.00 [07:53<00:00, 113s/it] Processing 9 items: 100%|██████████| 9.00/9.00 [07:53<00:00, 52.6s/it]
+2026-05-31 08:37:20,377 - modelscope - INFO - Download model 'facebook/sam3' successfully.
+DL_OK /Users/lizeyan/Desktop/i2e/work/ms_cache/facebook/sam3 (479s)
+symlinked sam3.pt -> /Users/lizeyan/Desktop/i2e/work/ms_cache/facebook/sam3/sam3.pt

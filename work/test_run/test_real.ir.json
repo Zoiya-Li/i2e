@@ -1,0 +1,1164 @@
+{
+  "ir_version": "1.0",
+  "id": "img_test",
+  "source": {
+    "generator": "test",
+    "original_image_ref": "test.png",
+    "width": 1257,
+    "height": 341,
+    "ingested_at": "2026-06-23T17:01:36.218846+00:00"
+  },
+  "canvas": {
+    "width": 1257,
+    "height": 341,
+    "unit": "px",
+    "background_element_id": "background-1"
+  },
+  "brand_ref": null,
+  "elements": [
+    {
+      "id": "background-1",
+      "type": "background",
+      "name": "background",
+      "z": 0,
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1257.0,
+        "h": 341.0
+      },
+      "nbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 1.0,
+        "h": 1.0
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract+opencv",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [],
+      "background": {
+        "asset_ref": "work/test_run/test_real.ir.json.assets/_background.png",
+        "inpaint": {
+          "model": "openai-compat",
+          "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+          "confidence": 1.0
+        }
+      }
+    },
+    {
+      "id": "text-1",
+      "type": "text",
+      "name": "section_label_A",
+      "z": 1,
+      "bbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 125.7,
+        "h": 17.05
+      },
+      "nbox": {
+        "x": 0.0,
+        "y": 0.0,
+        "w": 0.1,
+        "h": 0.05
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "A. Overall Architecture",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 12.0,
+        "color": "#696969",
+        "align": "left",
+        "baked_region_ref": "assets/layers/img_test/text-1_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "text-2",
+      "type": "text",
+      "name": "section_label_B",
+      "z": 2,
+      "bbox": {
+        "x": 0.0,
+        "y": 85.25,
+        "w": 125.7,
+        "h": 17.05
+      },
+      "nbox": {
+        "x": 0.0,
+        "y": 0.25,
+        "w": 0.1,
+        "h": 0.05
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "B. Horizon-Aware Adaptive Decomposition",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 12.0,
+        "color": "#6B6B6E",
+        "align": "left",
+        "baked_region_ref": "assets/layers/img_test/text-2_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 6
+      }
+    },
+    {
+      "id": "text-3",
+      "type": "text",
+      "name": "section_label_C",
+      "z": 3,
+      "bbox": {
+        "x": 628.5,
+        "y": 85.25,
+        "w": 125.7,
+        "h": 17.05
+      },
+      "nbox": {
+        "x": 0.5,
+        "y": 0.25,
+        "w": 0.1,
+        "h": 0.05
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "C. Component-Specific Projection",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 12.0,
+        "color": "#E4C7C7",
+        "align": "left",
+        "baked_region_ref": "assets/layers/img_test/text-3_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "text-4",
+      "type": "text",
+      "name": "section_label_D",
+      "z": 4,
+      "bbox": {
+        "x": 942.75,
+        "y": 0.0,
+        "w": 125.7,
+        "h": 17.05
+      },
+      "nbox": {
+        "x": 0.75,
+        "y": 0.0,
+        "w": 0.1,
+        "h": 0.05
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "D. Horizon-Dependent Recombination",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 12.0,
+        "color": "#FEFEFE",
+        "align": "left",
+        "baked_region_ref": "assets/layers/img_test/text-4_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "vector-1",
+      "type": "vector",
+      "name": "overall_architecture_diagram",
+      "z": 5,
+      "bbox": {
+        "x": 125.7,
+        "y": 17.05,
+        "w": 502.8,
+        "h": 68.2
+      },
+      "nbox": {
+        "x": 0.1,
+        "y": 0.05,
+        "w": 0.4,
+        "h": 0.2
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "bbox"
+      ],
+      "vector": {
+        "svg_ref": "assets/layers/img_test/vector-1.svg",
+        "svg_path": null,
+        "fill": null,
+        "stroke": null
+      }
+    },
+    {
+      "id": "vector-2",
+      "type": "vector",
+      "name": "decomposition_diagram",
+      "z": 6,
+      "bbox": {
+        "x": 125.7,
+        "y": 102.3,
+        "w": 502.8,
+        "h": 68.2
+      },
+      "nbox": {
+        "x": 0.1,
+        "y": 0.3,
+        "w": 0.4,
+        "h": 0.2
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "bbox"
+      ],
+      "vector": {
+        "svg_ref": "assets/layers/img_test/vector-2.svg",
+        "svg_path": null,
+        "fill": null,
+        "stroke": null
+      }
+    },
+    {
+      "id": "vector-3",
+      "type": "vector",
+      "name": "projection_diagram",
+      "z": 7,
+      "bbox": {
+        "x": 628.5,
+        "y": 102.3,
+        "w": 314.25,
+        "h": 68.2
+      },
+      "nbox": {
+        "x": 0.5,
+        "y": 0.3,
+        "w": 0.25,
+        "h": 0.2
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "bbox"
+      ],
+      "vector": {
+        "svg_ref": "assets/layers/img_test/vector-3.svg",
+        "svg_path": null,
+        "fill": null,
+        "stroke": null
+      }
+    },
+    {
+      "id": "vector-4",
+      "type": "vector",
+      "name": "recombination_diagram",
+      "z": 8,
+      "bbox": {
+        "x": 942.75,
+        "y": 17.05,
+        "w": 314.25,
+        "h": 68.2
+      },
+      "nbox": {
+        "x": 0.75,
+        "y": 0.05,
+        "w": 0.25,
+        "h": 0.2
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "bbox"
+      ],
+      "vector": {
+        "svg_ref": "assets/layers/img_test/vector-4.svg",
+        "svg_path": null,
+        "fill": null,
+        "stroke": null
+      }
+    },
+    {
+      "id": "vector-5",
+      "type": "vector",
+      "name": "horizon_segments_legend",
+      "z": 9,
+      "bbox": {
+        "x": 1194.1499999999999,
+        "y": 17.05,
+        "w": 62.85,
+        "h": 17.05
+      },
+      "nbox": {
+        "x": 0.9499999999999998,
+        "y": 0.05,
+        "w": 0.05,
+        "h": 0.05
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "bbox"
+      ],
+      "vector": {
+        "svg_ref": "assets/layers/img_test/vector-5.svg",
+        "svg_path": null,
+        "fill": null,
+        "stroke": null
+      }
+    },
+    {
+      "id": "vector-6",
+      "type": "vector",
+      "name": "time_series_with_segments",
+      "z": 10,
+      "bbox": {
+        "x": 1194.1499999999999,
+        "y": 34.1,
+        "w": 62.85,
+        "h": 51.15
+      },
+      "nbox": {
+        "x": 0.9499999999999998,
+        "y": 0.1,
+        "w": 0.05,
+        "h": 0.15
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "bbox"
+      ],
+      "vector": {
+        "svg_ref": "assets/layers/img_test/vector-6.svg",
+        "svg_path": null,
+        "fill": null,
+        "stroke": null
+      }
+    },
+    {
+      "id": "vector-7",
+      "type": "vector",
+      "name": "trend_plot",
+      "z": 11,
+      "bbox": {
+        "x": 1194.1499999999999,
+        "y": 85.25,
+        "w": 62.85,
+        "h": 51.15
+      },
+      "nbox": {
+        "x": 0.9499999999999998,
+        "y": 0.25,
+        "w": 0.05,
+        "h": 0.15
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "bbox"
+      ],
+      "vector": {
+        "svg_ref": "assets/layers/img_test/vector-7.svg",
+        "svg_path": null,
+        "fill": null,
+        "stroke": null
+      }
+    },
+    {
+      "id": "vector-8",
+      "type": "vector",
+      "name": "seasonal_plot",
+      "z": 12,
+      "bbox": {
+        "x": 1194.1499999999999,
+        "y": 136.4,
+        "w": 62.85,
+        "h": 51.15
+      },
+      "nbox": {
+        "x": 0.9499999999999998,
+        "y": 0.4,
+        "w": 0.05,
+        "h": 0.15
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "bbox"
+      ],
+      "vector": {
+        "svg_ref": "assets/layers/img_test/vector-8.svg",
+        "svg_path": null,
+        "fill": null,
+        "stroke": null
+      }
+    },
+    {
+      "id": "text-5",
+      "type": "text",
+      "name": "trend_label",
+      "z": 13,
+      "bbox": {
+        "x": 1194.1499999999999,
+        "y": 85.25,
+        "w": 62.85,
+        "h": 6.82
+      },
+      "nbox": {
+        "x": 0.9499999999999998,
+        "y": 0.25,
+        "w": 0.05,
+        "h": 0.02
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "Trend",
+        "lang": "en",
+        "font_family": "Hiragino Sans GB.ttc",
+        "font_size_px": 10.0,
+        "color": "#606B7C",
+        "align": "center",
+        "baked_region_ref": "assets/layers/img_test/text-5_text.png",
+        "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+        "font_index": 0
+      }
+    },
+    {
+      "id": "text-6",
+      "type": "text",
+      "name": "seasonal_label",
+      "z": 14,
+      "bbox": {
+        "x": 1194.1499999999999,
+        "y": 136.4,
+        "w": 62.85,
+        "h": 6.82
+      },
+      "nbox": {
+        "x": 0.9499999999999998,
+        "y": 0.4,
+        "w": 0.05,
+        "h": 0.02
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "Seasonal",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 10.0,
+        "color": "#D1CFC8",
+        "align": "center",
+        "baked_region_ref": "assets/layers/img_test/text-6_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "text-7",
+      "type": "text",
+      "name": "x_axis_trend",
+      "z": 15,
+      "bbox": {
+        "x": 1194.1499999999999,
+        "y": 129.58,
+        "w": 62.85,
+        "h": 6.82
+      },
+      "nbox": {
+        "x": 0.9499999999999998,
+        "y": 0.38000000000000006,
+        "w": 0.05,
+        "h": 0.02
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "Horizon Step",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 8.0,
+        "color": "#CDCCC9",
+        "align": "center",
+        "baked_region_ref": "assets/layers/img_test/text-7_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "text-8",
+      "type": "text",
+      "name": "x_axis_seasonal",
+      "z": 16,
+      "bbox": {
+        "x": 1194.1499999999999,
+        "y": 180.73000000000002,
+        "w": 62.85,
+        "h": 6.82
+      },
+      "nbox": {
+        "x": 0.9499999999999998,
+        "y": 0.53,
+        "w": 0.05,
+        "h": 0.02
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "Horizon Step",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 8.0,
+        "color": "#FFFFFF",
+        "align": "center",
+        "baked_region_ref": "assets/layers/img_test/text-8_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "text-9",
+      "type": "text",
+      "name": "y_axis_trend",
+      "z": 17,
+      "bbox": {
+        "x": 1194.1499999999999,
+        "y": 85.25,
+        "w": 12.57,
+        "h": 51.15
+      },
+      "nbox": {
+        "x": 0.9499999999999998,
+        "y": 0.25,
+        "w": 0.01,
+        "h": 0.15
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "Value\n-0.25\n0\n0.25\n0.5\n0.75\n1.0",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 8.0,
+        "color": "#2C4268",
+        "align": "right",
+        "baked_region_ref": "assets/layers/img_test/text-9_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "text-10",
+      "type": "text",
+      "name": "y_axis_seasonal",
+      "z": 18,
+      "bbox": {
+        "x": 1194.1499999999999,
+        "y": 136.4,
+        "w": 12.57,
+        "h": 51.15
+      },
+      "nbox": {
+        "x": 0.9499999999999998,
+        "y": 0.4,
+        "w": 0.01,
+        "h": 0.15
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "Value\n-0.25\n0\n0.25\n0.5\n0.75\n1.0",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 8.0,
+        "color": "#F0E2B4",
+        "align": "right",
+        "baked_region_ref": "assets/layers/img_test/text-10_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "vector-9",
+      "type": "vector",
+      "name": "arrow_trend",
+      "z": 19,
+      "bbox": {
+        "x": 1194.1499999999999,
+        "y": 85.25,
+        "w": 12.57,
+        "h": 6.82
+      },
+      "nbox": {
+        "x": 0.9499999999999998,
+        "y": 0.25,
+        "w": 0.01,
+        "h": 0.02
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "bbox"
+      ],
+      "vector": {
+        "svg_ref": "assets/layers/img_test/vector-9.svg",
+        "svg_path": null,
+        "fill": null,
+        "stroke": null
+      }
+    },
+    {
+      "id": "vector-10",
+      "type": "vector",
+      "name": "arrow_seasonal",
+      "z": 20,
+      "bbox": {
+        "x": 1194.1499999999999,
+        "y": 136.4,
+        "w": 12.57,
+        "h": 6.82
+      },
+      "nbox": {
+        "x": 0.9499999999999998,
+        "y": 0.4,
+        "w": 0.01,
+        "h": 0.02
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "bbox"
+      ],
+      "vector": {
+        "svg_ref": "assets/layers/img_test/vector-10.svg",
+        "svg_path": null,
+        "fill": null,
+        "stroke": null
+      }
+    },
+    {
+      "id": "text-11",
+      "type": "text",
+      "name": "decomposition_legend",
+      "z": 21,
+      "bbox": {
+        "x": 125.7,
+        "y": 102.3,
+        "w": 62.85,
+        "h": 17.05
+      },
+      "nbox": {
+        "x": 0.1,
+        "y": 0.3,
+        "w": 0.05,
+        "h": 0.05
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "S-H\nL-H\nU-L-H\nShort-Horizon Kernel Size\nLong-Horizon Kernel Size\nUltra-Long-Horizon Kernel Size",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 8.0,
+        "color": "#3D4344",
+        "align": "left",
+        "baked_region_ref": "assets/layers/img_test/text-11_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "text-12",
+      "type": "text",
+      "name": "projection_input_label",
+      "z": 22,
+      "bbox": {
+        "x": 628.5,
+        "y": 102.3,
+        "w": 62.85,
+        "h": 6.82
+      },
+      "nbox": {
+        "x": 0.5,
+        "y": 0.3,
+        "w": 0.05,
+        "h": 0.02
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "(T_p, S_p)",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 10.0,
+        "color": "#FFFEFB",
+        "align": "center",
+        "baked_region_ref": "assets/layers/img_test/text-12_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 1
+      }
+    },
+    {
+      "id": "text-13",
+      "type": "text",
+      "name": "projection_output_trend",
+      "z": 23,
+      "bbox": {
+        "x": 628.5,
+        "y": 136.4,
+        "w": 62.85,
+        "h": 6.82
+      },
+      "nbox": {
+        "x": 0.5,
+        "y": 0.4,
+        "w": 0.05,
+        "h": 0.02
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "(T_p)",
+        "lang": "en",
+        "font_family": "Hiragino Sans GB.ttc",
+        "font_size_px": 10.0,
+        "color": "#5F5648",
+        "align": "center",
+        "baked_region_ref": "assets/layers/img_test/text-13_text.png",
+        "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "text-14",
+      "type": "text",
+      "name": "projection_output_seasonal",
+      "z": 24,
+      "bbox": {
+        "x": 628.5,
+        "y": 153.45000000000002,
+        "w": 62.85,
+        "h": 6.82
+      },
+      "nbox": {
+        "x": 0.5,
+        "y": 0.45000000000000007,
+        "w": 0.05,
+        "h": 0.02
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "(S_p)",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 10.0,
+        "color": "#FEFEFC",
+        "align": "center",
+        "baked_region_ref": "assets/layers/img_test/text-14_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "text-15",
+      "type": "text",
+      "name": "recombination_input_label",
+      "z": 25,
+      "bbox": {
+        "x": 942.75,
+        "y": 17.05,
+        "w": 62.85,
+        "h": 6.82
+      },
+      "nbox": {
+        "x": 0.75,
+        "y": 0.05,
+        "w": 0.05,
+        "h": 0.02
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "(S_trend + S_seasonal)",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 10.0,
+        "color": "#B4CCE2",
+        "align": "center",
+        "baked_region_ref": "assets/layers/img_test/text-15_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "text-16",
+      "type": "text",
+      "name": "recombination_loss_label",
+      "z": 26,
+      "bbox": {
+        "x": 942.75,
+        "y": 34.1,
+        "w": 62.85,
+        "h": 6.82
+      },
+      "nbox": {
+        "x": 0.75,
+        "y": 0.1,
+        "w": 0.05,
+        "h": 0.02
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "Loss Function",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 8.0,
+        "color": "#FFFFFF",
+        "align": "center",
+        "baked_region_ref": "assets/layers/img_test/text-16_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "text-17",
+      "type": "text",
+      "name": "recombination_weighted_label",
+      "z": 27,
+      "bbox": {
+        "x": 942.75,
+        "y": 17.05,
+        "w": 62.85,
+        "h": 6.82
+      },
+      "nbox": {
+        "x": 0.75,
+        "y": 0.05,
+        "w": 0.05,
+        "h": 0.02
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "Weighted Recombination",
+        "lang": "en",
+        "font_family": "Songti.ttc",
+        "font_size_px": 10.0,
+        "color": "#B4CCE2",
+        "align": "center",
+        "baked_region_ref": "assets/layers/img_test/text-17_text.png",
+        "font_file": "/System/Library/Fonts/Supplemental/Songti.ttc",
+        "font_index": 3
+      }
+    },
+    {
+      "id": "text-18",
+      "type": "text",
+      "name": "overall_architecture_labels",
+      "z": 28,
+      "bbox": {
+        "x": 125.7,
+        "y": 17.05,
+        "w": 502.8,
+        "h": 68.2
+      },
+      "nbox": {
+        "x": 0.1,
+        "y": 0.05,
+        "w": 0.4,
+        "h": 0.2
+      },
+      "extraction": {
+        "confidence": 1.0,
+        "model": "openai-compat",
+        "model_version": "openai-compat:Qwen/Qwen3-VL-32B-Instruct",
+        "method": "openai-compat:vlm-extract",
+        "extracted_at": "2026-06-23T17:01:36.218846+00:00"
+      },
+      "needs_review": false,
+      "editable": [
+        "text.content",
+        "text.color",
+        "text.font_family"
+      ],
+      "text": {
+        "content": "Input Series\nHorizon\nPreprocessing\nHorizon-Aware Adaptive Decomposition\nComponent-Specific Projection\nHorizon-Dependent Recombination\nPrediction Series",
+        "lang": "en",
+        "font_family": "Hiragino Sans GB.ttc",
+        "font_size_px": 10.0,
+        "color": "#A1A299",
+        "align": "left",
+        "baked_region_ref": "assets/layers/img_test/text-18_text.png",
+        "font_file": "/System/Library/Fonts/Hiragino Sans GB.ttc",
+        "font_index": 2
+      }
+    }
+  ],
+  "corrections": [],
+  "created_at": "2026-06-23T17:01:36.218846+00:00",
+  "updated_at": "2026-06-23T17:01:36.218846+00:00"
+}

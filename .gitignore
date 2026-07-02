@@ -1,0 +1,58 @@
+# ── secrets — never commit ─────────────────────────────────────────
+.env
+.env.*
+*.key
+*.pem
+
+# ── macOS / editor ─────────────────────────────────────────────────
+.DS_Store
+.idea/
+.vscode/
+
+# ── Python ─────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+*_venv/
+
+# ── large model weights (download at setup time, never in git) ─────
+*.pt
+*.pth
+*.onnx
+*.safetensors
+*.ckpt
+*.bin
+*.gguf
+*.sentencepiece
+sentencepiece.bpe.model
+
+# ── model / HF / MS caches ─────────────────────────────────────────
+work/hf_cache/
+work/ms_cache/
+work/diagram2ppt/v3/models/pix2text-mfr/
+work/diagram2ppt/v3/models/texify/
+mobile_sam.pt
+
+# ── generated assets / outputs ─────────────────────────────────────
+*.assets/
+*.ir.json.assets/
+work/*_out*/
+work/diagram2ppt/*_out*/
+work/diagram2ppt/v3_out_index.*
+work/diagram2ppt/archive_202506/
+work/diagram2ppt/**/snapshots/
+work/poster*/
+work/derender_*/
+work/gen_decompose/
+work/diagram2ppt/v3/v3/
+
+# ── historical experiments & third-party submodules (too large / not ours) ─
+archive/
+external/
+
+# ── OCR upscale scratch files at repo root ─────────────────────────
+*.ocr_upscale.png
