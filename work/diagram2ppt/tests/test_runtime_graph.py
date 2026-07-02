@@ -5,6 +5,7 @@ and verify topological ordering, dependency enforcement, and caching.
 """
 from __future__ import annotations
 
+from pathlib import Path
 from types import SimpleNamespace
 
 from work.diagram2ppt.v3.runtime import PlannerKernel
@@ -16,6 +17,7 @@ from work.diagram2ppt.v3.runtime.graph import (
 )
 from work.diagram2ppt.v3.runtime.operators import (
     ImmutableAuditTasksOperator,
+    ImmutableOperator,
     ImmutableTaskGraphOperator,
 )
 
@@ -137,3 +139,131 @@ def test_graph_to_dict_roundtrip():
     d = g.to_dict()
     assert d["nodes"]["a"]["operator"] == "x"
     assert d["nodes"]["a"]["inputs"]["k"] == 1
+
+
+def test_auto_connect_from_operator_contracts():
+    kernel = _kernel_with_ir()
+    g = ExecutionGraph()
+    g.add_node(GraphNode(id="perceive", operator="perceive"))
+    g.add_node(GraphNode(id="render", operator="render_verify_audit"))
+    g.add_node(GraphNode(id="derive", operator="derive_components"))
+    g.add_node(GraphNode(id="audit", operator="audit_tasks"))
+    g.auto_connect(kernel)
+
+    edges = {(e.source, e.target, e.field) for e in g.edges}
+    assert ("perceive", "render", "ir") in edges
+    assert ("perceive", "derive", "ir") in edges or ("perceive", "derive", "strategy_plan") in edges
+    assert ("derive", "audit", "components") in edges
+
+    order = g.topological_order()
+    assert order.index("perceive") < order.index("render")
+    assert order.index("perceive") < order.index("derive")
+    assert order.index("derive") < order.index("audit")
+
+
+def test_immutable_operator_effects_committed():
+    kernel = _kernel_with_ir()
+    g = ExecutionGraph()
+    g.add_node(GraphNode(
+        id="audit",
+        operator="immutable_audit_tasks",
+        produced_fields=["audit_tasks"],
+        produced_artifacts=["audit_tasks.json"],
+    ))
+    trace = kernel.execute_graph(g)
+    assert "audit" in trace.node_results
+    assert kernel.state.audit_tasks is not None
+    assert (Path(kernel.state.out_dir) / "audit_tasks.json").exists()
+
+
+def test_parallel_wave_executes_independent_immutable_operators():
+    from copy import deepcopy
+
+    class _WriteComponents(ImmutableOperator):
+        name = "write_components"
+        target_stage = "auditing"
+        reads = ("ir",)
+        writes = ("components",)
+        idempotent = True
+
+        def run(self, state, **inputs):
+            new = deepcopy(state)
+            new.components = [{"id": "comp_a"}]
+            new.stage = self.target_stage
+            return new, []
+
+    class _WriteAuditTasks(ImmutableOperator):
+        name = "write_audit_tasks2"
+        target_stage = "auditing"
+        reads = ("ir",)
+        writes = ("audit_tasks",)
+        idempotent = True
+
+        def run(self, state, **inputs):
+            new = deepcopy(state)
+            new.audit_tasks = [{"id": "task_1"}]
+            new.stage = self.target_stage
+            return new, []
+
+    kernel = _kernel_with_ir()
+    kernel._operators["write_components"] = _WriteComponents()
+    kernel._operators["write_audit_tasks2"] = _WriteAuditTasks()
+
+    g = ExecutionGraph()
+    g.add_node(GraphNode(id="wc", operator="write_components", produced_fields=["components"]))
+    g.add_node(GraphNode(id="wa", operator="write_audit_tasks2", produced_fields=["audit_tasks"]))
+
+    trace = kernel.execute_graph(g)
+    assert kernel.state.components == [{"id": "comp_a"}]
+    assert kernel.state.audit_tasks == [{"id": "task_1"}]
+    assert len(trace.transitions) == 2
+
+
+def test_loop_node_executes_body_until_guard_stops():
+    from work.diagram2ppt.v3.runtime.operators import Operator
+
+    class _CounterGuard(Operator):
+        name = "counter_guard"
+        target_stage = "refining"
+        reads = ("loop_iteration",)
+        writes = ("loop_continue",)
+
+        def run(self, kernel, **inputs):
+            state = self._state_copy(kernel)
+            state.loop_continue = state.loop_iteration < 3
+            state.stage = self.target_stage
+            return state
+
+    class _CounterBody(Operator):
+        name = "counter_body"
+        target_stage = "refining"
+        reads = ()
+        writes = ("loop_iteration",)
+
+        def run(self, kernel, **inputs):
+            state = self._state_copy(kernel)
+            state.loop_iteration += 1
+            state.stage = self.target_stage
+            return state
+
+    kernel = _kernel_with_ir()
+    kernel._operators["counter_guard"] = _CounterGuard()
+    kernel._operators["counter_body"] = _CounterBody()
+
+    body = ExecutionGraph()
+    body.add_node(GraphNode(id="body", operator="counter_body"))
+
+    g = ExecutionGraph()
+    g.add_node(GraphNode(
+        id="guard",
+        operator="counter_guard",
+        guard_operator="counter_guard",
+        loop_body=body,
+    ))
+
+    trace = kernel.execute_graph(g)
+    assert kernel.state.loop_iteration == 3
+    body_transitions = [t for t in trace.transitions if t.operator == "counter_body"]
+    guard_transitions = [t for t in trace.transitions if t.operator == "counter_guard"]
+    assert len(body_transitions) == 3
+    assert len(guard_transitions) == 4

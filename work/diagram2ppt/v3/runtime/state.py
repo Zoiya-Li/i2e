@@ -97,6 +97,11 @@ class RuntimeState:
     last_verify_result: dict[str, Any] | None = None
     last_proposal_result: dict[str, Any] | None = None
 
+    # Loop / decision transient state
+    loop_continue: bool | None = None
+    next_action: str | None = None
+    loop_iteration: int = 0
+
     # Configuration
     config: dict[str, Any] = field(default_factory=dict)
     run_memory: dict[str, Any] = field(default_factory=dict)

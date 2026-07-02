@@ -24,6 +24,7 @@ from .contract import (
     SideEffect,
     WriteFileEffect,
 )
+from ..planner import _has_visual_review_defects
 
 
 class Operator:
@@ -31,6 +32,9 @@ class Operator:
 
     name: str = "base"
     target_stage: str = "idle"
+    reads: tuple[str, ...] = ()
+    writes: tuple[str, ...] = ()
+    artifacts: tuple[str, ...] = ()
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         pass
@@ -48,6 +52,10 @@ class PerceiveOperator(Operator):
 
     name = "perceive"
     target_stage = "planning"
+    reads: tuple[str, ...] = ()
+    writes: tuple[str, ...] = (
+        "ir", "strategy_plan", "metrics", "defects", "visual_review", "round"
+    )
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.planner is None:
@@ -72,6 +80,8 @@ class ComposeOperator(Operator):
 
     name = "compose"
     target_stage = "composing"
+    reads = ("ir",)
+    writes = ("ir",)
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.planner is None:
@@ -91,6 +101,11 @@ class RenderVerifyAuditOperator(Operator):
 
     name = "render_verify_audit"
     target_stage = "auditing"
+    reads = ("ir",)
+    writes = (
+        "metrics", "defects", "visual_review", "renderer_mode",
+        "last_verify_result", "last_render_png", "last_compare_png", "last_pptx",
+    )
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.planner is None:
@@ -132,6 +147,8 @@ class TaskGraphOperator(Operator):
 
     name = "task_graph"
     target_stage = "refining"
+    reads = ("ir", "strategy_plan")
+    writes = ("task_graph",)
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.planner is None:
@@ -189,6 +206,8 @@ class ProposalPhaseOperator(Operator):
 
     name = "proposal_phase"
     target_stage = "refining"
+    reads = ("ir", "task_graph")
+    writes = ("ir", "metrics", "defects", "last_proposal_result")
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.planner is None:
@@ -211,6 +230,8 @@ class ComponentCleanupOperator(Operator):
 
     name = "component_cleanup"
     target_stage = "refining"
+    reads = ("ir",)
+    writes = ("ir",)
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.planner is None:
@@ -234,6 +255,8 @@ class RepairOperator(Operator):
 
     name = "repair"
     target_stage = "refining"
+    reads = ("ir",)
+    writes = ("ir",)
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.planner is None:
@@ -270,6 +293,8 @@ class AcceptOrRollbackOperator(Operator):
 
     name = "rollback_or_accept"
     target_stage = "refining"
+    reads = ("ir",)
+    writes = ("ir", "metrics", "defects")
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.planner is None:
@@ -291,6 +316,9 @@ class DeriveComponentsOperator(Operator):
 
     name = "derive_components"
     target_stage = "auditing"
+    reads = ("ir", "strategy_plan")
+    writes = ("components",)
+    artifacts = ("components.json",)
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.state.ir is None:
@@ -319,6 +347,10 @@ class AuditTasksOperator(Operator):
 
     name = "audit_tasks"
     target_stage = "auditing"
+    reads = ("ir",)
+    optional_reads = ("components",)
+    writes = ("audit_tasks",)
+    artifacts = ("audit_tasks.json",)
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.state.ir is None:
@@ -354,6 +386,7 @@ class ImmutableAuditTasksOperator(ImmutableOperator):
     name = "immutable_audit_tasks"
     target_stage = "auditing"
     reads = ("ir",)
+    optional_reads = ("components",)
     writes = ("audit_tasks",)
     artifacts = ("audit_tasks.json",)
     idempotent = True
@@ -387,10 +420,17 @@ class ImmutableAuditTasksOperator(ImmutableOperator):
 
 
 class SvgLoopOperator(Operator):
-    """Run IR → SVG → PNG → diff for the current IR."""
+    """Run IR → SVG → PNG → diff for the current IR.
+
+    This is a best-effort preview operator: it never crashes the graph even when
+    the SVG rasterizer is missing or ``ir_final.json`` has not been written yet.
+    """
 
     name = "svg_loop"
     target_stage = "auditing"
+    reads = ("ir",)
+    writes = ("last_svg",)
+    artifacts = ("svg_loop.json", "diagram_v3.svg")
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.state.ir is None:
@@ -399,9 +439,13 @@ class SvgLoopOperator(Operator):
     def run(self, kernel: Any, **inputs: Any) -> RuntimeState:
         from .. import svg_loop as _svg_loop
 
-        result = _svg_loop.run_svg_loop(kernel.state.out_dir)
         state = self._state_copy(kernel)
-        state.last_svg = result.get("svg")
+        try:
+            result = _svg_loop.run_svg_loop(kernel.state.out_dir)
+            state.last_svg = result.get("svg")
+        except Exception:
+            # Preview is optional; do not fail the runtime graph.
+            pass
         state.stage = self.target_stage
         return state
 
@@ -411,6 +455,8 @@ class AcceptOperator(Operator):
 
     name = "accept"
     target_stage = "accepted"
+    reads = ("ir",)
+    writes = ("ir",)
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.planner is None or kernel.planner.ir is None:
@@ -428,6 +474,8 @@ class FailOperator(Operator):
 
     name = "fail"
     target_stage = "failed"
+    reads = ("ir",)
+    writes = ("ir",)
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.planner is None or kernel.planner.ir is None:
@@ -436,6 +484,67 @@ class FailOperator(Operator):
     def run(self, kernel: Any, **inputs: Any) -> RuntimeState:
         kernel.planner.ir["status"] = "failed"
         state = self._state_copy(kernel)
+        state.stage = self.target_stage
+        return state
+
+
+class AcceptanceOperator(Operator):
+    """Terminal operator: accept if verification passed, otherwise fail.
+
+    This replaces the early-return ``_accept_if_done`` logic with an explicit
+    graph node so the full execution plan is visible to the scheduler.
+    """
+
+    name = "acceptance"
+    target_stage = "accepted"
+    reads = ("last_verify_result", "ir")
+    writes = ("ir",)
+
+    def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
+        if kernel.planner is None or kernel.planner.ir is None:
+            raise RuntimeError("acceptance requires an IR")
+
+    def run(self, kernel: Any, **inputs: Any) -> RuntimeState:
+        state = self._state_copy(kernel)
+        passed = bool((state.last_verify_result or {}).get("passed"))
+        visual_ok = not _has_visual_review_defects(state.ir)
+        status = "accepted" if passed and visual_ok else "failed"
+        kernel.planner.ir["status"] = status
+        state.ir = copy.deepcopy(kernel.planner.ir)
+        state.stage = "accepted" if status == "accepted" else "failed"
+        return state
+
+
+class AuditLoopGuardOperator(Operator):
+    """Loop guard for the audit agent control loop.
+
+    Sets ``state.loop_continue`` based on the latest verify result, visual
+    review, and the iteration budget.  The scheduler repeats the loop body while
+    this flag is true.
+    """
+
+    name = "audit_loop_guard"
+    target_stage = "refining"
+    reads = ("last_verify_result", "ir", "loop_iteration")
+    writes = ("loop_continue",)
+
+    def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
+        if kernel.planner is None:
+            raise RuntimeError("audit_loop_guard requires a planner")
+
+    def run(self, kernel: Any, **inputs: Any) -> RuntimeState:
+        state = self._state_copy(kernel)
+        max_rounds = int(getattr(kernel.planner, "max_rounds", 0))
+        iteration = state.loop_iteration
+        passed = bool((state.last_verify_result or {}).get("passed"))
+        visual_ok = not _has_visual_review_defects(state.ir)
+        # Honor an explicit stop signal from the loop body (e.g. decision=stop).
+        explicit_stop = state.loop_continue is False
+        state.loop_continue = (
+            (not explicit_stop)
+            and (not (passed and visual_ok))
+            and (iteration < max_rounds)
+        )
         state.stage = self.target_stage
         return state
 
@@ -449,6 +558,8 @@ class LegacyPlannerLoopOperator(Operator):
 
     name = "legacy_planner_loop"
     target_stage = "finalizing"
+    reads = ()
+    writes = ("ir",)
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.planner is None:
@@ -467,6 +578,8 @@ class FinalizeOperator(Operator):
 
     name = "finalize"
     target_stage = "finalizing"
+    reads = ("ir", "strategy_plan")
+    writes = ("components", "audit_tasks", "last_svg")
 
     def check_preconditions(self, kernel: Any, **inputs: Any) -> None:
         if kernel.state.ir is None:

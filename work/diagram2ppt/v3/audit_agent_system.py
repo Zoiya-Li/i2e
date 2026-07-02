@@ -14,6 +14,90 @@ from typing import Any, Callable
 
 from . import component_cleanup, ir as IR
 from .planner import _has_visual_review_defects
+from .runtime.graph import DependencyEdge, ExecutionGraph, GraphNode
+from .runtime.operators import Operator
+
+
+class _AuditInitialStateOperator(Operator):
+    """Write the initial audit state once the first render is available."""
+
+    name = "audit_initial_state"
+    target_stage = "auditing"
+    reads = ("last_verify_result", "ir")
+    writes = ()
+
+    def __init__(self, system: "AuditAgentSystem") -> None:
+        super().__init__()
+        self.system = system
+
+    def run(self, kernel: Any, **inputs: Any) -> Any:
+        state = self._state_copy(kernel)
+        result = state.last_verify_result or {}
+        self.system._write_agent_state(
+            "initial", self.system._build_audit_state(result, 0)
+        )
+        return state
+
+
+class _AuditLoopBodyOperator(Operator):
+    """One iteration of the audit agent loop.
+
+    This operator decides between coordinated proposals and a single repair,
+    executes the chosen action via kernel transitions, re-renders, and derives
+    post-change artifacts.  It is the loop body inside the execution graph.
+    """
+
+    name = "audit_loop_body"
+    target_stage = "refining"
+    reads = (
+        "ir", "last_verify_result", "defects", "visual_review",
+        "metrics", "loop_iteration",
+    )
+    writes = (
+        "ir", "metrics", "defects", "visual_review", "last_verify_result",
+        "last_proposal_result", "components", "audit_tasks", "last_svg",
+        "renderer_mode", "loop_continue", "loop_iteration",
+    )
+
+    def __init__(self, system: "AuditAgentSystem") -> None:
+        super().__init__()
+        self.system = system
+
+    def run(self, kernel: Any, **inputs: Any) -> Any:
+        state = self._state_copy(kernel)
+        state.loop_iteration += 1
+        iteration = state.loop_iteration
+
+        result = state.last_verify_result or {}
+        audit_state = self.system._build_audit_state(result, iteration)
+        self.system._write_agent_state(f"{iteration:02d}", audit_state)
+        decision = self.system._decide_next_action(audit_state)
+        self.system._write_decision(f"{iteration:02d}", decision)
+        self.system._record("decision", decision)
+
+        action = decision["action"]
+        should_stop = False
+        if action == "proposal_phase":
+            kernel.transition("task_graph")
+            kernel.transition("proposal_phase")
+            if self.system._current_proposal_result().get("accepted", 0):
+                kernel.transition("component_cleanup")
+            kernel.transition("render_verify_audit")
+            self.system._derive_runtime_artifacts()
+        elif action == "single_repair":
+            self.system._run_single_repair_kernel(decision)
+            self.system._derive_runtime_artifacts()
+        elif action == "stop":
+            should_stop = True
+        else:
+            self.system._record("warning", {"reason": f"unknown action {action}"})
+            should_stop = True
+
+        new_state = self._state_copy(kernel)
+        new_state.loop_iteration = iteration
+        new_state.loop_continue = False if should_stop else new_state.loop_continue
+        new_state.stage = self.target_stage
+        return new_state
 
 
 class AuditAgentSystem:
@@ -68,53 +152,97 @@ class AuditAgentSystem:
         return self._run_legacy()
 
     def _run_with_kernel(self) -> dict:
-        """Kernel-driven control path (Phase 3+)."""
+        """Kernel-driven control path using an explicit ExecutionGraph."""
         assert self.kernel is not None
-        self.kernel.transition("perceive")
-        self._derive_runtime_artifacts()
-        result = self.kernel.transition("render_verify_audit")
-        self._derive_runtime_artifacts()
-        self._write_agent_state("initial", self._build_audit_state(self._current_verify_result(), 0))
+        # Register agent-system-specific operators for this run.
+        self.kernel._operators[_AuditInitialStateOperator.name] = _AuditInitialStateOperator(self)
+        self.kernel._operators[_AuditLoopBodyOperator.name] = _AuditLoopBodyOperator(self)
 
-        if self._accept_if_done(self._current_verify_result(), "initial render passed"):
-            return self.planner.ir
-
-        for iteration in range(max(0, int(self.planner.max_rounds))):
-            state = self._build_audit_state(self._current_verify_result(), iteration + 1)
-            self._write_agent_state(f"{iteration + 1:02d}", state)
-            decision = self._decide_next_action(state)
-            self._write_decision(f"{iteration + 1:02d}", decision)
-            self._record("decision", decision)
-
-            action = decision["action"]
-            if action == "proposal_phase":
-                self.kernel.transition("task_graph")
-                self.kernel.transition("proposal_phase")
-                if self._current_proposal_result().get("accepted", 0):
-                    self.kernel.transition("component_cleanup")
-                result = self.kernel.transition("render_verify_audit")
-                self._derive_runtime_artifacts()
-            elif action == "single_repair":
-                result = self._run_single_repair_kernel(decision)
-                self._derive_runtime_artifacts()
-            elif action == "stop":
-                break
-            else:
-                self._record("warning", {"reason": f"unknown action {action}"})
-                break
-
-            if self._accept_if_done(self._current_verify_result(), f"iteration {iteration + 1} passed"):
-                return self.planner.ir
-
-        if not self._result_passed(self._current_verify_result()):
-            result = self.kernel.transition("render_verify_audit")
-            self._derive_runtime_artifacts()
-
-        passed = self._result_passed(self._current_verify_result())
-        self.kernel.transition("finalize")
-        self.kernel.transition("accept" if passed else "fail")
+        graph = self._build_audit_graph()
+        self.kernel.execute_graph(graph)
         self._finish()
         return self.planner.ir
+
+    def _build_audit_graph(self) -> ExecutionGraph:
+        """Build the full audit agent execution graph.
+
+        The graph is:
+            perceive → render_verify_audit → audit_initial_state
+            render_verify_audit → [derive_components, audit_tasks, svg_loop]
+            artifact nodes → audit_loop
+            audit_loop (guard + body) → finalize → acceptance
+        """
+        assert self.kernel is not None
+        graph = ExecutionGraph()
+
+        graph.add_node(GraphNode(id="perceive", operator="perceive", stage="planning"))
+        graph.add_node(
+            GraphNode(id="render_verify_audit", operator="render_verify_audit", stage="auditing")
+        )
+        graph.add_node(
+            GraphNode(id="audit_initial_state", operator="audit_initial_state", stage="auditing")
+        )
+
+        graph.add_node(
+            GraphNode(
+                id="derive_components",
+                operator="derive_components",
+                stage="auditing",
+                produced_fields=["components"],
+                produced_artifacts=["components.json"],
+            )
+        )
+        graph.add_node(
+            GraphNode(
+                id="audit_tasks",
+                operator="audit_tasks",
+                stage="auditing",
+                produced_fields=["audit_tasks"],
+                produced_artifacts=["audit_tasks.json"],
+            )
+        )
+        graph.add_node(
+            GraphNode(
+                id="svg_loop",
+                operator="svg_loop",
+                stage="auditing",
+                produced_fields=["last_svg"],
+                produced_artifacts=["svg_loop.json"],
+            )
+        )
+
+        body = ExecutionGraph()
+        body.add_node(
+            GraphNode(id="audit_loop_body", operator="audit_loop_body", stage="refining")
+        )
+        body.auto_connect(self.kernel)
+
+        graph.add_node(
+            GraphNode(
+                id="audit_loop",
+                operator="audit_loop_guard",
+                stage="refining",
+                guard_operator="audit_loop_guard",
+                loop_body=body,
+            )
+        )
+        graph.add_node(GraphNode(id="finalize", operator="finalize", stage="finalizing"))
+        graph.add_node(GraphNode(id="acceptance", operator="acceptance", stage="accepted"))
+
+        graph.auto_connect(self.kernel)
+
+        # Control-flow edges that auto-connect cannot infer (loop/terminal ordering).
+        graph.add_edge(
+            DependencyEdge(source="render_verify_audit", target="audit_initial_state", field="last_verify_result")
+        )
+        graph.add_edge(DependencyEdge(source="audit_initial_state", target="audit_loop"))
+        graph.add_edge(DependencyEdge(source="derive_components", target="audit_tasks"))
+        for nid in ("derive_components", "audit_tasks", "svg_loop"):
+            graph.add_edge(DependencyEdge(source=nid, target="audit_loop"))
+        graph.add_edge(DependencyEdge(source="audit_loop", target="finalize"))
+        graph.add_edge(DependencyEdge(source="finalize", target="acceptance"))
+
+        return graph
 
     def _derive_runtime_artifacts(self) -> None:
         """Best-effort derive components / audit tasks / SVG after state changes."""

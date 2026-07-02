@@ -9,6 +9,8 @@ from typing import Any, Callable
 from .operators import (
     AcceptOperator,
     AcceptOrRollbackOperator,
+    AcceptanceOperator,
+    AuditLoopGuardOperator,
     AuditTasksOperator,
     ComponentCleanupOperator,
     ComposeOperator,
@@ -48,6 +50,8 @@ def register_operators() -> dict[str, Operator]:
         LegacyPlannerLoopOperator(),
         ImmutableTaskGraphOperator(),
         ImmutableAuditTasksOperator(),
+        AcceptanceOperator(),
+        AuditLoopGuardOperator(),
     ]
     return {op.name: op for op in ops}
 

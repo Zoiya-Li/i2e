@@ -212,7 +212,7 @@ def test_kernel_dispatches_operators():
         assert "derive_components" in ops
         assert "audit_tasks" in ops
         assert "svg_loop" in ops
-        assert "accept" in ops
+        assert "acceptance" in ops
         assert log["stage"] == "accepted"
 
 
