@@ -1,58 +1,54 @@
-# ── secrets — never commit ─────────────────────────────────────────
+
+__pycache__/
+.DS_Store
 .env
 .env.*
-*.key
-*.pem
-
-# ── macOS / editor ─────────────────────────────────────────────────
-.DS_Store
 .idea/
-.vscode/
-
-# ── Python ─────────────────────────────────────────────────────────
-__pycache__/
-*.py[cod]
-*.egg-info/
-.pytest_cache/
 .mypy_cache/
+.pytest_cache/
 .venv/
-venv/
+.vscode/
 *_venv/
-
-# ── large model weights (download at setup time, never in git) ─────
+*.assets/
+*.bin
+*.ckpt
+*.egg-info/
+*.gguf
+*.ir.json.assets/
+*.key
+*.log
+*.ocr_upscale.png
+*.onnx
+*.pem
 *.pt
 *.pth
-*.onnx
+*.py[cod]
 *.safetensors
-*.ckpt
-*.bin
-*.gguf
 *.sentencepiece
-sentencepiece.bpe.model
-
-# ── model / HF / MS caches ─────────────────────────────────────────
-work/hf_cache/
-work/ms_cache/
-work/diagram2ppt/v3/models/pix2text-mfr/
-work/diagram2ppt/v3/models/texify/
-mobile_sam.pt
-
 # ── generated assets / outputs ─────────────────────────────────────
-*.assets/
-*.ir.json.assets/
-work/*_out*/
-work/diagram2ppt/*_out*/
-work/diagram2ppt/v3_out_index.*
-work/diagram2ppt/archive_202506/
-work/diagram2ppt/**/snapshots/
-work/poster*/
-work/derender_*/
-work/gen_decompose/
-work/diagram2ppt/v3/v3/
-
 # ── historical experiments & third-party submodules (too large / not ours) ─
+# ── large model weights (download at setup time, never in git) ─────
+# ── macOS / editor ─────────────────────────────────────────────────
+# ── model / HF / MS caches ─────────────────────────────────────────
+# ── OCR upscale scratch files at repo root ─────────────────────────
+# ── Python ─────────────────────────────────────────────────────────
+# ── secrets — never commit ─────────────────────────────────────────
 archive/
 external/
-
-# ── OCR upscale scratch files at repo root ─────────────────────────
-*.ocr_upscale.png
+mobile_sam.pt
+sentencepiece.bpe.model
+venv/
+work/*_out*/
+work/derender_*/
+work/diagram2ppt/*_out*/
+work/diagram2ppt/**/snapshots/
+work/diagram2ppt/archive_202506/
+work/diagram2ppt/v3_out_index.*
+work/diagram2ppt/v3/models/pix2text-mfr/
+work/diagram2ppt/v3/models/texify/
+work/diagram2ppt/v3/v3/
+work/gen_decompose/
+work/hf_cache/
+work/ms_cache/
+work/poster*/
+work/test_run/

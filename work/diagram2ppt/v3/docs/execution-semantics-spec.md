@@ -543,14 +543,108 @@ added side-by-side.  The next incremental steps are:
 
 ### 13.6 What is still missing
 
-- The kernel does not yet commit immutable-operator effects.
+- The kernel does not yet commit immutable-operator effects by default.
 - No write-field validation hook.
 - No code-version / seed recording in `Transaction`.
-- No execution graph scheduler.
 - No transactional rollback of partial file writes.
 
 These remain Target work; the contract layer makes them implementable
 incrementally without rewriting the whole system.
+
+---
+
+## 14. Execution graph kernel (Current as of 2026-07-02)
+
+The next jump is implemented in `work/diagram2ppt/v3/runtime/graph.py`:
+`PlannerKernel` can now execute a dependency graph of operators via
+`execute_graph(graph, cache)`.
+
+### 14.1 Core classes
+
+- `ExecutionGraph`: a DAG of `GraphNode`s and `DependencyEdge`s.
+- `GraphNode`: one operator invocation with `inputs`, `depends_on`, and declared
+  `produced_fields` / `produced_artifacts`.
+- `DependencyEdge`: a data dependency between two nodes on a state field or
+  artifact path.
+- `GraphScheduler`: topologically sorts the graph, executes nodes, records a
+  `GraphExecutionTrace`, and caches results by deterministic node keys.
+
+### 14.2 Scheduler behavior
+
+```text
+for each node in topological_order(graph):
+    cache_key = node.compute_cache_key(kernel.state)
+    if cache_key in cache:
+        kernel.state = cached_state
+        mark cache hit
+    else:
+        if operator is ImmutableOperator:
+            new_state = op.run(kernel.state)
+        else:
+            new_state = kernel.transition(op_name)
+        cache[cache_key] = new_state
+    append transition to trace
+```
+
+Independent nodes are grouped into waves by `independent_groups()`; the current
+scheduler runs waves serially and nodes inside a wave serially.  A parallel
+executor can be swapped in later without changing graph semantics.
+
+### 14.3 Cache key semantics
+
+`GraphNode.compute_cache_key()` hashes:
+
+- node id
+- operator name
+- node inputs
+- canonical upstream state (input image, out_dir, round, IR, strategy_plan,
+  components, renderer_mode)
+
+It deliberately excludes derived outputs (`task_graph`, `audit_tasks`) and the
+runtime `stage` so that the same upstream state hits the cache even after a
+previous graph execution mutated the stage or produced derived fields.
+
+### 14.4 First graph execution tests
+
+`work/diagram2ppt/tests/test_runtime_graph.py` covers:
+
+- Topological order respects dependency edges.
+- Cycle detection raises `RuntimeError`.
+- Independent groups split nodes into parallelizable waves.
+- Graph scheduler runs `immutable_task_graph` → `immutable_audit_tasks` in order.
+- Cache hits on re-execution with the same upstream state.
+- Cache key changes when upstream state changes.
+- Graph serialization via `ExecutionGraph.to_dict()`.
+
+### 14.5 What this unlocks
+
+- **Parallel execution**: independent nodes can run concurrently once a thread/
+  process executor is added.
+- **Partial recompute**: after an IR mutation, only downstream nodes need
+  re-execution.
+- **Deterministic caching**: expensive operators (render/verify/VLM) can be
+  memoized.
+- **Auditable plans**: the graph itself is a first-class artifact that can be
+  saved, diffed, and reviewed.
+
+### 14.6 What is still missing
+
+- `AuditAgentSystem` does not yet build or execute a graph; it still uses
+  linear `kernel.transition()` calls.
+- No automatic graph construction from operator `reads`/`writes`.
+- No parallel executor.
+- No graph-level rollback or checkpointing.
+- Effects from immutable operators are not yet committed through the kernel.
+
+These are the next Target increments after the graph kernel foundation.
+
+---
+
+**Bottom line:** v3 is now an event-driven state machine kernel with a
+concrete graph execution layer on top. The remaining gap to a full Visual
+Design Compiler runtime is populating `ExecutionGraph` automatically from the
+declarative operator contracts and wiring `AuditAgentSystem` to schedule via
+the graph instead of linear transitions.
 
 ---
 

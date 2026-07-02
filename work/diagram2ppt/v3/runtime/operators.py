@@ -353,7 +353,7 @@ class ImmutableAuditTasksOperator(ImmutableOperator):
 
     name = "immutable_audit_tasks"
     target_stage = "auditing"
-    reads = ("ir", "components")
+    reads = ("ir",)
     writes = ("audit_tasks",)
     artifacts = ("audit_tasks.json",)
     idempotent = True
@@ -367,7 +367,9 @@ class ImmutableAuditTasksOperator(ImmutableOperator):
 
         if state.ir is None:
             raise RuntimeError("immutable_audit_tasks requires an IR")
-        tasks = _audit_tasks.unify_tasks(state.ir, state.components)
+        # components is optional: derive from state if present, otherwise None.
+        components = getattr(state, "components", None)
+        tasks = _audit_tasks.unify_tasks(state.ir, components)
         payload = {
             "schema": "audit-tasks-v1",
             "count": len(tasks),

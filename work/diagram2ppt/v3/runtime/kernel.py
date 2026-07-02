@@ -14,6 +14,7 @@ from typing import Any
 
 from .state import RuntimeState, Transition
 from . import registry
+from .graph import ExecutionGraph, GraphScheduler
 
 
 class PlannerKernel:
@@ -190,6 +191,25 @@ class PlannerKernel:
             )
         }
         return self.state.write(out / "state_log.json")
+
+    def execute_graph(
+        self,
+        graph: ExecutionGraph,
+        cache: dict[str, RuntimeState] | None = None,
+    ) -> Any:
+        """Execute a dependency graph of operators and return the execution trace.
+
+        This is the graph-kernel entry point: it replaces the linear
+        ``transition()`` call with a topologically scheduled DAG.  Independent
+        nodes are executed serially here; a parallel executor can be swapped in
+        later without changing the graph semantics.
+        """
+        scheduler = GraphScheduler(self, cache=cache)
+        trace = scheduler.execute(graph)
+        # Write back any populated cache entries to the caller's dict.
+        if cache is not None:
+            cache.update(scheduler.cache)
+        return trace
 
     def replay(self, state_log_path: str | Path) -> RuntimeState:
         """Load a previously recorded RuntimeState from ``state_log.json``.
