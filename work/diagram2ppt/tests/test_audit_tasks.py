@@ -60,3 +60,19 @@ def test_write_audit_tasks_roundtrip():
         reloaded = json.loads((Path(d) / "audit_tasks.json").read_text())
         assert reloaded["count"] == 1
         assert reloaded["tasks"][0]["type"] == "refine_geometry"
+
+
+def test_verifier_fallback_routing_with_dict_strategy():
+    # Real strategy is a dict with fallback_methods; a crop method routes to fallback.
+    ir = {"defects": [
+        {"id": "a", "type": "high_residual", "element_id": "e1", "severity": 0.5,
+         "suggested_agent": "StyleAgent",
+         "strategy": {"method": "m", "fallback_methods": ["faithful_crop"]}},
+        {"id": "b", "type": "high_residual", "element_id": "e2", "severity": 0.5,
+         "suggested_agent": "StyleAgent",
+         "strategy": {"method": "m", "fallback_methods": ["chart_parser"]}},
+    ]}
+    tasks = unify_tasks(ir)
+    by_el = {t["element_id"]: t for t in tasks}
+    assert by_el["e1"]["type"] == "apply_fallback"   # faithful_crop is a fallback method
+    assert by_el["e2"]["type"] == "refine_geometry"  # chart_parser is a rebuild method

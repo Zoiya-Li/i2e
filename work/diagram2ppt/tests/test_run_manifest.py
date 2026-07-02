@@ -47,7 +47,7 @@ def _base_kwargs(**over):
 
 def test_build_manifest_accepted():
     m = rm.build_manifest(
-        ir={"status": "accepted", "round": 3, "metrics": {"native_fraction": 0.7}, "defects": []},
+        ir={"status": "accepted", "renderer_mode": "true_powerpoint", "round": 3, "metrics": {"native_fraction": 0.7}, "defects": []},
         artifacts={"diagram_v3.pptx": True},
         **_base_kwargs(),
     )
@@ -104,7 +104,7 @@ def test_build_manifest_interrupted():
 def test_write_manifest_roundtrip():
     with TemporaryDirectory() as d:
         m = rm.build_manifest(
-            ir={"status": "accepted", "metrics": {}, "defects": []},
+            ir={"status": "accepted", "renderer_mode": "true_powerpoint", "metrics": {}, "defects": []},
             artifacts={"diagram_v3.pptx": True},
             **_base_kwargs(out_dir=d),
         )
@@ -163,3 +163,15 @@ def test_true_powerpoint_accepted_has_no_blockers():
     assert m["acceptance_blockers"] == []
     assert m["last_successful_stage"] == "finalized"
     assert m["memory"] is None
+
+
+def test_accepted_without_renderer_mode_is_downgraded():
+    # A missing renderer_mode must NOT be reported as accepted (early crash /
+    # legacy path); production acceptance requires a true-PowerPoint render.
+    m = rm.build_manifest(
+        ir={"status": "accepted", "metrics": {}, "defects": []},  # no renderer_mode
+        artifacts={"diagram_v3.pptx": True},
+        **_base_kwargs(),
+    )
+    assert m["outcome"] == rm.OUTCOME_PARTIAL
+    assert any("renderer_mode" in b for b in m["acceptance_blockers"])

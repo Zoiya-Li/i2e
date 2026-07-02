@@ -85,8 +85,11 @@ def build_components(ir: dict, strategy_plan: dict) -> list:
         eids = region.get("element_ids") or []
         elems = [by_id[e] for e in eids if e in by_id]
         comp_defects = [d for e in eids for d in defects_by_el.get(e, [])]
+        region_id = region.get("id") or f"{region.get('kind', 'region')}_{i:02d}"
+        comp_id = "comp_" + "".join(
+            c if (c.isalnum() or c in "._-") else "_" for c in str(region_id))
         comps.append({
-            "id": f"comp_{region.get('kind', 'region')}_{i:02d}",
+            "id": comp_id,
             "kind": region.get("kind"),
             "bbox": region.get("bbox"),
             "canvas": {"width_px": canvas.get("width_px"), "height_px": canvas.get("height_px")},

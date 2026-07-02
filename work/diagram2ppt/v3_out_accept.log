@@ -1,0 +1,48 @@
+[AuditAgent] tool=bootstrap_blackboard
+[Planner] planning reconstruction for test.png
+[decompose] CV structure seeds: +26 {'chart': 2, 'container': 12, 'shape': 12}
+[Perception:VLMStructureAgent] pass 1: 22 boxes
+[Perception:VLMStructureAgent] pass 2: 39 boxes
+[Perception:VLMTextAgent] failed: RuntimeError: VLM call failed after 1 attempts: VLM call exceeded I2E_VLM_TOTAL_TIMEOUT
+[Perception:OCRTextAgent] 7 usable OCR lines
+[PerceptionBlackboard] fused 94 evidence -> 73 entities {'container': 9, 'chart': 9, 'surface': 6, 'shape': 42, 'text': 7}
+[Planner] perception blackboard: evidence=94 entities=73 sources={'cv_geometry': 26, 'vlm_structure': 61, 'ocr_text': 7}
+[Planner] strategy: regions=16 policy={'try_procedural_surfaces': True, 'try_component_motifs': False, 'try_pipeline_context': True, 'try_auditor_cards': False, 'try_failure_summary': False, 'try_q0_coverage': False, 'try_bottom_mini_surface': False, 'try_cross_panel_bridge': True, 'try_residual_replacement': False, 'max_base_candidates': 4, 'procedural_candidate_limit': 2, 'motif_candidate_limit': 2, 'residual_candidate_limit': 0}
+[ContentOrchestrator] tasks=73 ok=73 failed=0 by_agent={'ShapeContentAgent': 51, 'ChartContentAgent': 9, 'SurfaceContentAgent': 6, 'TextContentAgent': 7}
+[Planner] content tasks: tasks=73 ok=73 failed=0
+[Planner] strategy refined: regions=13 policy={'try_procedural_surfaces': True, 'try_component_motifs': False, 'try_pipeline_context': True, 'try_auditor_cards': True, 'try_failure_summary': False, 'try_q0_coverage': False, 'try_bottom_mini_surface': False, 'try_cross_panel_bridge': True, 'try_residual_replacement': False, 'max_base_candidates': 4, 'procedural_candidate_limit': 2, 'motif_candidate_limit': 2, 'residual_candidate_limit': 0}
+[candidate:current] [junk] dropped 5 degenerate text fragments
+[candidate:current] [postprocess] dropped 2 hollow grouping shape(s)
+[candidate:current] [postprocess] separated 32 overlapping panel pair(s)
+[candidate:current] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=5 traced_surfaces=4 component_motifs=0 split_text=0 styled_text=1 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=1 captions_normalized=0 solution_subtitles_added=1 solution_subtitles_normalized=0 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=4 typography_slotted=2 typography_clamped=4
+[candidate:current] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=0 component_motifs=0 split_text=0 styled_text=0 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=2 typography_slotted=2 typography_clamped=4
+[Planner] candidate current: visual_delta=0.4036 critical=6 text=0.5
+[candidate:current_procedural] [junk] dropped 5 degenerate text fragments
+[candidate:current_procedural] [postprocess] dropped 2 hollow grouping shape(s)
+[candidate:current_procedural] [postprocess] separated 32 overlapping panel pair(s)
+[candidate:current_procedural] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=5 traced_surfaces=4 component_motifs=0 split_text=0 styled_text=1 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=1 captions_normalized=0 solution_subtitles_added=1 solution_subtitles_normalized=0 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=4 typography_slotted=2 typography_clamped=4
+[candidate:current_procedural] [Initializers] ProceduralSurfaceAgent initialized region_surface_6 changed=1
+[candidate:current_procedural] [Initializers] ProceduralSurfaceAgent initialized region_surface_8 changed=1
+[candidate:current_procedural] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=0 component_motifs=0 split_text=0 styled_text=0 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=2 typography_slotted=2 typography_clamped=4
+[Planner] candidate current_procedural: visual_delta=0.4093 critical=5 text=0.5
+[candidate:cache_00] [junk] dropped 5 degenerate text fragments
+[candidate:cache_00] [postprocess] dropped 2 hollow grouping shape(s)
+[candidate:cache_00] [postprocess] separated 10 overlapping panel pair(s)
+[candidate:cache_00] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=5 traced_surfaces=4 component_motifs=0 split_text=0 styled_text=1 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=1 captions_normalized=0 solution_subtitles_added=1 solution_subtitles_normalized=0 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=4 typography_slotted=2 typography_clamped=4
+[candidate:cache_00] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=0 component_motifs=0 split_text=0 styled_text=0 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=2 typography_slotted=2 typography_clamped=4
+[Planner] candidate cache_00: visual_delta=0.3759 critical=2 text=0.75
+[candidate:cache_00_procedural] [junk] dropped 5 degenerate text fragments
+[candidate:cache_00_procedural] [postprocess] dropped 2 hollow grouping shape(s)
+[candidate:cache_00_procedural] [postprocess] separated 10 overlapping panel pair(s)
+[candidate:cache_00_procedural] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=5 traced_surfaces=4 component_motifs=0 split_text=0 styled_text=1 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=1 captions_normalized=0 solution_subtitles_added=1 solution_subtitles_normalized=0 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=4 typography_slotted=2 typography_clamped=4
+[candidate:cache_00_procedural] [Initializers] ProceduralSurfaceAgent initialized region_surface_6 changed=1
+[candidate:cache_00_procedural] [Initializers] ProceduralSurfaceAgent initialized region_surface_7 changed=1
+[candidate:cache_00_procedural] [QualityGate] rejected_text=0 sanitized_text=0 traced_icons=0 traced_charts=0 traced_surfaces=0 component_motifs=0 split_text=0 styled_text=0 recovered_card_containers=0 normalized_formulas=0 dropped_formula_fragments=0 captions_added=0 captions_normalized=1 solution_subtitles_added=0 solution_subtitles_normalized=1 procedural_surfaces=0 procedural_axis_arrows=0 typography_styled=2 typography_slotted=2 typography_clamped=4
+[Planner] candidate cache_00_procedural: visual_delta=0.3809 critical=2 text=0.75
+[Planner] selected initial candidate cache_00 by real render/verify
+[AuditAgent] tool=render_verify_audit
+[Planner] built work/diagram2ppt/v3_out_accept/diagram_v3.pptx: {'shapes': 22, 'pictures': 0, 'connectors': 2, 'charts': 5, 'dots': 478, 'surfaces': 6, 'output_path': 'work/diagram2ppt/v3_out_accept/diagram_v3.pptx', 'profile': 'all_native', 'native': True}
+[Planner] visual review unavailable: RuntimeError: VLM call failed after 1 attempts: VLM call exceeded I2E_VLM_TOTAL_TIMEOUT
+[Planner] verification: {'elements': 39, 'native_count': 39, 'native_fraction_count': 1.0, 'native_fraction_area': 1.0, 'defect_count': 17, 'critical_defect_count': 2, 'visual_delta': 0.3759, 'coverage_explained': 1.0, 'coverage_missing_count': 0, 'text_accuracy': 0.75, 'connector_accuracy': 1.0, 'typography_role_fraction': 1.0, 'typography_overflow_count': 3, 'text_layout_mismatch_count': 2, 'text_layout_error': 0.5239, 'text_color_mismatch_count': 2, 'text_template_mismatch_count': 2, 'text_template_error': 0.2976}
+[AuditAgent] tool=proposal_phase
+[Planner] proposal task graph: tasks=13 regions=13

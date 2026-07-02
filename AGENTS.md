@@ -149,7 +149,7 @@ python -m work.diagram2ppt.v3.run <image.png> -o work/diagram2ppt/v3_out --max-r
 
 ```bash
 python -m pytest tests/ work/diagram2ppt/tests/ -q
-# 当前：135 passed, 0 failed
+# 当前：162 passed, 0 failed（重跑：pytest tests/ work/diagram2ppt/tests/ -q）
 ```
 
 ### 6.2 单条 smoke 测试（均离线，无需 API key）

@@ -32,7 +32,7 @@ def test_build_components_maps_elements_and_status():
         {"id": "r2", "kind": "empty", "bbox": [0, 0, 5, 5], "element_ids": []},
     ])
     comps = build_components(ir, sp)
-    assert [c["id"] for c in comps] == ["comp_card_00", "comp_box_01", "comp_empty_02"]
+    assert [c["id"] for c in comps] == ["comp_r0", "comp_r1", "comp_r2"]
 
     c0 = comps[0]
     assert c0["status"] == "rendered"
@@ -73,7 +73,7 @@ def test_write_component_artifacts_writes_index_and_subir():
         assert idx["schema"] == "components-v1"
         assert idx["count"] == 1
         assert (Path(d) / "components.json").exists()
-        sub = json.loads((Path(d) / "components" / "comp_card_00" / "component_ir.json").read_text())
+        sub = json.loads((Path(d) / "components" / "comp_r" / "component_ir.json").read_text())
         assert [e["id"] for e in sub["elements"]] == ["e1"]
         # no source image passed -> crop is absent, not an error
         assert comps[0]["artifacts"]["component_crop"] is None

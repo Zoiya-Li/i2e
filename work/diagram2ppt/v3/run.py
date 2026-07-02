@@ -5,10 +5,16 @@ Wraps the audit/planner loop so that **every** invocation writes a diagnosable
 ``timeout`` (SIGTERM), raise mid-pipeline, or stop with residual defects. This
 is the P0 stabilization contract: a run's failure must always be inspectable
 after the fact (see ``run_manifest`` and ``work/diagram2ppt/STATUS.md`` §1.5).
+
+When a run finalizes (``ir_final.json`` exists) the post-run tools are invoked
+best-effort so a finished run also produces the Component IR, unified audit
+tasks, and an SVG preview/diff — turning the pipeline into
+``ir_final → components → audit_tasks → svg_loop`` without a manual step.
 """
 from __future__ import annotations
 
 import argparse
+import json
 import os
 import signal
 import sys
@@ -38,8 +44,8 @@ def _install_sigterm_handler() -> None:
         pass
 
 
-# Artifacts the pipeline may drop; presence is recorded in the manifest so a
-# partial/failed run still shows how far it got.
+# Artifacts the pipeline / post-run tools may drop; presence is recorded in the
+# manifest so a partial/failed run still shows how far it got.
 ARTIFACT_NAMES = (
     "perception_blackboard.json",
     "content_tasks.json",
@@ -49,12 +55,56 @@ ARTIFACT_NAMES = (
     "diagram_v3.compare.png",
     "ir_final.json",
     "audit_trace.json",
+    "components.json",
+    "audit_tasks.json",
+    "svg_loop.json",
 )
 
 
 def _artifacts(out_dir: str) -> dict:
     base = Path(out_dir)
     return {name: (base / name).exists() for name in ARTIFACT_NAMES}
+
+
+def _postprocess(out_dir: str) -> dict:
+    """Best-effort post-run derivation on a finalized run: Component IR,
+    unified audit tasks, and the SVG preview/diff. Never raises."""
+    produced: dict = {}
+    run_dir = Path(out_dir)
+    if not (run_dir / "ir_final.json").exists():
+        return produced
+
+    try:
+        from . import components as _components
+        ir, strategy_plan = _components._load_run(run_dir)
+        comps = _components.build_components(ir, strategy_plan)
+        _components.write_component_artifacts(
+            comps, ir, _components._source_path(ir, run_dir), run_dir)
+        produced["components"] = len(comps)
+    except Exception:  # noqa: BLE001 - post-run tooling must not fail the run
+        pass
+
+    try:
+        from . import audit_tasks as _audit_tasks
+        ir = json.loads((run_dir / "ir_final.json").read_text())
+        comp_index = None
+        comp_path = run_dir / "components.json"
+        if comp_path.exists():
+            comp_index = json.loads(comp_path.read_text()).get("components")
+        tasks = _audit_tasks.unify_tasks(ir, comp_index)
+        _audit_tasks.write_audit_tasks(tasks, run_dir)
+        produced["audit_tasks"] = len(tasks)
+    except Exception:  # noqa: BLE001
+        pass
+
+    try:
+        from . import svg_loop as _svg_loop
+        _svg_loop.run_svg_loop(run_dir)
+        produced["svg_loop"] = True
+    except Exception:  # noqa: BLE001
+        pass
+
+    return produced
 
 
 def main() -> int:
@@ -78,6 +128,8 @@ def main() -> int:
                     default="all_native",
                     help="build profile: all_native (research, zero raster) or "
                          "product_delivery (documented local fallback allowed)")
+    ap.add_argument("--no-postprocess", action="store_true",
+                    help="skip the components/audit_tasks/svg_loop post-run derivation")
     args = ap.parse_args()
     os.environ["I2E_BUILD_PROFILE"] = args.profile
 
@@ -98,6 +150,7 @@ def main() -> int:
     final_ir: dict = {}
     error = None
     interrupted = False
+    postprocess: dict = {}
     try:
         planner = Planner(args.image, args.out, max_rounds=args.max_rounds)
         register_default_agents(planner)
@@ -114,6 +167,8 @@ def main() -> int:
             "traceback": traceback.format_exc(),
         }
     finally:
+        if not args.no_postprocess and not interrupted:
+            postprocess = _postprocess(args.out)
         ended = time.time()
         ir_obj = final_ir or (getattr(planner, "ir", None) or {})
         manifest = run_manifest.build_manifest(
@@ -127,6 +182,7 @@ def main() -> int:
             interrupted=interrupted,
             artifacts=_artifacts(args.out),
         )
+        manifest["postprocess"] = postprocess
         try:
             manifest_path = run_manifest.write_manifest(args.out, manifest)
         except Exception:  # noqa: BLE001 - never let manifest I/O mask the run
@@ -135,9 +191,14 @@ def main() -> int:
     print("\n=== v3 reconstruction result ===")
     print(f"outcome: {manifest['outcome']}")
     print(f"ir_status: {manifest.get('ir_status')}")
+    print(f"renderer_mode: {manifest.get('renderer_mode')}")
+    print(f"last_successful_stage: {manifest.get('last_successful_stage')}")
     print(f"rounds: {manifest.get('rounds')}")
     print(f"metrics: {manifest.get('metrics', {})}")
     print(f"defects: {manifest.get('defect_count')}")
+    print(f"acceptance_blockers: {manifest.get('acceptance_blockers')}")
+    if postprocess:
+        print(f"postprocess: {postprocess}")
     if error:
         print(f"error: {error.get('type')}: {error.get('message')}")
     print(f"manifest: {manifest_path}")

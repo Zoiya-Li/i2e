@@ -123,7 +123,7 @@ All core tests are **offline** (mock providers, stub segmenters, synthetic image
 
 ```bash
 python -m pytest tests/ work/diagram2ppt/tests/ -q
-# 159 passed
+# 162 passed  (latest known; rerun locally/CI before release)
 ```
 
 ---

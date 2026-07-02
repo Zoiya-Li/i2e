@@ -26,7 +26,7 @@ FALLBACK_TYPES = {
 }
 
 # §9 metadata a well-formed fallback record must carry.
-REQUIRED_FIELDS = ("reason", "future_replacement")
+REQUIRED_FIELDS = ("reason", "source_bbox", "future_replacement")
 
 
 def is_fallback(el: dict[str, Any]) -> bool:

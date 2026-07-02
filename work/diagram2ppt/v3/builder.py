@@ -81,6 +81,17 @@ def validate_buildable(ir: dict, profile: str | None = None) -> list[dict]:
             continue
         # non-native element
         if profile == PROFILE_PRODUCT and _fallback.is_fallback(el):
+            # Only fallback types the v2 builder actually embeds as pictures are
+            # allowed through; any other "fallback" type would silently
+            # mis-render (fall through to a default shape) rather than a crop.
+            if t != "raster_crop":
+                blockers.append({
+                    "element_id": el.get("id", "?"),
+                    "element_type": t,
+                    "reason": f"fallback type {t!r} unsupported by builder "
+                              "(only 'raster_crop' embeds as a picture)",
+                })
+                continue
             rec = _fallback.fallback_record(el)
             missing = [f for f in _fallback.REQUIRED_FIELDS if not rec.get(f)]
             if missing:

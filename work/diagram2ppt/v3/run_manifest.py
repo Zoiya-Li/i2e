@@ -98,8 +98,8 @@ def acceptance_blockers(ir: Optional[dict]) -> list:
     if ir.get("status") != "accepted":
         blockers.append(f"ir_status={ir.get('status') or 'none'}")
     renderer_mode = ir.get("renderer_mode")
-    if renderer_mode and renderer_mode != "true_powerpoint":
-        blockers.append(f"renderer_mode={renderer_mode} (not true_powerpoint)")
+    if renderer_mode != "true_powerpoint":
+        blockers.append(f"renderer_mode={renderer_mode or 'none'} (not true_powerpoint)")
     crit = int(metrics.get("critical_defect_count") or 0)
     if crit:
         blockers.append(f"critical_defect_count={crit}")
@@ -144,7 +144,9 @@ def build_manifest(
     outcome = classify_outcome(ir.get("status"), produced_output, error, interrupted)
 
     renderer_mode = renderer_mode or ir.get("renderer_mode")
-    if outcome == OUTCOME_ACCEPTED and renderer_mode and renderer_mode != "true_powerpoint":
+    # Production acceptance requires a true-PowerPoint render. A missing
+    # renderer_mode (early crash / legacy path) is NOT sufficient either.
+    if outcome == OUTCOME_ACCEPTED and renderer_mode != "true_powerpoint":
         outcome = OUTCOME_PARTIAL
 
     ir_view = {**ir, "renderer_mode": renderer_mode}

@@ -51,7 +51,13 @@ def _severity_to_float(sev: Any) -> float:
 
 
 def _verifier_task_type(defect: dict) -> str:
-    if str(defect.get("strategy", "")) in _FALLBACK_STRATEGIES:
+    strategy = defect.get("strategy")
+    # Real strategy routing stores a dict ({method, region_id, fallback_methods,
+    # ...}); older/synthetic defects may store a bare string.
+    if isinstance(strategy, dict):
+        if set(strategy.get("fallback_methods") or []) & _FALLBACK_STRATEGIES:
+            return "apply_fallback"
+    elif str(strategy or "") in _FALLBACK_STRATEGIES:
         return "apply_fallback"
     t = str(defect.get("type", ""))
     agent = str(defect.get("suggested_agent", ""))

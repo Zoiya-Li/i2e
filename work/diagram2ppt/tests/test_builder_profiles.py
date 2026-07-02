@@ -61,3 +61,13 @@ def test_build_pptx_raises_on_blocked_ir():
     ir = _ir([{"id": "x", "type": "raster_crop", "bbox": [0, 0, 10, 10]}])
     with pytest.raises(builder.BuildBlockedError):
         builder.build_pptx(ir, "/tmp/should-not-be-written.pptx", profile="all_native")
+
+
+def test_product_blocks_unsupported_fallback_type():
+    # A documented but non-raster_crop fallback the v2 builder can't embed is blocked.
+    el = {"id": "im", "type": "image", "bbox": [0, 0, 10, 10], "editable": False,
+          "ext": {"fallback": {"reason": "x", "future_replacement": "y",
+                               "source_bbox": [0, 0, 10, 10]}}}
+    blockers = builder.validate_buildable(_ir([el]), profile=builder.PROFILE_PRODUCT)
+    assert len(blockers) == 1
+    assert "unsupported by builder" in blockers[0]["reason"]
