@@ -58,9 +58,12 @@ def compare_to_baseline(structure: dict[str, Any]) -> dict[str, Any] | None:
     }
 
 
+# Repo-relative so the suite runs on any machine/checkout (no hard-coded /Users
+# paths). Override by passing image paths explicitly on the CLI.
+_REPO_ROOT = Path(__file__).resolve().parents[3]
 DEFAULT_CASES = [
-    "/Users/lizeyan/Desktop/i2e/framework.png.ocr_upscale.png",
-    "/Users/lizeyan/Desktop/i2e/test.png",
+    str(_REPO_ROOT / "framework.png"),
+    str(_REPO_ROOT / "test.png"),
 ]
 
 

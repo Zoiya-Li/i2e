@@ -42,7 +42,7 @@ run.py
 python -m work.diagram2ppt.v3.run <image.png> -o work/diagram2ppt/v3_out --max-rounds 5
 ```
 
-**Current issue:** the default model (`Qwen/Qwen3.6-35B-A3B` via SiliconFlow) can time out on large diagrams. If you hit timeouts, try:
+**Current issue:** the CLI default model is `Qwen/Qwen3-VL-32B-Instruct` via SiliconFlow (set by `run.py`; the provider-level fallback, used only when `I2E_VLM_MODEL` is unset, is the older `Qwen/Qwen3.6-35B-A3B`). It can still time out or fail to converge on large diagrams — but every run writes a diagnosable `run_manifest.json` regardless. If you hit timeouts, try:
 
 ```bash
 I2E_VLM_TIMEOUT=240 I2E_VLM_TOTAL_TIMEOUT=300 \

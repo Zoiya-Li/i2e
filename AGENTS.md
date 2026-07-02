@@ -35,16 +35,20 @@ Visual Artifact → Evidence → Components → Editable Design IR → SVG / PPT
 
 长期产品契约：AI 可参与反编译过程（转换期多轮 VLM / agent / audit / refine），但**导出后的用户编辑必须是 native / deterministic / fast / auditable / not model-dependent**——改字、改色、移动形状、调 connector、编辑公式或图表时不再依赖 AI 重新生成图片。
 
-**防幻觉清单**：以下均为 **Target**，当前仓库中**不存在**对应的稳定文件或接口，除非你在代码里亲自确认后再引用：
+**已交付（Current，仓库中已存在、离线可测，见 `work/diagram2ppt/STATUS.md` §1.6）**：
 
-- 多层 IR：`Evidence IR` / `Component IR` / `Editable Design IR` / `Correction IR`。当前承重墙仍是**单层** `ir/ir-v1.schema.json`；短期不破坏 IR v1，多层概念只在 `work/diagram2ppt/v3/` 内逐步引入。
-- 运行态契约对象：`RunManifest` / `PipelineState` / `Task` / `TaskResult` / `AuditResult` / `Component` / `Element` / `Constraint` / `FallbackRecord` / `CorrectionRecord`。
-- 组件级局部闭环：`crop → local generate → local render → local diff → local refine → component accepted`。
-- 审计驱动修复：audit 产出**可执行修复任务**（映射到 component_id / element_id / suggested_task），而非只打分。
-- 多维质量指标：`editability_score` / `native_object_ratio` / `fallback_area_ratio` / `true_ppt_render_score` 等。
-- 显式 fallback 记录：`editable=false` + `reason` + `source bbox` + `confidence` + `future replacement target`；禁止无标记的整页 fallback。
+- `v3/run_manifest.py`（每次运行写 `run_manifest.json`，outcome ∈ accepted/partial/rejected/error/interrupted）、`v3/metrics.py`（§8 多维指标离线部分）、`v3/fallback.py`（§9 fallback 审计）、`v3/triage.py`（输出目录分类索引）、`v3/pptx_stats.py`、`v3/baselines/v2_framework.json`（v2 回归基线）。
+- 修正飞轮的 `corrections[]` 单条契约（`field_path` / `kind` / `predicted` / `corrected`）已在 IR v1 中。
 
-演进路线（Target，详见 `work/diagram2ppt/STATUS.md`）：P0 让 v3 稳定跑完（不 timeout、允许 partial/rejected/fallback、输出 run manifest）→ P1 运行态契约 → P2 组件级局部闭环 → P3 SVG canonical loop → P4 PPTX native lowering → P5 audit-driven refinement。
+**仍是 Target（尚未实现，不要当作已存在的稳定文件 / API）**：
+
+- 真正的多层 IR：`Evidence IR` / `Component IR` / `Editable Design IR`。当前承重墙仍是**单层** `ir/ir-v1.schema.json`；证据已内嵌在 `ext.evidence*`，但多层分离尚未落地，只在 `work/diagram2ppt/v3/` 内增量、非破坏引入。
+- 组件级局部闭环：`crop → local generate → local render → local diff → local refine → component accepted`（`Component` 尚未成为一等对象，region/task 仍是每轮临时推断）。
+- 可执行 refinement task queue：audit 产出**统一的可执行修复任务**（映射 component_id / element_id / suggested_task）——目前 verifier / visual_review 各自产 defect，尚未统一。
+- 跨格式 lowering：SVG canonical loop、Figma-like JSON / HTML 导出。
+- 运行态契约的完整对象化：`PipelineState` / `Task` / `TaskResult` / `AuditResult` / `Constraint` 等尚未定形为稳定 schema。
+
+演进路线（Target，详见 `work/diagram2ppt/STATUS.md`）：P1 坐实运行态契约（renderer_mode / memory_used / stage 诊断）→ P2 组件级 Component IR 闭环 → P3 SVG canonical loop → P4 PPTX native lowering → P5 audit-driven refinement task queue。
 
 ## 2. 仓库地图
 
@@ -133,7 +137,7 @@ python -m work.diagram2ppt.v2.run framework.png -o work/diagram2ppt/v2_out
 # v2 legacy 输出 PPTX（native + faithful crop 兜底）
 python -m work.diagram2ppt.v2.run framework.png --legacy -o work/diagram2ppt/v2_out
 
-# v3 研究管线（默认 SiliconFlow Qwen3.6-35B-A3B，可能超时）
+# v3 研究管线（CLI 默认 SiliconFlow Qwen/Qwen3-VL-32B-Instruct；每次运行落 run_manifest.json）
 python -m work.diagram2ppt.v3.run <image.png> -o work/diagram2ppt/v3_out --max-rounds 5
 ```
 
@@ -145,7 +149,7 @@ python -m work.diagram2ppt.v3.run <image.png> -o work/diagram2ppt/v3_out --max-r
 
 ```bash
 python -m pytest tests/ work/diagram2ppt/tests/ -q
-# 当前：104 passed, 0 failed
+# 当前：135 passed, 0 failed
 ```
 
 ### 6.2 单条 smoke 测试（均离线，无需 API key）

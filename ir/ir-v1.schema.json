@@ -273,16 +273,16 @@
           "type": "string",
           "description": "Correction category -> which extraction sub-model to retrain.",
           "enum": [
-            "text_content", "font", "color", "geometry", "type_reclassify",
+            "text_content", "font", "font_size", "color", "geometry", "type_reclassify",
             "layer_split", "layer_merge", "zorder", "mask_refine", "inpaint_redo",
-            "element_add", "element_delete", "brand_apply"
+            "asset_replace", "element_add", "element_delete", "brand_apply"
           ]
         },
         "predicted": { "description": "What Node ② produced. Any JSON value." },
         "corrected": { "description": "What the user finalized. Any JSON value." },
         "confidence_at_prediction": { "type": "number", "minimum": 0, "maximum": 1, "description": "Lets us check calibration: were low-confidence items the ones actually corrected?" },
         "model_version": { "type": "string", "description": "Which model erred. Required for attributing the training signal." },
-        "session_id": { "type": "string" },
+        "session_id": { "type": ["string", "null"] },
         "user_hash": { "type": ["string", "null"], "description": "Pseudonymous user id for dedup/abuse, never PII." },
         "corrected_at": { "type": "string", "format": "date-time" }
       }

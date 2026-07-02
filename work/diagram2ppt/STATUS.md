@@ -62,7 +62,7 @@ Input → Preprocess → Evidence Extraction → Component Decomposition → Loc
 | `v3/triage.py` + `v3_out_index.{json,md}` | 非破坏地扫描并分类 v3 输出目录（当前 29 个活跃 run，全部 partial，含 editability/fallback 列，可按 visual_delta 排序；最佳 `v3_out_testpng_default` 0.357/cov1.0） | P2 |
 | `v3/metrics.py` | §8 多维指标（离线部分）：native_element_ratio、fallback_area_ratio、editability_score、object_coverage；visual/text 分数从 `ir['metrics']` 透传（需真实渲染） | §8 |
 | `v3/fallback.py` | §9 fallback 审计：识别 raster_crop/editable=False，校验「局部+显式+可追踪」，标记 undocumented / full_page 违规（`ext.forced` 视为强制原生，不算 fallback） | §9 |
-| 测试 `test_run_manifest.py` `test_v2_baseline.py` `test_triage.py` `test_metrics.py` `test_fallback.py` | 上述契约的离线回归（全套件 **133 passed**） | — |
+| 测试 `test_run_manifest.py` `test_v2_baseline.py` `test_triage.py` `test_metrics.py` `test_fallback.py` `tests/test_capture_corrections.py` | 上述契约 + Correction schema 的离线回归（全套件 **135 passed**） | — |
 
 > **实测洞见（由新指标暴露）**：全部 29 个 v3 run 的 editability=1.0 / fallback=0（全原生政策生效），但最佳 `visual_delta` 仅 0.357——即 **v3 在可编辑性上已胜过 v2（1.0 vs 0.735），输在视觉保真**。v2 hybrid 交付含 26.5% raster fallback 面积且 7 处均无 §9 文档。瓶颈是收敛/保真，不是可编辑性。
 
@@ -79,10 +79,11 @@ Input → Preprocess → Evidence Extraction → Component Decomposition → Loc
 **架构**：全局 VLM 理解 → 类型路由（text/OCR、formula/LaTeX-OCR、box/arrow、chart、3D/illustration）→ 组装渲染 → 迭代修复环（render-diff → refine/demote/identify）。
 
 **最佳交付物**：
-- `work/diagram2ppt/v22_out/diagram_final.pptx`
-- 指标：native fraction **0.70 / 0.696**（count / area），coverage **0.972**
-- 组成：81 shapes + 402 dots + 12 icons + 2 charts + 10 公式 + 6 connectors
-- 策略：顽固元素降级为忠实裁切（faithful crop），保证 100% 保真
+- `work/diagram2ppt/v22_out/diagram_final.pptx` —— **实测为 hybrid 交付**（原生对象 + 忠实裁切兜底），**不是**零图片全原生。
+- 实测结构（`v3/pptx_stats.py`）：97 shapes = 43 text + 38 autoshape + 6 connector + 2 chart + 1 freeform + **7 pictures**；9 OMML 公式；native_object_ratio **0.9278**；约 **26% 面积为 raster fallback**。
+- v2 自有指标：native fraction **0.70 / 0.696**（count / area），coverage **0.972**。
+- 策略：顽固元素降级为忠实裁切（faithful crop），保证 100% 保真。
+- 注：早期文档"0 图片 + 402 dots + 12 icons"描述对应的是**另一个** all-native 实验产物 `diagram_v33.pptx`（~60KB），与磁盘上的 `diagram_final.pptx` 不是同一文件。冻结基线见 `v3/baselines/v2_framework.json`。
 
 **v2 后续演进**：
 - `v2_out/`：早期输出
@@ -144,7 +145,7 @@ Input → Preprocess → Evidence Extraction → Component Decomposition → Loc
 python -m work.diagram2ppt.v3.run <image> -o <out_dir> --max-rounds N
 ```
 
-**默认模型**：SiliconFlow `Qwen/Qwen3.6-35B-A3B`（VLM）、`Qwen/Qwen3.5-397B-A3B`（planner）。
+**默认模型**（`run.py`）：SiliconFlow `Qwen/Qwen3-VL-32B-Instruct`（VLM/vision）、`Qwen/Qwen3.5-397B-A17B`（planner）。provider 级 fallback（未设 `I2E_VLM_MODEL` 时）仍为旧的 `Qwen/Qwen3.6-35B-A3B`。
 
 **当前问题**：
 - 默认模型在 `test.png` 上 timeout（第一次跑 90s 超时，第二次加 timeout 后被 kill）
@@ -221,7 +222,7 @@ work/diagram2ppt/
 
 ```bash
 python -m pytest tests/ work/diagram2ppt/tests/ -q
-# 结果：104 passed, 0 failed
+# 结果：135 passed, 0 failed
 ```
 
 ### 5.2 各测试文件

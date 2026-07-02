@@ -30,7 +30,7 @@
 | v2.4 | ✅ Best v2 delivery | 0.70 / 0.696 | Formula + chart experts online |
 | v3 | 🚧 Active rewrite | N/A | All-native policy; no accepted output yet |
 
-**Key blocker:** v3 defaults to SiliconFlow `Qwen/Qwen3.6-35B-A3B` and times out on new images. Needs a lighter model or longer timeout to converge.
+**Key blocker:** v3 (CLI default `Qwen/Qwen3-VL-32B-Instruct`) produces native output but still has not reached `status: accepted` end-to-end — it can time out or fail to converge on large diagrams. Every run now writes a diagnosable `run_manifest.json`; the remaining gap is convergence/fidelity, not editability.
 
 **See:** `work/diagram2ppt/STATUS.md` for v2/v3 architecture and current outputs.
 
@@ -73,7 +73,7 @@ python -m editor.server out.ir.json
 
 ```bash
 python -m pytest tests/ work/diagram2ppt/tests/ -q
-# 104 passed, 0 failed
+# 135 passed, 0 failed
 ```
 
 ### Output organization
