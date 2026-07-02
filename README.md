@@ -98,11 +98,15 @@ Offline, deterministic infra built around the v3 pipeline:
 
 | Module | Purpose |
 |---|---|
-| `v3/run_manifest.py` | One diagnosable `run_manifest.json` per run (outcome, config, metrics, error/traceback) |
+| `v3/run_manifest.py` | One diagnosable `run_manifest.json` per run (outcome, `renderer_mode`, `memory`, `last_successful_stage`, `acceptance_blockers`, error/traceback). Proxy renders can never be `accepted` |
 | `v3/pptx_stats.py` | Deterministic PPTX fingerprint: shape histogram, picture/OMML counts, `native_object_ratio`, sha256 |
 | `v3/baselines/v2_framework.json` | Frozen, **measured** v2 delivery locked as a regression baseline |
 | `v3/metrics.py` | Multi-dimensional metrics: `native_element_ratio`, `fallback_area_ratio`, `editability_score`, coverage |
 | `v3/fallback.py` | Fallback audit: flags raster fallbacks that are undocumented or full-page |
+| `v3/components.py` | Component IR: promote strategy regions into first-class components (lifecycle, local metrics, crops, sub-IR) → `components.json` |
+| `v3/audit_tasks.py` | Unify verifier + visual_review defects into one executable `AuditTask` schema → `audit_tasks.json` |
+| `v3/svg_loop.py` | SVG canonical loop: IR → SVG → PNG (`rsvg-convert`) → pixel diff vs source (debug/preview renderer) |
+| `v3/builder.py` | Build profiles: `all_native` (zero raster) vs `product_delivery` (documented local fallback) via `--profile` / `I2E_BUILD_PROFILE` |
 | `v3/triage.py` | Non-destructive scan/index of `v3_out*` run dirs → `v3_out_index.{json,md}` |
 | `v3/regression_suite.py` | Runs the pipeline over an image set; embeds the v2 baseline and per-case comparison |
 
@@ -119,7 +123,7 @@ All core tests are **offline** (mock providers, stub segmenters, synthetic image
 
 ```bash
 python -m pytest tests/ work/diagram2ppt/tests/ -q
-# 135 passed
+# 159 passed
 ```
 
 ---
