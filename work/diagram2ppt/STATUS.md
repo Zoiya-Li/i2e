@@ -62,7 +62,8 @@ Input → Preprocess → Evidence Extraction → Component Decomposition → Loc
 | `v3/triage.py` + `v3_out_index.{json,md}` | 非破坏地扫描并分类 v3 输出目录（当前 29 个活跃 run，全部 partial，含 editability/fallback 列，可按 visual_delta 排序；最佳 `v3_out_testpng_default` 0.357/cov1.0） | P2 |
 | `v3/metrics.py` | §8 多维指标（离线部分）：native_element_ratio、fallback_area_ratio、editability_score、object_coverage；visual/text 分数从 `ir['metrics']` 透传（需真实渲染） | §8 |
 | `v3/fallback.py` | §9 fallback 审计：识别 raster_crop/editable=False，校验「局部+显式+可追踪」，标记 undocumented / full_page 违规（`ext.forced` 视为强制原生，不算 fallback） | §9 |
-| 测试 `test_run_manifest.py` `test_v2_baseline.py` `test_triage.py` `test_metrics.py` `test_fallback.py` `tests/test_capture_corrections.py` | 上述契约 + Correction schema 的离线回归（全套件 **135 passed**） | — |
+| `v3/components.py` + `components.json` | P2 Component IR：把 strategy 区域升级为一等 `Component`（生命周期 planned/generated/rendered/audited/accepted/fallback、component-local 指标、per-component crop + sub-IR、provenance）。CLI `python -m work.diagram2ppt.v3.components <run_dir>`。`local_visual_delta` 为 Target 钩子（待组件级 render/diff） | P2 |
+| 测试 `test_run_manifest.py` `test_v2_baseline.py` `test_triage.py` `test_metrics.py` `test_fallback.py` `test_components.py` `tests/test_capture_corrections.py` | 上述契约 + Correction schema 的离线回归（全套件 **144 passed**） | — |
 
 > **实测洞见（由新指标暴露）**：全部 29 个 v3 run 的 editability=1.0 / fallback=0（全原生政策生效），但最佳 `visual_delta` 仅 0.357——即 **v3 在可编辑性上已胜过 v2（1.0 vs 0.735），输在视觉保真**。v2 hybrid 交付含 26.5% raster fallback 面积且 7 处均无 §9 文档。瓶颈是收敛/保真，不是可编辑性。
 
