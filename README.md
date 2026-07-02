@@ -108,7 +108,7 @@ Offline, deterministic infra built around the v3 pipeline:
 | `v3/svg_loop.py` | SVG canonical loop: IR → SVG → PNG (`rsvg-convert`) → pixel diff vs source (debug/preview renderer) |
 | `v3/builder.py` | Build profiles: `all_native` (zero raster) vs `product_delivery` (documented local fallback) via `--profile` / `I2E_BUILD_PROFILE` |
 | `v3/triage.py` | Non-destructive scan/index of `v3_out*` run dirs → `v3_out_index.{json,md}` |
-| `v3/regression_suite.py` | Runs the pipeline over an image set; embeds the v2 baseline and per-case comparison |
+| `v3/docs/execution-semantics-spec.md` | Honest audit of the v3 runtime: TSI (traceable state interpreter) today vs state-machine kernel Target |
 
 ```bash
 # index every v3 run directory by outcome + editability (writes nothing destructive)

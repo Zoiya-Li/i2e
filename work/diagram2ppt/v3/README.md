@@ -51,6 +51,19 @@ I2E_VLM_TIMEOUT=240 I2E_VLM_TOTAL_TIMEOUT=300 \
 
 ---
 
+## Runtime semantics
+
+v3 is currently a **traceable state interpreter (TSI)**, not a graph runtime or
+compiler backend. The `PlannerKernel` / `RuntimeState` / `state_log.json` layer
+adds auditable transitions around the existing Planner, but operators are still
+mostly wrappers around in-place mutations of the Global Native IR.
+
+See [`docs/execution-semantics-spec.md`](docs/execution-semantics-spec.md) for
+an honest audit of what is real today versus what is required for a true
+state-machine kernel.
+
+---
+
 ## Relationship to v2
 
 - **v3 depends on v2.** It imports v2 for decompose fallback, handlers, build_pptx, render, diff, and snapshot.

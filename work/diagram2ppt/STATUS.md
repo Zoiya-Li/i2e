@@ -271,7 +271,7 @@ python -m pytest tests/ work/diagram2ppt/tests/ -q
 | `docs/positioning-20260610.md` | 战略 pivot：从拆像素到语义原生结构 |
 | `docs/diagram2ppt-progress.md` | v1→v3 演进史、实验结果、工程坑 |
 | `work/diagram2ppt/DEFECTS.md` | framework.png 逐轮缺陷与修复证据 |
-| `work/diagram2ppt/STATUS.md` | 本文件：当前状态 |
+| `work/diagram2ppt/v3/docs/execution-semantics-spec.md` | v3 运行语义审计：当前是 TSI，与真 state-machine kernel 的差距及迁移路径 |
 
 ---
 
